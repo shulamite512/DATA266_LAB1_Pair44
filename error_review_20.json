@@ -1,0 +1,182 @@
+[
+  {
+    "index": 7077,
+    "error_type": "near_threshold",
+    "proposed_fix": "Calibrate the decision threshold on a validation split.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.4995516836643219,
+    "text": "liv tyler liv tyler liv tyler yeah s hard keep mind off fetching beauty giving radiantly picture perfect performance she simply tongues wagging one night mccool s dementedly quirky raunchy black comedy old fashion shades tied familiar but smartly crafted chaotic narrative which three men lusting after one women she s milking her advantage when see tyler no wonder why they infatuated would do anything s anything see her happy living her dreams just like tyler there s something rather intoxicating about feature see likes matt dillon john goodman paul reiser who s great especially michael douglas who plays hired assassin cool ease but questionable hairdo really having good time their roles consuming plot opens up main three characters dillon"
+  },
+  {
+    "index": 3622,
+    "error_type": "near_threshold",
+    "proposed_fix": "Calibrate the decision threshold on a validation split.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5007283091545105,
+    "text": "i wrestlemania vi toronto year old event i saw then pretty different what i saw wrestlemania collection dvd i just watched i don t understand how wwe doesn t have rights some old music since most those songs created wwf they shouldn t have worry about licensing royalty fees prevent shows like snl releasing season sets pretty stupid whine about but me hearing demolition come out their theme music wrestlemania person memory i never forgot didn t exist dvd what point them even owning rights huge library video if they have edit so drastically use"
+  },
+  {
+    "index": 6692,
+    "error_type": "near_threshold",
+    "proposed_fix": "Calibrate the decision threshold on a validation split.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.49878785014152527,
+    "text": "interesting movie jordana brewster young woman who travels europe attempt find out what became her older sister cameron diaz who mysteriously died years earlier brewster very good keeps involved despite some unrealistic plotting such having her amazinly find start romance her dead sister s much older boyfriend christopher eccleston still mostly good grade b"
+  },
+  {
+    "index": 2268,
+    "error_type": "near_threshold",
+    "proposed_fix": "Calibrate the decision threshold on a validation split.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5013023018836975,
+    "text": "carlito s angels spoof charlie s angels not afraid spoof even itself times however does not mean film above criticism viewers well amateurish juvenile i think fast motion stopped being funny around assaulting rap music often drowns out dialogue film feels longer than even though runs barely over hour girls themselves hot adorable wonderful lean bodies even though they never get naked their outfits leave little imagination checking out their imdb pages i found out one them alessandra ramos actually going through film career i wish her luck because although film bad she well other girls gave whatever energy i wouldn t mind all seeing her again screen"
+  },
+  {
+    "index": 6069,
+    "error_type": "near_threshold",
+    "proposed_fix": "Calibrate the decision threshold on a validation split.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.4984460771083832,
+    "text": "end credits shadows after read directed john cassavetes some white letters screen can seen film have just seen improvised they say i am always pursuing fact words so important movies since filmmakers started using them because basically there s no film without screenplay many other reasons br br cassavetes pursued same goal believed freedom words shadows perfect example s film no real main characters no real main plot lines s mostly people different situations talking yes some situations connected but cassavetes apparently always rush get talking uses fast forward technique when characters going somewhere or escaping someone not speaking br br appearances everything movie example there s brilliant score full jazz influences lot fantastic solos there s one character says"
+  },
+  {
+    "index": 6452,
+    "error_type": "slice_specific",
+    "proposed_fix": "Train and report separate short- and long-review slices.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.4984451234340668,
+    "text": "after all these years i am puzzled why julie brown west coast isn t household name or hugely famous comedic star she one funniest females planet spoof she takes madonna who one her favorite targets she medusa hugely successful singer like madonna who also happened have documentary truth or dare julie brown spoofs madonna medusa who came wisconsin land dairy beer i remember segment where she went wisconsin visit her family grave i don t remember if parent or her pet i remember somebody saying medusa did nothing original she just copying others i have say i hope spoof documentary available dvd somewhere julie brown her best mocking spoofing others"
+  },
+  {
+    "index": 5888,
+    "error_type": "slice_specific",
+    "proposed_fix": "Train and report separate short- and long-review slices.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.49789461493492126,
+    "text": "easily one best indian films ever granted s not saying much i made conclusion after whopping minutes watching but i can truly say fire also one really beautiful brilliant films i ve seen br br beautiful because imagery best example i can give parallelism between female leads radha sita characters same name hindu mythology sita example wife revered lord ram legend goes ram subjugates his wife making her walk through fire prove her purity sita response cries leaves him reuniting her mother earth story all sort crazy links stories indian women nandita das shabana azmi word fire all sudden many meanings marriage tradition religion motherhood probably few others i didn t catch br br brilliant because social overtones many who"
+  },
+  {
+    "index": 9450,
+    "error_type": "slice_specific",
+    "proposed_fix": "Train and report separate short- and long-review slices.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.497782438993454,
+    "text": "revised riverdance presentation staged radio city music hall new york city three irish dance musicals i watched during mid late s which includes first riverdance lord dance i liked one best br br i thought better than original held dublin ireland because adds segments mostly good more varied colorful stage setting eliminated apiece two original wasn t good begin just very solid show few weak spots certain there some songs dances just fair but none poor which amazing considering there numbers all br br cast similar first riverdance main exception colin dunne replacing michael flatley featured dancer both extremely talented major difference might their looks dunne little goateed black haired guy while flatley clean shaven blond i prefer dunne because"
+  },
+  {
+    "index": 2653,
+    "error_type": "slice_specific",
+    "proposed_fix": "Train and report separate short- and long-review slices.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.502339780330658,
+    "text": "i find disconcerting era when satisfying fulfilling spirituality unknown all scattered across whole spectrum possible beliefs charlatan fraud gurdjieff s caliber charlatan exceptional there no denying had special gift s pity misused though aggrandizement his wounded ego feeding adulation unwary sheep who his beck call awe him can inspire such extreme adherence credulity movie presents idealized version gurdjieff s own largely fictional fantastic account his formation awakening which i would rather describe his discovery how much could sway minds wills certain types sadly disoriented people see if dare have disagreeable eye opening about how sadly deprived true religious leaders extent clown like gurdjieff could inspire such devotion careful have blood pressure medicine hand if one those who still hope healthy"
+  },
+  {
+    "index": 7067,
+    "error_type": "slice_specific",
+    "proposed_fix": "Train and report separate short- and long-review slices.",
+    "label": 1,
+    "prediction": 0,
+    "probability": 0.4975546896457672,
+    "text": "okay maybe movie not revolution but very good piece entertainment s liv tyler s variation alicia silverstone s clueless or cameron diaz there s something about mary br br liv plays femme fatale which just wants have own house all kinds material comfort well she does everything get just even crimes many crimes she drops every boyfriend which doesn t cooperate get these things additionally she actually doesn t mind have some additional lovers beside her current boyfriend br br movie even funnier watch if one knows liv actually zodiac sign cancer cancer reported very domestic so character liv played here actually parody cancer br br i alone cinema when i watched one quite comfortable because i could laugh loud"
+  },
+  {
+    "index": 3,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.6358968615531921,
+    "text": "not even beatles could write songs everyone liked although walter hill no mop top s second none when comes thought provoking action movies nineties came social platforms changing music film emergence rapper turned movie star full swing acting took back seat each man s overpowering regional accent transparent acting one many ice t movies i saw kid loved only watch them later cringe bill paxton william sadler firemen basic lives until burning building tenant about go up flames hands over map gold implications i hand walter quickly neatly setting up main characters location but i fault everyone involved turning out lame o performances ice t cube must have been red hot time while i ve enjoyed both their careers rappers"
+  },
+  {
+    "index": 4,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.6351729035377502,
+    "text": "brass pictures movies not fitting word them really somewhat brassy their alluring visual qualities reminiscent expensive high class tv commercials but unfortunately brass pictures feature films pretense wanting entertain viewers over two hours they fail miserably their undeniable but rather soft flabby than steamy erotic qualities non withstanding br br senso remake film luchino visconti same title alida valli farley granger lead original tells story senseless love lust around venice during italian wars independence brass moved action th into th century exact so there mussolini murals men black shirts german uniforms or tattered garb partisans but just window dressing historic context completely negligible br br anna galiena plays attractive aristocratic woman who falls amoral ss guy who always puts too"
+  },
+  {
+    "index": 9,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5127859711647034,
+    "text": "wealthy horse ranchers buenos aires have long standing no trading policy crawfords manhattan but what happens when mustachioed latin son falls certain crawford bright eyes blonde hair some perky moves dance floor th century fox musical glossy veneer yet seems bit tatty around edges very heavy frenetic gymnastic like dancing exceedingly thin story betty grable eleventh hour replacement alice faye gives boost even though she s paired leaden don ameche tan make up slick hair also good charlotte greenwood betty s pithy aunt limousine driver who s constantly asleep job carmen miranda playing herself who else stock shots argentina far outclass action filmed fox backlot some supporting performances quite awful time big horserace finale most viewers will have had enough"
+  },
+  {
+    "index": 16,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5687096118927002,
+    "text": "bottom end apocalypse movie scale piece pish called final executioner least where i come bloke trained ex cop seek vengeance those killed his woman friends cold blood s about lots fake explosions repetitive shootings ensue one weirdest array costumes i ve seen film while massive fortress which apparently only run people great job dubbing too guys best moment when our hero loses swordfight about skewered through neck just gets out his gun bang why not do earlier s mystery why anyone would want sit through first place i m still puzzling over one myself now"
+  },
+  {
+    "index": 17,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.771549642086029,
+    "text": "earth been destroyed nuclear holocaust well parts earth because somewhere italy band purebred survivors those without radioactive contamination holed up massive mansion surrounded lush grounds waiting next opportunity go hunting those polluted blood final executioner story one their would victims alan william mang who looks not surprisingly lot like kurt russell his efforts take down legally sanctioned hunters who led edra marina costa erasmus harrison muller jr alan been trained kill former nypd cop sam woody strode who mostly hangs around giving his pupil moral support mooching tinned meat strode far best thing about film though doesn t look all well only appears about third running time story s blending elements better films stories including ten little indians most dangerous"
+  },
+  {
+    "index": 18,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5163179636001587,
+    "text": "many people standing front house n some women crying men standing close groups speaking hushed up tone couple guys come they discussing how sexy daughter might look today soon u will know someone house died dead person s wife worried about preparing food so many people her friend sitting beside her gives idea making matters easy preparing simple roti sabji one dead person s son speaking someone over mobile daughter busy her makeup her mother suggests her wear salwar kameej but daughter more interested looking good when so many people will visiting their house hence prefers jeans t shirt over salwar kameez another son asks her mom finish all kriyas also indicates her should not expected come early office then"
+  },
+  {
+    "index": 19,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.5737420916557312,
+    "text": "new york family last their neighborhood get television set which nearly ruins david niven s marriage mitzi gaynor bedroom comedy rarely ventures into bedroom nothing sexy happens there anyway gaynor actress about much range oven she turns she turns off film s sole compensation supporting performance perky patty duke pre miracle worker niven s daughter she s delightful happy anniversary not"
+  },
+  {
+    "index": 51,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.6303210258483887,
+    "text": "one those strange self important self indulgent movies which tries too hard profound isn t instead spouts cliches try pass profundity typical scene where peter kelsey grammer explains protagonist best friend adam dwier brown how man starts life breast feeding then moves sucking breast his girlfriend finally his wife thus concluding ultimately life sucks so deep treated variety characters who offer their perspective life universe etc during adam s travels through mojave desert foot abruptly leaves l day his wedding his family friends fiance assume s dead when his car found military test range smashed rocket some characters more entertaining than others best far escapee mental hospital who only speaks through voices others actor james kevin ward does some great"
+  },
+  {
+    "index": 56,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.9549499750137329,
+    "text": "time time s very advisable aristocracy watch some silent film about harsh life common people order remind themselves privileges comfortable life they have enjoyed since beginning mankind or even before comparison complicated hard work common people have endure everyday since aristocrats rule world br br s what happens love light first film directed dame france marion who will famous afterwards silent talkie world thanks overall her work screenwriter better her certainly because her career film director doesn t impress german count br br film tells story dame angela carlotti dame mary pickford merry italian girl who lives surrounded picturesque squalor important difference opinion between upper low classes aristocrats prefers live surrounded picturesque luxury she two brothers secret admirer but all"
+  },
+  {
+    "index": 59,
+    "error_type": "additional_error",
+    "proposed_fix": "Review this example and assign a specific failure category.",
+    "label": 0,
+    "prediction": 1,
+    "probability": 0.650377094745636,
+    "text": "caution spoiler end movie announced bridge collapsed just few days after captured impression attack all nothing reality taking bridge remagen last important victory western allies crossing rhine allies had been trying achieve six months because remagen bridge taken war ended just few weeks br br bridge only need last day after captured enough time americans send combat engineers large protective force other side they could then start building series pontoon bridges taking bridge complete success meant end war near would not last through summer contrary cynical nature film victory heralded elation troops who did they knew how vital battle br br film little do real history more reflection cynical nature time which produced"
+  }
+]
