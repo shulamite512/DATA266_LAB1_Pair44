@@ -1,0 +1,89 @@
+{
+  "dropped_rows": {
+    "train": {
+      "malformed_rows": 0,
+      "missing_or_empty_text": 0,
+      "invalid_label": 0
+    },
+    "test": {
+      "malformed_rows": 0,
+      "missing_or_empty_text": 0,
+      "invalid_label": 0
+    }
+  },
+  "train": {
+    "count": 90000,
+    "class_counts": {
+      "negative": 44992,
+      "positive": 45008
+    },
+    "positive_fraction": 0.5000888888888889,
+    "duplicate_texts": 0,
+    "raw_word_length": {
+      "mean": 133.85562222222222,
+      "median": 98.0,
+      "p90": 284.0,
+      "max": 1023,
+      "mean_by_class": {
+        "negative": 152.39042496443813,
+        "positive": 115.32740846071809
+      }
+    },
+    "processed_token_length": {
+      "mean": 94.9494,
+      "median": 69.0
+    },
+    "fraction_truncated_at_max_length": 0.26154444444444447,
+    "empty_after_preprocessing": 3
+  },
+  "val": {
+    "count": 10000,
+    "class_counts": {
+      "negative": 5008,
+      "positive": 4992
+    },
+    "positive_fraction": 0.4992,
+    "duplicate_texts": 0,
+    "raw_word_length": {
+      "mean": 133.6848,
+      "median": 98.0,
+      "p90": 285.0,
+      "max": 974,
+      "mean_by_class": {
+        "negative": 153.7879392971246,
+        "positive": 113.51722756410257
+      }
+    },
+    "processed_token_length": {
+      "mean": 94.7189,
+      "median": 69.0
+    },
+    "fraction_truncated_at_max_length": 0.2545,
+    "empty_after_preprocessing": 2
+  },
+  "test": {
+    "count": 10000,
+    "class_counts": {
+      "negative": 5000,
+      "positive": 5000
+    },
+    "positive_fraction": 0.5,
+    "duplicate_texts": 0,
+    "raw_word_length": {
+      "mean": 133.7112,
+      "median": 99.0,
+      "p90": 282.0,
+      "max": 1007,
+      "mean_by_class": {
+        "negative": 151.7718,
+        "positive": 115.6506
+      }
+    },
+    "processed_token_length": {
+      "mean": 94.6991,
+      "median": 69.0
+    },
+    "fraction_truncated_at_max_length": 0.2597,
+    "empty_after_preprocessing": 0
+  }
+}

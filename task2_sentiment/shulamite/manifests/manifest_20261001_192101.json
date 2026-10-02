@@ -1,0 +1,140 @@
+{
+  "run_id": "20261001_192101",
+  "script": "task2_sentiment/shulamite/src/train_sentiment.py",
+  "command": "train_sentiment.py",
+  "git_commit": null,
+  "python": "3.13.12",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "nltk": "3.10.3",
+    "matplotlib": "3.11.2"
+  },
+  "hardware": {
+    "device": "cuda",
+    "cpu": "12th Gen Intel(R) Core(TM) i9-12900HK",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+    "gpu_memory_gb": 16.0,
+    "cuda_version": "12.8"
+  },
+  "config": {
+    "seed": 266,
+    "data": {
+      "dataset": "yelp_polarity",
+      "data_dir": "data",
+      "train_limit": 100000,
+      "val_fraction": 0.1,
+      "test_limit": 10000
+    },
+    "preprocessing": {
+      "max_length": 120,
+      "min_frequency": 2,
+      "expand_negations": true,
+      "stemming": true,
+      "stopwords": [
+        "a",
+        "an",
+        "and",
+        "are",
+        "as",
+        "at",
+        "be",
+        "by",
+        "for",
+        "from",
+        "has",
+        "he",
+        "in",
+        "is",
+        "it",
+        "its",
+        "of",
+        "on",
+        "that",
+        "the",
+        "this",
+        "to",
+        "was",
+        "we",
+        "were",
+        "with",
+        "you",
+        "your"
+      ]
+    },
+    "training": {
+      "batch_size": 128,
+      "epochs": 5,
+      "early_stopping_patience": 2,
+      "lr": 0.002
+    },
+    "models": {
+      "baseline_mean": {
+        "type": "mean",
+        "embedding_dim": 64,
+        "hidden_dim": 64
+      },
+      "experimental_cnn": {
+        "type": "cnn",
+        "embedding_dim": 96,
+        "channels": 96,
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ]
+      },
+      "experimental_gru": {
+        "type": "gru",
+        "embedding_dim": 64,
+        "hidden_dim": 64
+      }
+    },
+    "evaluation": {
+      "threshold": 0.5,
+      "ece_bins": 10,
+      "bootstrap_repetitions": 1000,
+      "length_slices": {
+        "short": [
+          0,
+          20
+        ],
+        "medium": [
+          21,
+          60
+        ],
+        "long": [
+          61,
+          1000000
+        ]
+      },
+      "negation_words": [
+        "not",
+        "no",
+        "never",
+        "nothing",
+        "nobody",
+        "neither",
+        "nor",
+        "none"
+      ],
+      "error_review_model": "best"
+    }
+  },
+  "artifacts": {
+    "raw_log": "task2_sentiment/shulamite/logs/train_20261001_192101.log",
+    "checkpoints": {
+      "baseline_mean": "task2_sentiment/shulamite/checkpoints/baseline_mean.pt",
+      "experimental_cnn": "task2_sentiment/shulamite/checkpoints/experimental_cnn.pt",
+      "experimental_gru": "task2_sentiment/shulamite/checkpoints/experimental_gru.pt"
+    },
+    "vocab": "task2_sentiment/shulamite/checkpoints/vocab.json",
+    "metrics_report": "task2_sentiment/shulamite/metrics_report.csv",
+    "metrics_json": "task2_sentiment/shulamite/outputs/metrics.json",
+    "split_indices": "task2_sentiment/shulamite/outputs/split_indices.json",
+    "error_review_model": "experimental_gru"
+  }
+}

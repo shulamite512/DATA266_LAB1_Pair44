@@ -1,0 +1,37 @@
+metric,value,notes
+best_epoch,20,checkpoint: checkpoints/best.pt
+epochs_run,20,
+train_cross_entropy,1.1844361123025668,"nats/char, running mean over the epoch (dropout on)"
+val_cross_entropy,1.093883497551709,nats/char
+val_perplexity,2.985847116040028,exp(val CE)
+train_perplexity,3.268843041296503,exp(train CE)
+val_bits_per_char,1.5781402972281253,val CE / ln 2
+train_bits_per_char,1.7087801054687166,train CE / ln 2
+generalization_gap,-0.09055261475085774,val CE - train CE
+val_top1_accuracy,0.6581769554306148,next-character
+train_top1_accuracy,0.6323091591471893,next-character
+grad_norm_mean_all_epochs,0.5026755445348285,pre-clip L2 norm
+grad_norm_max_all_epochs,1.4100607633590698,pre-clip L2 norm
+loss_spikes_total,0,step loss > spike_factor x EMA
+nan_steps_total,0,non-finite loss or grad (step skipped)
+parameter_count,257869,
+train_tokens_per_sec_mean,239996.3694227534,
+total_training_seconds,11695.164799999999,includes validation passes
+gpu_peak_allocated_mb,147.107421875,
+cpu_peak_rss_mb,3985.87890625,
+greedy_distinct_1,0.08806818181818182,"word-level, pooled over prompts"
+greedy_distinct_2,0.11815561959654179,"word-level, pooled over prompts"
+greedy_distinct_3,0.13742690058479531,"word-level, pooled over prompts"
+greedy_repeated_4gram_rate,0.7030728709394205,"word-level, mean over samples"
+greedy_generation_tokens_per_sec,257.33658012068867,batch size 1
+temp_0.8_distinct_1,0.5566037735849056,"word-level, pooled over prompts"
+temp_0.8_distinct_2,0.939297124600639,"word-level, pooled over prompts"
+temp_0.8_distinct_3,0.9935064935064936,"word-level, pooled over prompts"
+temp_0.8_repeated_4gram_rate,0.0,"word-level, mean over samples"
+temp_0.8_generation_tokens_per_sec,236.86431066968856,batch size 1
+temp_1.0_top20_distinct_1,0.6044303797468354,"word-level, pooled over prompts"
+temp_1.0_top20_distinct_2,0.954983922829582,"word-level, pooled over prompts"
+temp_1.0_top20_distinct_3,1.0,"word-level, pooled over prompts"
+temp_1.0_top20_repeated_4gram_rate,0.0,"word-level, mean over samples"
+temp_1.0_top20_generation_tokens_per_sec,238.96378801737134,batch size 1
+hardware,NVIDIA GeForce RTX 3080 Ti Laptop GPU,cuda

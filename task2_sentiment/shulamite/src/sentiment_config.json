@@ -1,0 +1,43 @@
+{
+  "seed": 266,
+  "data": {
+    "dataset": "yelp_polarity",
+    "data_dir": "data",
+    "train_limit": 100000,
+    "val_fraction": 0.1,
+    "test_limit": 10000
+  },
+  "preprocessing": {
+    "max_length": 120,
+    "min_frequency": 2,
+    "expand_negations": true,
+    "stemming": true,
+    "stopwords": ["a", "an", "and", "are", "as", "at", "be", "by", "for", "from",
+                  "has", "he", "in", "is", "it", "its", "of", "on", "that", "the",
+                  "this", "to", "was", "we", "were", "with", "you", "your"]
+  },
+  "training": {
+    "batch_size": 128,
+    "epochs": 5,
+    "early_stopping_patience": 2,
+    "lr": 2e-3
+  },
+  "models": {
+    "baseline_mean": {"type": "mean", "embedding_dim": 64, "hidden_dim": 64},
+    "experimental_cnn": {"type": "cnn", "embedding_dim": 96, "channels": 96, "kernel_sizes": [3, 4, 5]},
+    "experimental_gru": {"type": "gru", "embedding_dim": 64, "hidden_dim": 64}
+  },
+  "evaluation": {
+    "threshold": 0.5,
+    "ece_bins": 10,
+    "bootstrap_repetitions": 1000,
+    "length_slices": {"short": [0, 20], "medium": [21, 60], "long": [61, 1000000]},
+    "negation_words": ["not", "no", "never", "nothing", "nobody", "neither", "nor", "none"],
+    "error_review_model": "best"
+  },
+  "smoke_test_overrides": {
+    "data": {"train_limit": 2000, "test_limit": 500},
+    "training": {"epochs": 1},
+    "evaluation": {"bootstrap_repetitions": 50}
+  }
+}

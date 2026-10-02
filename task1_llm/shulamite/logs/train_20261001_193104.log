@@ -1,0 +1,60 @@
+Run 20261001_193104
+Hardware: {"device": "cuda", "cpu": "12th Gen Intel(R) Core(TM) i9-12900HK", "platform": "Windows-11-10.0.26200-SP0", "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU", "gpu_memory_gb": 16.0, "cuda_version": "12.8"}
+Config: {"seed": 266, "data": {"data_dir": "data", "source_file": "TinyStories-train.txt", "download_base_url": "https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main", "pool_stories": 150000, "train_stories": 100000, "val_stories": 10000, "story_joiner": "\n\n"}, "model": {"seq_len": 128, "emb_dim": 96, "num_heads": 4, "num_layers": 3, "ff_mult": 2, "dropout": 0.1}, "training": {"epochs": 20, "min_epochs": 10, "early_stopping_patience": 3, "batch_size": 32, "window_stride": 128, "lr": 3e-05, "weight_decay": 0.01, "warmup_fraction_of_epoch": 0.25, "min_lr_ratio": 0.1, "grad_clip": 1.0, "loss_spike_factor": 1.5, "log_every_steps": 50}, "generation": {"prompts": ["Once upon a time", "One day, a little girl named Lily", "The dog was very happy because", "Tom and his mom went to the park.", "There was a big red ball"], "max_new_tokens": 300, "decoding": [{"name": "greedy", "temperature": 0.0, "top_k": null}, {"name": "temp_0.8", "temperature": 0.8, "top_k": null}, {"name": "temp_1.0_top20", "temperature": 1.0, "top_k": 20}]}}
+Downloading https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStories-train.txt ...
+Stories: train=100,000 val=10,000 | chars: train=89,115,955 val=8,913,120 | vocab=109 | unseen val chars mapped to UNK: 0
+Train windows: 696,218 | val windows: 69,633 | steps/epoch: 21,756
+Parameters: 257,869
+LR schedule: linear warm-up for 5439 steps, cosine decay to 0.1 x peak over 435120 steps
+Epoch 1/20 | train_loss=2.4185 | val_loss=1.8480 | val_ppl=6.35 | val_bpc=2.666 | train_acc=0.3209 | val_acc=0.4412 | grad_norm(mean/max)=0.347/1.410 | spikes=0 | nan=0 | 268,003 tok/s | 332.5s
+  new best val_loss -> saved checkpoints/best.pt (epoch 1)
+Epoch 2/20 | train_loss=1.7013 | val_loss=1.4738 | val_ppl=4.37 | val_bpc=2.126 | train_acc=0.4848 | val_acc=0.5508 | grad_norm(mean/max)=0.383/0.497 | spikes=0 | nan=0 | 246,397 tok/s | 361.7s
+  new best val_loss -> saved checkpoints/best.pt (epoch 2)
+Epoch 3/20 | train_loss=1.4905 | val_loss=1.3426 | val_ppl=3.83 | val_bpc=1.937 | train_acc=0.5453 | val_acc=0.5875 | grad_norm(mean/max)=0.428/0.557 | spikes=0 | nan=0 | 245,085 tok/s | 363.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 3)
+Epoch 4/20 | train_loss=1.3971 | val_loss=1.2712 | val_ppl=3.57 | val_bpc=1.834 | train_acc=0.5719 | val_acc=0.6078 | grad_norm(mean/max)=0.456/0.563 | spikes=0 | nan=0 | 242,038 tok/s | 368.2s
+  new best val_loss -> saved checkpoints/best.pt (epoch 4)
+Epoch 5/20 | train_loss=1.3421 | val_loss=1.2265 | val_ppl=3.41 | val_bpc=1.769 | train_acc=0.5875 | val_acc=0.6200 | grad_norm(mean/max)=0.475/0.597 | spikes=0 | nan=0 | 244,410 tok/s | 364.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 5)
+Epoch 6/20 | train_loss=1.3052 | val_loss=1.1953 | val_ppl=3.30 | val_bpc=1.724 | train_acc=0.5978 | val_acc=0.6287 | grad_norm(mean/max)=0.489/0.694 | spikes=0 | nan=0 | 241,968 tok/s | 368.3s
+  new best val_loss -> saved checkpoints/best.pt (epoch 6)
+Epoch 7/20 | train_loss=1.2786 | val_loss=1.1724 | val_ppl=3.23 | val_bpc=1.691 | train_acc=0.6053 | val_acc=0.6353 | grad_norm(mean/max)=0.501/0.628 | spikes=0 | nan=0 | 18,308 tok/s | 4867.5s
+  new best val_loss -> saved checkpoints/best.pt (epoch 7)
+Epoch 8/20 | train_loss=1.2588 | val_loss=1.1555 | val_ppl=3.18 | val_bpc=1.667 | train_acc=0.6108 | val_acc=0.6401 | grad_norm(mean/max)=0.510/0.646 | spikes=0 | nan=0 | 263,032 tok/s | 338.8s
+  new best val_loss -> saved checkpoints/best.pt (epoch 8)
+Epoch 9/20 | train_loss=1.2434 | val_loss=1.1424 | val_ppl=3.13 | val_bpc=1.648 | train_acc=0.6153 | val_acc=0.6441 | grad_norm(mean/max)=0.518/0.652 | spikes=0 | nan=0 | 254,161 tok/s | 350.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 9)
+Epoch 10/20 | train_loss=1.2309 | val_loss=1.1318 | val_ppl=3.10 | val_bpc=1.633 | train_acc=0.6189 | val_acc=0.6473 | grad_norm(mean/max)=0.525/0.672 | spikes=0 | nan=0 | 257,832 tok/s | 345.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 10)
+Epoch 11/20 | train_loss=1.2207 | val_loss=1.1231 | val_ppl=3.07 | val_bpc=1.620 | train_acc=0.6219 | val_acc=0.6497 | grad_norm(mean/max)=0.530/0.741 | spikes=0 | nan=0 | 256,598 tok/s | 347.3s
+  new best val_loss -> saved checkpoints/best.pt (epoch 11)
+Epoch 12/20 | train_loss=1.2122 | val_loss=1.1161 | val_ppl=3.05 | val_bpc=1.610 | train_acc=0.6243 | val_acc=0.6518 | grad_norm(mean/max)=0.534/0.716 | spikes=0 | nan=0 | 251,314 tok/s | 354.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 12)
+Epoch 13/20 | train_loss=1.2052 | val_loss=1.1106 | val_ppl=3.04 | val_bpc=1.602 | train_acc=0.6263 | val_acc=0.6533 | grad_norm(mean/max)=0.538/0.755 | spikes=0 | nan=0 | 253,163 tok/s | 352.0s
+  new best val_loss -> saved checkpoints/best.pt (epoch 13)
+Epoch 14/20 | train_loss=1.1998 | val_loss=1.1062 | val_ppl=3.02 | val_bpc=1.596 | train_acc=0.6279 | val_acc=0.6546 | grad_norm(mean/max)=0.541/0.705 | spikes=0 | nan=0 | 250,644 tok/s | 355.5s
+  new best val_loss -> saved checkpoints/best.pt (epoch 14)
+Epoch 15/20 | train_loss=1.1954 | val_loss=1.1026 | val_ppl=3.01 | val_bpc=1.591 | train_acc=0.6292 | val_acc=0.6556 | grad_norm(mean/max)=0.543/0.722 | spikes=0 | nan=0 | 252,000 tok/s | 353.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 15)
+Epoch 16/20 | train_loss=1.1920 | val_loss=1.0999 | val_ppl=3.00 | val_bpc=1.587 | train_acc=0.6302 | val_acc=0.6565 | grad_norm(mean/max)=0.545/0.683 | spikes=0 | nan=0 | 252,159 tok/s | 353.4s
+  new best val_loss -> saved checkpoints/best.pt (epoch 16)
+Epoch 17/20 | train_loss=1.1894 | val_loss=1.0979 | val_ppl=3.00 | val_bpc=1.584 | train_acc=0.6309 | val_acc=0.6571 | grad_norm(mean/max)=0.546/0.703 | spikes=0 | nan=0 | 251,319 tok/s | 354.6s
+  new best val_loss -> saved checkpoints/best.pt (epoch 17)
+Epoch 18/20 | train_loss=1.1874 | val_loss=1.0963 | val_ppl=2.99 | val_bpc=1.582 | train_acc=0.6314 | val_acc=0.6575 | grad_norm(mean/max)=0.547/0.696 | spikes=0 | nan=0 | 249,156 tok/s | 357.7s
+  new best val_loss -> saved checkpoints/best.pt (epoch 18)
+Epoch 19/20 | train_loss=1.1858 | val_loss=1.0949 | val_ppl=2.99 | val_bpc=1.580 | train_acc=0.6319 | val_acc=0.6579 | grad_norm(mean/max)=0.548/0.731 | spikes=0 | nan=0 | 250,686 tok/s | 355.5s
+  new best val_loss -> saved checkpoints/best.pt (epoch 19)
+Epoch 20/20 | train_loss=1.1844 | val_loss=1.0939 | val_ppl=2.99 | val_bpc=1.578 | train_acc=0.6323 | val_acc=0.6582 | grad_norm(mean/max)=0.548/0.780 | spikes=0 | nan=0 | 251,655 tok/s | 354.1s
+  new best val_loss -> saved checkpoints/best.pt (epoch 20)
+
+[greedy] Once upon a time, there was a little girl named Lily. She was so happy to help her mom and said, "I want to the big ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I wa
+
+[greedy] One day, a little girl named Lily. She was so happy to help her mom and said, "I want to the bear and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the 
+
+[greedy] The dog was very happy because he was so happy to the ball and said, "I want to the ball and said, "I want to the bear and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball a
+
+[greedy] Tom and his mom went to the park. They were so happy to the box and said, "I want to the bird and said, "I will a big bear and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball 
+
+[greedy] There was a big red ball and said, "I want to the bird and said, "I want to the bird and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball and said, "I want to the ball
+
+Done. Metrics: task1_llm/shulamite/metrics_report.csv | raw log: task1_llm/shulamite/logs/train_20261001_193104.log

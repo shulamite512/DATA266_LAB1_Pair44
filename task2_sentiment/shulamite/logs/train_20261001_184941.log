@@ -1,0 +1,39 @@
+Run 20261001_184941
+Hardware: {"device": "cuda", "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel", "platform": "Windows-11-10.0.26200-SP0", "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU", "gpu_memory_gb": 16.0, "cuda_version": "12.8"}
+Config: {"seed": 266, "data": {"dataset": "yelp_polarity", "data_dir": "data", "train_limit": 100000, "val_fraction": 0.1, "test_limit": 10000}, "preprocessing": {"max_length": 120, "min_frequency": 2, "expand_negations": true, "stemming": true, "stopwords": ["a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "has", "he", "in", "is", "it", "its", "of", "on", "that", "the", "this", "to", "was", "we", "were", "with", "you", "your"]}, "training": {"batch_size": 128, "epochs": 5, "early_stopping_patience": 2, "lr": 0.002}, "models": {"baseline_mean": {"type": "mean", "embedding_dim": 64, "hidden_dim": 64}, "experimental_cnn": {"type": "cnn", "embedding_dim": 96, "channels": 96, "kernel_sizes": [3, 4, 5]}, "experimental_gru": {"type": "gru", "embedding_dim": 64, "hidden_dim": 64}}, "evaluation": {"threshold": 0.5, "ece_bins": 10, "bootstrap_repetitions": 1000, "length_slices": {"short": [0, 20], "medium": [21, 60], "long": [61, 1000000]}, "negation_words": ["not", "no", "never", "nothing", "nobody", "neither", "nor", "none"], "error_review_model": "best"}}
+Raw rows kept: train=560,000 test=38,000 | dropped train={'malformed_rows': 0, 'missing_or_empty_text': 0, 'invalid_label': 0} test={'malformed_rows': 0, 'missing_or_empty_text': 0, 'invalid_label': 0}
+Preprocessed 110,000 reviews in 4.7s
+train: 90,000 reviews | classes {'negative': 44992, 'positive': 45008} | median words 98 | truncated 26.2%
+val: 10,000 reviews | classes {'negative': 5008, 'positive': 4992} | median words 98 | truncated 25.4%
+test: 10,000 reviews | classes {'negative': 5000, 'positive': 5000} | median words 99 | truncated 26.0%
+Vocabulary size: 32,094 (min frequency 2)
+
+Training baseline_mean ({'type': 'mean', 'embedding_dim': 64, 'hidden_dim': 64}) with 2,058,241 parameters on NVIDIA GeForce RTX 3080 Ti Laptop GPU...
+Epoch 1/5 | train_loss=0.3273 | val_loss=0.2522 | val_acc=0.8996
+Epoch 2/5 | train_loss=0.2098 | val_loss=0.2399 | val_acc=0.9078
+Epoch 3/5 | train_loss=0.1821 | val_loss=0.2418 | val_acc=0.9086
+Epoch 4/5 | train_loss=0.1645 | val_loss=0.2491 | val_acc=0.9074
+Early stopping; restoring epoch 2 with val_loss=0.2399.
+baseline_mean: test acc=0.9119 | macro-F1=0.9119 | MCC=0.8238 | ROC-AUC=0.9705 | ECE=0.0069
+
+Training experimental_cnn ({'type': 'cnn', 'embedding_dim': 96, 'channels': 96, 'kernel_sizes': [3, 4, 5]}) with 3,192,193 parameters on NVIDIA GeForce RTX 3080 Ti Laptop GPU...
+Epoch 1/5 | train_loss=0.2863 | val_loss=0.2389 | val_acc=0.9017
+Epoch 2/5 | train_loss=0.1503 | val_loss=0.2235 | val_acc=0.9124
+Epoch 3/5 | train_loss=0.0699 | val_loss=0.2906 | val_acc=0.9018
+Epoch 4/5 | train_loss=0.0239 | val_loss=0.2660 | val_acc=0.9142
+Early stopping; restoring epoch 2 with val_loss=0.2235.
+experimental_cnn: test acc=0.9143 | macro-F1=0.9143 | MCC=0.8288 | ROC-AUC=0.9755 | ECE=0.0271
+
+Training experimental_gru ({'type': 'gru', 'embedding_dim': 64, 'hidden_dim': 64}) with 2,104,065 parameters on NVIDIA GeForce RTX 3080 Ti Laptop GPU...
+Epoch 1/5 | train_loss=0.3584 | val_loss=0.2459 | val_acc=0.8990
+Epoch 2/5 | train_loss=0.2009 | val_loss=0.2234 | val_acc=0.9130
+Epoch 3/5 | train_loss=0.1499 | val_loss=0.2078 | val_acc=0.9206
+Epoch 4/5 | train_loss=0.1146 | val_loss=0.2191 | val_acc=0.9202
+Epoch 5/5 | train_loss=0.0849 | val_loss=0.2369 | val_acc=0.9165
+Early stopping; restoring epoch 3 with val_loss=0.2078.
+experimental_gru: test acc=0.9258 | macro-F1=0.9258 | MCC=0.8520 | ROC-AUC=0.9785 | ECE=0.0165
+McNemar baseline_mean vs experimental_cnn: p=0.3933
+McNemar baseline_mean vs experimental_gru: p=4.689e-08
+Error review: 20 errors from experimental_gru (worst slice: length_long)
+
+Done. Metrics: task2_sentiment/shulamite/metrics_report.csv | raw log: task2_sentiment/shulamite/logs/train_20261001_184941.log

@@ -1,0 +1,91 @@
+{
+  "run_id": "20261001_193104",
+  "script": "task1_llm/shulamite/src/train_char_gpt.py",
+  "command": "train_char_gpt.py",
+  "git_commit": null,
+  "python": "3.13.12",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "hardware": {
+    "device": "cuda",
+    "cpu": "12th Gen Intel(R) Core(TM) i9-12900HK",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+    "gpu_memory_gb": 16.0,
+    "cuda_version": "12.8"
+  },
+  "config": {
+    "seed": 266,
+    "data": {
+      "data_dir": "data",
+      "source_file": "TinyStories-train.txt",
+      "download_base_url": "https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main",
+      "pool_stories": 150000,
+      "train_stories": 100000,
+      "val_stories": 10000,
+      "story_joiner": "\n\n"
+    },
+    "model": {
+      "seq_len": 128,
+      "emb_dim": 96,
+      "num_heads": 4,
+      "num_layers": 3,
+      "ff_mult": 2,
+      "dropout": 0.1
+    },
+    "training": {
+      "epochs": 20,
+      "min_epochs": 10,
+      "early_stopping_patience": 3,
+      "batch_size": 32,
+      "window_stride": 128,
+      "lr": 3e-05,
+      "weight_decay": 0.01,
+      "warmup_fraction_of_epoch": 0.25,
+      "min_lr_ratio": 0.1,
+      "grad_clip": 1.0,
+      "loss_spike_factor": 1.5,
+      "log_every_steps": 50
+    },
+    "generation": {
+      "prompts": [
+        "Once upon a time",
+        "One day, a little girl named Lily",
+        "The dog was very happy because",
+        "Tom and his mom went to the park.",
+        "There was a big red ball"
+      ],
+      "max_new_tokens": 300,
+      "decoding": [
+        {
+          "name": "greedy",
+          "temperature": 0.0,
+          "top_k": null
+        },
+        {
+          "name": "temp_0.8",
+          "temperature": 0.8,
+          "top_k": null
+        },
+        {
+          "name": "temp_1.0_top20",
+          "temperature": 1.0,
+          "top_k": 20
+        }
+      ]
+    }
+  },
+  "artifacts": {
+    "raw_log": "task1_llm/shulamite/logs/train_20261001_193104.log",
+    "best_checkpoint": "task1_llm/shulamite/checkpoints/best.pt",
+    "best_epoch": 20,
+    "metrics_report": "task1_llm/shulamite/metrics_report.csv",
+    "metrics_json": "task1_llm/shulamite/outputs/metrics.json",
+    "loss_curves": "task1_llm/shulamite/outputs/loss_curves.png",
+    "samples": "task1_llm/shulamite/outputs/samples.json",
+    "split_indices": "task1_llm/shulamite/outputs/split_indices.json"
+  }
+}

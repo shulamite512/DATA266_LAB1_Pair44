@@ -1,0 +1,162 @@
+[
+  {
+    "test_index": 1196,
+    "category": "confident_false_positive",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.9972113966941833,
+    "text": "Note: The Company that owned Scottsdale Auto Salon (Scottsdale Auto Salon LLC) Declared Chapter 11 Bankruptcy in early March 2009.  The facility is being operated by the bank according to employees that now staff it.  \"Auto Salon\" and \"Auto Spa\" are terms that only get thrown around in Scottsdale apparently.  In the rest of the civilized world, these places are simply known as car washes.  Sadly, the only thing that appears to differ between an auto salon/spa and a car wash is the price and the propensity of the staff to try and upsell you to a super-carnuba waxy goodness package for $60.  Since SAS went chapter 11 on me, they have definitely slid down the ranks for attention to detail and service.  Of course, the flip side is the employees are likely no longer paid on commission since they are paid by the finance company that now owns this establishment, so upsells are few and far between.  If there is one good thing about SAS, it is that they will accept competitors coupons so you can find the best coupon and take it in to get them to match it.  Overall, they didn't spend much time drying my car and missed cleaning most of the windows.  Used to be very detail oriented but now I would say that Cobblestone is better (although you have to deal with the ongoing upsells at Cobblestone).  Don't go out of your way to go to SAS, but if you live in or near McDowell Mountain Ranch and have a good car wash coupon it might be worth your time."
+  },
+  {
+    "test_index": 3611,
+    "category": "confident_false_positive",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.9944551587104797,
+    "text": "Though I'm a Copper enthusiast when it comes to getting my Indian fix in Charlotte, I'd heard that Maharani was a cheaper but tasty option, so we ordered from there a few nights ago.   Copper is definitely still my place, but Maharani was fine enough. First of all, the food came very quickly, which is rare. Usually indian food, good indian good, takes at least 30-45 minutes. We got our order in like 30, which was great 'cause we were starving.   The Tikka Masala was spicy and pretty good, but it wasn't as thick and saucy as i like. The salad was just so-so. The Naan were all amazing. Definitely the highlight."
+  },
+  {
+    "test_index": 3773,
+    "category": "confident_false_positive",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.9940098524093628,
+    "text": "Very small portions, but good food. Had a perfectly cooked fillet minion, but $60 and they could have served with a toothpick, it was so small.   Same for rest of our party. Excellent salmon, but maybe 5 bites again $60.  Everything is a la carte so sides extra. Thai papaya salad good, and key lime pie great."
+  },
+  {
+    "test_index": 2463,
+    "category": "confident_false_positive",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.9937946796417236,
+    "text": "Food is always good."
+  },
+  {
+    "test_index": 2888,
+    "category": "confident_false_positive",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.9924772381782532,
+    "text": "What I love about Rubios' is that they always have beer. Always.  That is all I love though..."
+  },
+  {
+    "test_index": 3626,
+    "category": "confident_false_negative",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.0005273713613860309,
+    "text": "TERRIBLE SERVICE, RUDE WAITERS WITH A PISS POOR ATTITUDE! WOULD EAT HERE AGAIN! A++++  The food here is good but isn't that spectacular, the beer selection is somewhat disappointing if you like a good craft beer. Ask for a craft beer and get an insulting comment from the waitress.   What makes this place awesome is the atmosphere, live bands, sports on the TVs, the very obnoxious staff and the hats. Got to love the free hats.   If you go, ask for a glass of water with your meal. ;)"
+  },
+  {
+    "test_index": 9647,
+    "category": "confident_false_negative",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.0014915206702426076,
+    "text": "i wasn't in an objective frame of mind, given that i was a visitor from another state and was willing to try just about anything local. that said, this place left a smile on my face.  maybe it was the 1950s-era big neon sign out front. maybe it was the fiberglass horse on the roof. maybe it was the kitchy old-school cowboy-themed decor inside. maybe it was the fact that our waitress wore a holster and 6-shooter. or maybe it was the sawdust all over the floor.  side note: sawdust? really? WHY? aren't they concerned about people slipping and hurting themselves?  we ordered breakfast and it was good. it's hard to screw up eggs, hash browns, and bacon, and they didn't. yum.  i'm glad we didn't go to IHOP."
+  },
+  {
+    "test_index": 5130,
+    "category": "confident_false_negative",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.002840166911482811,
+    "text": "Last night several parents came in with over 15 children to celebrate their 9 year olds 4th grade graduation at 9:15 pm. The bartender expressed that it was not a place to have children running around as it is against the law and a liability issue if anything were to happen to them on their premise. The children were running in and out of the bar while the parents continued to drink upstairs claiming to watch them in the open park way. After their third round of drinks the bartender told them they were no longer welcomed due to the fact the kids were unsupervised as well as the other customers had cleared out expressing \"whether the bar was a childcare center\". One father even started swearing at her telling her it was none of her business what their children were doing. I am offended in that they completely took advantage of her, were rude, not to mention had their children with them at a bar at 10:00pm in the evening. I will say the bartender was very cordial and had mind to do the right thing."
+  },
+  {
+    "test_index": 1534,
+    "category": "confident_false_negative",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.0030960228759795427,
+    "text": "I really enjoyed the cupcakes from Mad Hatter since they opened. Unfortunately they decided to double the prices and as much as I like the cupcakes I rather spend my money on something else. They now charge $26 for a dozen mini-cupcakes and the previous price was $15. They lost a loyal (Chubby) customer."
+  },
+  {
+    "test_index": 4490,
+    "category": "confident_false_negative",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.00354241905733943,
+    "text": "Low points first:  - weird, office-like swivle chairs.  Uncomfortable & they kill the ambiance of an otherwise decent restaurant. -  beef filets, even when prepared medium rare, were dry. -  when your food arrives there are a ton of waitstaff, but drinks were refilled too rarely & some in my party didn't get new silverware after the appetizer utensils were cleared. -  bernaise sauce was kind of weak.  I'd expected more.  The shallot - red wine reduction was tastier. -  they told us we'd reserved the \"banquet room\" and when we should up it was just two long tables standing next to one another in the middle of the dining room.  We wanted to do toasts for the groom but couldn't really without ruining everyone else's dining experience.  Kinda felt like they misrepresented the space, it wasn't at all what you'd think of as a \"banquet room\".  Good stuff: -  most everything else positive! -  one of the best pork chops I've ever tasted -  very generous portions (if I'm paying 38 bucks for a pork chop can I really say that?  I say \"yes, I can\".  It was big, juicy, and the size was enormous.  worth the money).  Each of the sides were large as well.  Unless you're super hungry and just a glutton in general, you should plan to share the app's. -  raw Kobe app with Asian spices was a bit too salty, but the flavors & texture was otherwise satisfying.   -  poached egg, asparagus, & bacon app was awkward to eat but was sinfully tasty! -  mash potatoes were good but the $25 addition of black truffles didn't do much for me -  Wine was served properly and efficiently -  Tara, our waitress, we perfect.  She dealt with my group of buddies professionally without being cold.  She gave us honest answers to our questions and made sure to stop by frequently to see if we needed anything.  With so many good dining options in Vegas and me not being a big beef eater, I may not return, but if I do, I'm definitely getting that pork chop again. OMG that thing was tasty!"
+  },
+  {
+    "test_index": 3065,
+    "category": "near_threshold",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.5002349019050598,
+    "text": "If you are looking for cheap and accessible. This is it. Don't expect a whole lot. It's a hotel for cheapsters, so you will get what you expect. It isn't terrible, but it isn't wonderful either. The pool was descent and we went 2 times. The location is great- right on the strip, monorail station inside."
+  },
+  {
+    "test_index": 8273,
+    "category": "near_threshold",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.5005251169204712,
+    "text": "Yes, pizza from Brooklyn, is brand/location advertising that is attractive to a pizza lover.  Even the interior decor of b/w framed poster is unmistakably New York New York; it is homey and warm without the crowd and the lines of a neighborhood pizzeria.  A \"Hello\" when I walked-in was very welcoming and they had ESPN on so the sporty feel was nice too.  And then the order...  My spaghetti sauce is weak and watery; maybe it's just me but I want my tomato to be on the creamy, if not fresh and homemade (it does not help when they have the BIG can of tomato sauce on DISPLAY next to the counter). On the bright side, I think the pasta is texturally good and the meatball is a big ball of fun worth trying again.  I've never tried their pizza but it looks big and cheesy thin. You can get two slices and a drink for _____.  And then the bathroom...  Seeing it was not very busy when I was there, I wished the staff were more mindful on their cleaning, because unfortunately this would be the last thing I will remember about this place."
+  },
+  {
+    "test_index": 713,
+    "category": "near_threshold",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.4979301393032074,
+    "text": "THIS is an old-school pizza shop!  I'm sure that many of the foodie-types who frequent Yelp are going to dismiss this place, but having heard so much about it from my local pizza-loving friends about the pie at Fiori's, I finally decided to stop and order a couple of pizzas to go while I was in the neighborhood.  The sauce definitely isn't for everyone - it's a departure from the typical corporate pizza crap that everyone has gotten used to.  But the sauce is INTERESTING, and the crust is PERFECT.  A little too much flour used when it was flown, but I'm guessing that's because the place was doing such a high volume of business.  The pepperoni reminds me of the old Mineo's pizza, small slices that curl up and produce little grease pools.  WOW, now that's the pepperoni I love, and definitely not the pepperoni you'll find at Papa John's, or Vocelli's, or Domino's, or Little Caesar's, or Pizza Hut.  This is the PIZZA of your youth - the pizza you remember your dad bringing home, complete with the relic-style pizza box.  It's not in my neighborhood, and I'm lucky enough to live close to Luciano's, but if I'm hungry and in the vicinity of Fiore's any time soon, I won't hesitate to grab a couple more pies - maybe one for dinner and one for breakfast!"
+  },
+  {
+    "test_index": 8939,
+    "category": "near_threshold",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.4972144365310669,
+    "text": "I'm giving this place 5 stars. The Boyfriend & I decided to randomly try a new place (his idea) and I know he loves Brazilian steakhouses... So I steered us toward this place. At first we weren't sure what to think.. The place looks empty when you walk in, but actually almost every table had people. It took a little bit to get a table, but obviously they were busy. She sat us at a booth, which was perfect for us. The salad bar is significantly smaller than other Brazilian steakhouses but the Stroganoff is out of this world. Best I've ever had! The Boyfriend really liked the grape leaf wrapped something or other. I didn't try them so I have no idea.  They started bringing out the meat & one of the guys really stood out.  So much personality. Later we realized he was the owner.   The Boyfriend really liked one of the chicken skewers, but obviously the red meats were the standouts. No one gave us tongs, so it was a little weird getting the meat from the server, but they worked it out.   The meat selection is similar to other Brazilian steakhouses, but I do think they could do with some sharper knives. Meat quality is good, not great but definitely good.   This place is definitely a family owned restaurant with the good & bad qualities that go into that. For me personally, eating out is about the experience just as much as food quality and this place goes out of their way to give good experience. Towards the end of the night the owner was singing karaoke and encouraging everyone to get up and sing. Normally that's not really my thing, but something about all the positive energy really made it a lot of fun. When we left everyone was having fun drinking and dancing around. It was a lot of fun."
+  },
+  {
+    "test_index": 5846,
+    "category": "near_threshold",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.4967436194419861,
+    "text": "We went here back in October and I forgot to come back and write my review. I'm giving it 4 stars based on my feelings that it was 4.5 or 5 but my hubby thought more like a 3. He wasn't impressed. I actually really liked my cotton candy martini drink - it was very very sweet and pretty original I thought. Try it. The bartender really wasn't very friendly at all though. Our waitress on the other hand was super nice and really cool about us asking questions about the menu. We had a cool booth over by the window which had an awesome view of TI and the Venetian. I enjoyed and liked my food. It was pretty big servings. We had the cheesesteak dumplings and those were yummy. The pretzels they bring out are tasty, too. Being from Philly we didn't think the pretzels or the cheesesteak dumplings were \"that\" out of this world though. We didn't have room for dessert so we didn't have any.  Overall it was a cool place. They had The Office on all the Tvs, too, which was a plus!"
+  },
+  {
+    "test_index": 4835,
+    "category": "slice_specific (length_long)",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.49672403931617737,
+    "text": "I was initially a bit skeptical about coming here because 1) there were bad reviews and 2)  they were doing a groupon sale.  I know my second reason may sound weird to some of you but businesses promote their business on groupon normally when they're struggling, which may be a result of poor service.  So I contacted them to ask them if their groupon deal was applicable to any day since it was a \"now\" deal at the time. But the man who answered, Joe, told me that I don't need to purchase it online through groupon and that I just come in and tell him my name and look for him so that he can honor the deal regardless of whether I purchase the deal or not.  So I made my way there which is in the gas station at the intersection of Sahara and Durango. A bit far from where I live and work but most places around me were going to charge me $35-70 for the same service so I made the trip here.   As soon as I arrived, my car was immediately attended to and it took about 35-40 minutes to do which was standard and efficient to me. Really liked the service and I'm proud of taking a gamble regardless of its low Yelp ratings. Joe, whom I assume is the manager, was very courteous and professional. I definitely can't ask for more. For my reminder sticker, they listed $3 off for my next visit, which I assume is not combined with the groupon deal.  Overall, very satisfied with my experience here."
+  },
+  {
+    "test_index": 7099,
+    "category": "slice_specific (length_long)",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.50334233045578,
+    "text": "A shi-shi sports bar with an appetizing menu executed in a very average manner.    The current tenants of this space (previously Daddy Macs, and Blue Wave before that) have stuck with the existing deep red on black decor and subdued lighting. Very Victorian. It harkens back to the supper clubs of the olden days. I half expect to find gentlemen in top hats when I entered the door. Instead I only found a few mid-day drinkers playing video poker.  Being a sports bar, of course there are wide-screens all over the shop, which seem a bit anachronistic given that the place is swathed in late 19th-century red velvet drapery.  Interestingly, the owners have placed a few old-fashioned items on the menu, such as baked brie, which are juxtaposed with more modern tasters, such as the deep-fried mashed potato bites. The menu is fairly enticing.  Sadly the food falls short. It feels like everything here is made to sound impressive, but, looks and tastes like it was cooked at Wendy's. I would have assumed it was all fresh-made, but it all tastes to me like it originated in the freezer.  Today, I tried the Chicken Florentine Soup. It definitely came from a can.  No doubt about it. Then I got a California Turkey Burger.  The lettuce was limp, the avocado was almost non-existent, and the turkey patty was too salty.  However, there was a nice char on the patty, and I do love grill marks.  My main complaint is that this swanky restaurant has tremendous potential and no one here seems to know how to reach it.  The menu was promising. The descriptions of each item got me salivating.  Unfortunately, my dining experience turned out to be like a bad blind date:  your friend tells you how great this hamburger is, and then you finally meet it... and it is nothing compared to the burger you tasted in your dreams.  My advice to Elixir: if you're going to do gourmet pub food, actually do gourmet pub food.  It's just not right to titillate a person's tongue without bringing the taste buds to climax; wink, wink."
+  },
+  {
+    "test_index": 9345,
+    "category": "slice_specific (length_long)",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.49653246998786926,
+    "text": "I've stayed here so many times, I've actually lost count. Most of the stays have been comped, too. I appreciate the slot host, although he doesnt seem to like to be bothered all that much. I absolutely love the atmosphere. It's great to go a few times a year and stay there but I'm getting worn out with the crowd. It never changes...its always the good looking people. I've been around them a long time, so I would like to see an old school crowd in there. Not necessarily age wise, but people who arent so shallow and who might be a bit of a throwback.   The hotel itself it amazing. I've been in a couple of rooms that had problems here and there and I get it, you have a shit load of rooms and not ever missing blind is reported. All in all, I've had pretty great experiences here and I definintely recommend it. However, I dont recommend kids here, especially on weekend evenings. People are there for Marquee, seeing your kid is kind of a buzzkill for them."
+  },
+  {
+    "test_index": 4155,
+    "category": "slice_specific (length_long)",
+    "label": 1,
+    "prediction": 0,
+    "probability_positive": 0.4963156580924988,
+    "text": "took little lucy here and she did great.  :) she just gets the brush and bath but leaves so clean a her coat is so soft  afterwards.  their pricing is spot on, in my opinion, and I actually asked to have her teeth cleaned in stead of having her nails trimmed and it wasn't a problem at all and no extra charge.  thought she might not like it since it was her first grooming experience but she left happy as a clam!!!  we'll see you guys soon and I'll be sure to spread the word on how great you guys are :)"
+  },
+  {
+    "test_index": 8285,
+    "category": "slice_specific (length_long)",
+    "label": 0,
+    "prediction": 1,
+    "probability_positive": 0.5055456757545471,
+    "text": "Came in after some highly touted recommendations.  Stood at the front for approx. 4-5 mins before anyone acknowledged us (other than the pianist who was  a little too loud).  We were seated then another 10 mins passed at which point I waved down a waiter so we didn't need to continue our wait.   We promptly ordered, 2 salads, 3 entrees. Salads came out in about 10-15 mins.  I started with a spinach salad (w/pecans, cranberries& feta). It was very good, even though they were out of the requested raspberry  vinaigrette  dressing...balsamic vinaigrette was used instead. Wife said Caesar salad was also good.  After finishing salads, it was 10-15 mins before salad plates were cleared. Then another 15-20 before entrees were served.  Still no one stopped by table to check on anything.  Interestingly, the tray holder was put down by our table 15 mins before the food came out.  The entrees of Chicken Parmesan, Balsamic Chicken & Shrimp scampi were (finally) delivered.  My dish ( the Chx Parmesan ) was fair ( 5 on a 1-10 scale) and the pasta served on the same plate was watery and mixed w/ the chicken.  Other diners with me rated the Balsamic Chicken as a 7 and the Shrimp Scampi as a 6.  Meal was fair, service poor."
+  }
+]

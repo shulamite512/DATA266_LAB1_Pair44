@@ -1,0 +1,54 @@
+{
+  "seed": 266,
+  "data": {
+    "data_dir": "data",
+    "source_file": "TinyStories-train.txt",
+    "download_base_url": "https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main",
+    "pool_stories": 150000,
+    "train_stories": 100000,
+    "val_stories": 10000,
+    "story_joiner": "\n\n"
+  },
+  "model": {
+    "seq_len": 128,
+    "emb_dim": 96,
+    "num_heads": 4,
+    "num_layers": 3,
+    "ff_mult": 2,
+    "dropout": 0.1
+  },
+  "training": {
+    "epochs": 20,
+    "min_epochs": 10,
+    "early_stopping_patience": 3,
+    "batch_size": 32,
+    "window_stride": 128,
+    "lr": 3e-5,
+    "weight_decay": 0.01,
+    "warmup_fraction_of_epoch": 0.25,
+    "min_lr_ratio": 0.1,
+    "grad_clip": 1.0,
+    "loss_spike_factor": 1.5,
+    "log_every_steps": 50
+  },
+  "generation": {
+    "prompts": [
+      "Once upon a time",
+      "One day, a little girl named Lily",
+      "The dog was very happy because",
+      "Tom and his mom went to the park.",
+      "There was a big red ball"
+    ],
+    "max_new_tokens": 300,
+    "decoding": [
+      {"name": "greedy", "temperature": 0.0, "top_k": null},
+      {"name": "temp_0.8", "temperature": 0.8, "top_k": null},
+      {"name": "temp_1.0_top20", "temperature": 1.0, "top_k": 20}
+    ]
+  },
+  "smoke_test_overrides": {
+    "data": {"source_file": "TinyStories-valid.txt", "pool_stories": 400, "train_stories": 300, "val_stories": 50},
+    "training": {"epochs": 2, "min_epochs": 1, "log_every_steps": 5},
+    "generation": {"max_new_tokens": 60}
+  }
+}

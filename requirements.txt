@@ -1,0 +1,12 @@
+# Install PyTorch first with the CUDA build that matches your driver, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch
+numpy
+scikit-learn
+scipy
+matplotlib
+nltk
+psutil
+# notebooks
+jupyter
+ipykernel
