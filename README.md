@@ -4,8 +4,8 @@ Repository link: https://github.com/shulamite512/DATA266_LAB1_Pair44
 
 | Member | Folder name |
 |---|---|
-| _(name)_ | `shulamite` |
-| _(name)_ | _(folder)_ |
+| Chelsi Shulamite Elthuri | `shulamite` |
+| Parth Patel | `parth_patel` (to be added) |
 
 ## Datasets (Google Drive)
 
