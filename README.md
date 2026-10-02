@@ -1,6 +1,6 @@
 # DATA266 Lab 1: LLM pretraining, sentiment classification, CycleGAN
 
-Repository link: _(add GitHub URL)_
+Repository link: https://github.com/shulamite512/DATA266_LAB1_Pair44
 
 | Member | Folder name |
 |---|---|
@@ -11,7 +11,7 @@ Repository link: _(add GitHub URL)_
 
 Datasets are too large for GitHub, so they are shared as one zip on Google Drive (read access enabled):
 
-**Dataset zip:** _(paste Google Drive link here)_
+**Dataset zip:** [datasets.zip on Google Drive](https://drive.google.com/file/d/1Elz-CSlEQwb5e6X7R8mPWsrb1negSjpQ/view?usp=drive_link) (718 MB)
 
 Unzip it into the repo root so the folders land here:
 
