@@ -1,12 +1,34 @@
-# Install PyTorch first with the CUDA build that matches your driver, e.g.
-#   pip install torch --index-url https://download.pytorch.org/whl/cu128
-torch
-numpy
-scikit-learn
-scipy
-matplotlib
-nltk
+# DATA266 Lab 1: Tasks 1-3 and the final notebooks.
+# torch / torchvision have only low floors so pip leaves an existing CUDA build alone.
+# An RTX 5090 (sm_120) needs a CUDA 12.8+ build, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# Recorded builds: Tasks 1-2 torch 2.7.1+cu128; Task 3 torch 2.11.0+cu130 / torchvision 0.26.0+cu130
+# (exact package lists are in the pip-freeze files under reproducibility/manifests/).
+
+# ---- All tasks ----
+torch>=2.7
+numpy>=1.24
+pandas>=2.0
+pyyaml>=6.0
+matplotlib>=3.7
 psutil
-# notebooks
-jupyter
-ipykernel
+
+# ---- Task 2 (Yelp polarity sentiment) ----
+scikit-learn>=1.3
+scipy>=1.10
+nltk>=3.8
+joblib>=1.3
+datasets>=2.18
+
+# ---- Task 3 (CycleGAN) ----
+torchvision>=0.22
+pillow>=10.0
+tqdm>=4.66
+lpips>=0.1.4
+pytorch-fid>=0.3.0
+
+# ---- Notebooks and tests ----
+ipykernel>=6.29
+jupyter>=1.0
+nbconvert>=7.0
+pytest>=7.4
