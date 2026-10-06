@@ -21,7 +21,7 @@
 
 **Why this architecture and size:**
 
-_(your explanation)_
+The three-block, four-head design is large enough to represent short-range syntax and character interactions while remaining practical to train on a laptop GPU. Four heads allow different attention patterns to be learned at the same time; the 128-character context covers several short-story clauses. Pre-LayerNorm and residual connections make optimization more stable, while the 2x GELU feed-forward layer supplies nonlinear capacity. All attention, masking, normalization, embeddings, and the language-model head are implemented directly in the source code; no prebuilt Transformer or attention module is used.
 
 ## Training
 
@@ -36,7 +36,7 @@ _(your explanation)_
 
 **Why these hyperparameters:**
 
-_(your explanation)_
+AdamW was selected for stable updates with mild weight decay. The warm-up protects the randomly initialized model from large early updates, and cosine decay reduces the learning rate as the model approaches convergence. Gradient clipping at 1.0 limits occasional unstable updates without hiding the raw gradient statistics. Twenty epochs were run so the model exceeded the ten-epoch requirement; the best checkpoint was retained using validation performance.
 
 Plots: outputs/loss_curves.png, outputs/training_dynamics.png. Per-epoch numbers: outputs/epoch_history.csv
 
@@ -74,11 +74,11 @@ Hardware: NVIDIA GeForce RTX 3080 Ti Laptop GPU (16.0 GB), CPU 12th Gen Intel(R)
 
 ## Observations
 
-_(your interpretation: loss curves, gap, stability, greedy vs sampling)_
+The validation cross-entropy is 1.0939 and the training value is 1.1844 with dropout enabled, giving a small negative reported gap (-0.0906). This is not evidence that validation is intrinsically easier: training includes dropout noise, while validation is evaluated without dropout. There are zero recorded loss spikes and NaN steps, indicating stable optimization; the pre-clip gradient norm was 0.503 on average and 1.410 at maximum. Greedy decoding is highly repetitive, while temperature sampling increases diversity and removes repeated 4-grams but produces more grammar and coherence errors. The model has learned common TinyStories character patterns, yet its limited capacity and character-level objective do not give it dependable long-range story planning.
 
 ## Limitations and next steps
 
-_(yours)_
+The run uses a 128-character context and a relatively small 257,869-parameter model, so long dependencies are truncated and rare words are difficult to represent. The character vocabulary also makes spelling errors expensive because a whole word must be constructed one character at a time. The next experiment should compare repetition-penalty or constrained decoding, a longer context, and a modestly larger model while holding the split and evaluation prompts fixed. Epoch 7 timing should also be rerun without the recorded laptop-sleep interruption before making throughput claims.
 
 ## Failure analysis
 

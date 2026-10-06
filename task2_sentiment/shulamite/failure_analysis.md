@@ -4,26 +4,39 @@ Model reviewed: `experimental_gru` (checkpoint: checkpoints/experimental_gru.pt)
 
 | # | test idx | category | label | pred | p(pos) | error type (manual) |
 |---|---|---|---|---|---|---|
-| 1 | 1196 | confident_false_positive | 0 | 1 | 0.997 | |
-| 2 | 3611 | confident_false_positive | 0 | 1 | 0.994 | |
-| 3 | 3773 | confident_false_positive | 0 | 1 | 0.994 | |
-| 4 | 2463 | confident_false_positive | 0 | 1 | 0.994 | |
-| 5 | 2888 | confident_false_positive | 0 | 1 | 0.992 | |
-| 6 | 3626 | confident_false_negative | 1 | 0 | 0.001 | |
-| 7 | 9647 | confident_false_negative | 1 | 0 | 0.001 | |
-| 8 | 5130 | confident_false_negative | 1 | 0 | 0.003 | |
-| 9 | 1534 | confident_false_negative | 1 | 0 | 0.003 | |
-| 10 | 4490 | confident_false_negative | 1 | 0 | 0.004 | |
-| 11 | 3065 | near_threshold | 0 | 1 | 0.500 | |
-| 12 | 8273 | near_threshold | 0 | 1 | 0.501 | |
-| 13 | 713 | near_threshold | 1 | 0 | 0.498 | |
-| 14 | 8939 | near_threshold | 1 | 0 | 0.497 | |
-| 15 | 5846 | near_threshold | 1 | 0 | 0.497 | |
-| 16 | 4835 | slice_specific (length_long) | 1 | 0 | 0.497 | |
-| 17 | 7099 | slice_specific (length_long) | 0 | 1 | 0.503 | |
-| 18 | 9345 | slice_specific (length_long) | 1 | 0 | 0.497 | |
-| 19 | 4155 | slice_specific (length_long) | 1 | 0 | 0.496 | |
-| 20 | 8285 | slice_specific (length_long) | 0 | 1 | 0.506 | |
+| 1 | 1196 | confident_false_positive | 0 | 1 | 0.997 | sarcasm / negative overall stance |
+| 2 | 3611 | confident_false_positive | 0 | 1 | 0.994 | mixed sentiment; faint praise |
+| 3 | 3773 | confident_false_positive | 0 | 1 | 0.994 | value complaint despite positive aspects |
+| 4 | 2463 | confident_false_positive | 0 | 1 | 0.994 | very short / insufficient context |
+| 5 | 2888 | confident_false_positive | 0 | 1 | 0.992 | contrastive sarcasm |
+| 6 | 3626 | confident_false_negative | 1 | 0 | 0.001 | sarcasm and contradictory cues |
+| 7 | 9647 | confident_false_negative | 1 | 0 | 0.001 | positive narrative without simple keywords |
+| 8 | 5130 | confident_false_negative | 1 | 0 | 0.003 | long mixed review / contextual polarity |
+| 9 | 1534 | confident_false_negative | 1 | 0 | 0.003 | positive-to-negative contrast |
+| 10 | 4490 | confident_false_negative | 1 | 0 | 0.004 | aspect-level mixed sentiment |
+| 11 | 3065 | near_threshold | 0 | 1 | 0.500 | mixed and qualified opinion |
+| 12 | 8273 | near_threshold | 0 | 1 | 0.501 | positive opening followed by criticism |
+| 13 | 713 | near_threshold | 1 | 0 | 0.498 | niche preference / subjective wording |
+| 14 | 8939 | near_threshold | 1 | 0 | 0.497 | mild negatives outweighed by praise |
+| 15 | 5846 | near_threshold | 1 | 0 | 0.497 | multiple aspects with different polarity |
+| 16 | 4835 | slice_specific (length_long) | 1 | 0 | 0.497 | long review; evidence dispersed |
+| 17 | 7099 | slice_specific (length_long) | 0 | 1 | 0.503 | long review; positive style cues dominate |
+| 18 | 9345 | slice_specific (length_long) | 1 | 0 | 0.497 | long review; praise and criticism mixed |
+| 19 | 4155 | slice_specific (length_long) | 1 | 0 | 0.496 | long review; local positive cues dominate |
+| 20 | 8285 | slice_specific (length_long) | 0 | 1 | 0.506 | long review; delayed complaint structure |
+
+## Error-pattern reasoning
+
+The confident false positives are mostly reviews with positive local words but a
+negative overall judgment: sarcasm, faint praise, price/value complaints, or very short
+context. The confident false negatives show the reverse problem: positive opinions are
+expressed through detailed narrative, while negative opinions are mixed with praise or
+contradictory statements. Near-threshold examples are genuinely ambiguous because
+different aspects of the same business receive different sentiment. The five long-review
+errors show that truncation and dispersed evidence are important: the final judgment may
+occur far from the words describing the experience. These patterns are consistent with
+the slice results: the GRU is strongest without negation (macro-F1 0.922) and weakest on
+long reviews (macro-F1 0.914) and reviews containing negation (macro-F1 0.916).
 
 ## Notes per error
 
@@ -147,7 +160,30 @@ Model reviewed: `experimental_gru` (checkpoint: checkpoints/experimental_gru.pt)
 - Error type:
 - Why the model got it wrong:
 
+## Per-error reasoning summary
+
+1. Bankruptcy and dismissive wording are negative despite neutral business terms.
+2. “Fine enough” and comparison with a preferred restaurant weaken the positive food cues.
+3. Positive food adjectives are outweighed by tiny portions and excessive price.
+4. The isolated short sentence gives almost no context beyond a positive-looking phrase.
+5. “That is all I love” reverses the earlier beer praise through sarcasm.
+6. Extreme criticism is contradicted by “would eat here again” and “A++++”.
+7. Positive feeling is expressed through a detailed story and atmosphere rather than simple sentiment words.
+8. The review’s polarity depends on the bar/children situation and long-range event context.
+9. Early praise is reversed by the price increase and loss of loyalty.
+10. Several service and food complaints are mixed with the statement that the restaurant is otherwise decent.
+11. “Cheap and accessible” is positive, while “cheapsters,” “not terrible,” and “not wonderful” are qualified and mixed.
+12. Welcoming atmosphere is followed by a negative account of the order, creating a discourse-level reversal.
+13. The reviewer anticipates disagreement and describes a niche preference, making lexical polarity unreliable.
+14. Small initial doubts are outweighed by the final five-star judgment.
+15. Different reviewers and different aspects disagree, so the overall label is inherently mixed.
+16. In the long review, evidence about possible poor service is distributed across the text and may be truncated.
+17. Positive decorative and menu language competes with “very average” execution.
+18. Appreciation of the atmosphere is mixed with fatigue about the crowd, requiring aspect aggregation.
+19. Many positive local details can dominate even when the selected long-review label is negative.
+20. The review builds slowly from waiting-time complaints to food evaluation, so early and late cues conflict.
+
 ## Proposed testable fix
 
-- Fix:
-- How to test it:
+- Fix: Preserve negation and discourse structure, increase the maximum sequence length or use hierarchical pooling, and add hard-negative examples containing sarcasm, contrast, and mixed aspect sentiment. Keep very short reviews as a separate slice rather than treating them as ordinary long reviews.
+- How to test it: retrain the GRU with the same seed and split, compare the original 20-error categories and the existing length/negation slices, and require improvements in long-review and negation macro-F1 without reducing overall macro-F1. Separately compare a truncation length above 120 tokens and check whether the five long-review errors become less confident.
