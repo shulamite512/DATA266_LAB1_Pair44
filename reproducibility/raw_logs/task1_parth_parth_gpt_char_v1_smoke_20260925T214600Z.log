@@ -1,0 +1,88 @@
+2026-09-25 21:46:00 | INFO | run_id=parth_gpt_char_v1_smoke_20260925T214600Z
+2026-09-25 21:46:00 | INFO | resolved config:
+run_name: parth_gpt_char_v1
+seed: 8503
+model_config: task1_llm/parth/config/model.yaml
+data:
+  data_dir: task1_llm/data
+  data_file: null
+  max_stories_to_load: 3000
+  story_separator: '
+
+
+    '
+  split_unit: sequences
+  train_size: 2000
+  val_size: 200
+  window_stride: null
+  min_char_freq: 1
+  processed_dir: task1_llm/parth/data_processed/smoke
+  tokenizer_path: task1_llm/parth/data_processed/smoke/tokenizer.json
+training:
+  epochs: 2
+  batch_size: 32
+  learning_rate: 0.0003
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  betas:
+  - 0.9
+  - 0.95
+  warmup_ratio: 0.05
+  warmup_steps: null
+  grad_clip: 1.0
+  amp: true
+  amp_dtype: auto
+  allow_tf32: true
+  num_workers: 0
+  log_interval: 10
+  spike_factor: 2.0
+  eval_train_batches: 5
+paths:
+  checkpoint_dir: task1_llm/parth/checkpoints/smoke
+  figures_dir: task1_llm/parth/figures/smoke
+  logs_dir: task1_llm/parth/logs/smoke
+  outputs_dir: task1_llm/parth/outputs/smoke
+  metrics_report: task1_llm/parth/outputs/smoke/metrics_report_smoke.csv
+  raw_log_dir: reproducibility/raw_logs
+  manifest_dir: reproducibility/manifests
+model:
+  model_type: decoder-only-gpt
+  tokenization: character-level
+  normalization: pre-norm
+  positional_embedding: learned
+  activation: gelu
+  d_model: 64
+  n_heads: 4
+  n_layers: 2
+  context_length: 64
+  dropout: 0.1
+  ffn_hidden_multiplier: 4
+  bias: true
+  tie_weights: false
+is_smoke: true
+
+2026-09-25 21:46:00 | INFO | device=cuda hardware=NVIDIA GeForce RTX 5090 torch=2.7.1+cu128 cuda_build=12.8
+2026-09-25 21:46:00 | INFO | data prepared in 0.1s: {'data_file': 'task1_llm/data/TinyStoriesV2-GPT4-train.txt', 'split_unit': 'sequences', 'split_unit_note': 'NEEDS_CLARIFICATION: confirm unit of the 100K/10K split', 'train_size_requested': 2000, 'val_size_requested': 200, 'seed': 8503, 'stories_loaded': 3000, 'stories_loaded_note': 'first max_stories_to_load stories in file order, then seeded shuffle', 'train_stories': 157, 'val_stories': 18, 'train_chars': 128143, 'val_chars': 13328, 'context_length': 64, 'window_stride': 64, 'train_windows': 2000, 'val_windows': 200, 'vocab_size': 65, 'tokenizer_fitted_on': 'train split only', 'val_unknown_chars': 0, 'story_separator': '\n\n', 'run_id': 'parth_gpt_char_v1_smoke_20260925T214600Z'}
+2026-09-25 21:46:00 | INFO | tokenizer saved to task1_llm/parth/data_processed/smoke/tokenizer.json (vocab_size=65)
+2026-09-25 21:46:00 | INFO | model config: {'vocab_size': 65, 'context_length': 64, 'd_model': 64, 'n_heads': 4, 'n_layers': 2, 'dropout': 0.1, 'ffn_hidden_multiplier': 4, 'bias': True, 'tie_weights': False}
+2026-09-25 21:46:00 | INFO | parameter count: 112,512
+2026-09-25 21:46:01 | INFO | steps/epoch=62 total_steps=124 warmup_steps=6 amp=True dtype=torch.bfloat16 grad_scaler=False
+2026-09-25 21:46:02 | INFO | epoch 1 step 1/124 | loss 4.1962 | lr 1.000e-04 | grad_norm 2.674
+2026-09-25 21:46:02 | INFO | epoch 1 step 10/124 | loss 3.8604 | lr 2.992e-04 | grad_norm 1.633
+2026-09-25 21:46:02 | INFO | epoch 1 step 20/124 | loss 3.6692 | lr 2.907e-04 | grad_norm 1.537
+2026-09-25 21:46:02 | INFO | epoch 1 step 30/124 | loss 3.4956 | lr 2.734e-04 | grad_norm 1.434
+2026-09-25 21:46:02 | INFO | epoch 1 step 40/124 | loss 3.3492 | lr 2.484e-04 | grad_norm 1.369
+2026-09-25 21:46:02 | INFO | epoch 1 step 50/124 | loss 3.2461 | lr 2.175e-04 | grad_norm 1.325
+2026-09-25 21:46:02 | INFO | epoch 1 step 60/124 | loss 3.1657 | lr 1.829e-04 | grad_norm 1.252
+2026-09-25 21:46:02 | INFO | EPOCH 1/2 | train_loss 3.5349 | val_loss 3.1370 | val_ppl 23.034 | val_bpc 4.5257 | val_acc 0.2936 | 142703 tok/s | 0.9s | new best -> best.pt
+2026-09-25 21:46:02 | INFO | epoch 2 step 70/124 | loss 3.1221 | lr 1.471e-04 | grad_norm 1.141
+2026-09-25 21:46:02 | INFO | epoch 2 step 80/124 | loss 3.0576 | lr 1.125e-04 | grad_norm 1.141
+2026-09-25 21:46:02 | INFO | epoch 2 step 90/124 | loss 3.0336 | lr 8.163e-05 | grad_norm 1.120
+2026-09-25 21:46:02 | INFO | epoch 2 step 100/124 | loss 2.9904 | lr 5.663e-05 | grad_norm 1.092
+2026-09-25 21:46:02 | INFO | epoch 2 step 110/124 | loss 2.9956 | lr 3.927e-05 | grad_norm 1.100
+2026-09-25 21:46:03 | INFO | epoch 2 step 120/124 | loss 3.0097 | lr 3.076e-05 | grad_norm 1.042
+2026-09-25 21:46:03 | INFO | EPOCH 2/2 | train_loss 3.0424 | val_loss 2.9648 | val_ppl 19.390 | val_bpc 4.2773 | val_acc 0.2978 | 444976 tok/s | 0.3s | new best -> best.pt
+2026-09-25 21:46:03 | INFO | training finished in 1.8s | best epoch 2 val_loss 2.9648 | 216102 train tok/s | peak mem 38.4 MB
+2026-09-25 21:46:03 | INFO | summary: task1_llm/parth/logs/smoke/train_summary_parth_gpt_char_v1_smoke_20260925T214600Z.json
+2026-09-25 21:46:03 | INFO | manifest: reproducibility/manifests/task1_parth_parth_gpt_char_v1_smoke_20260925T214600Z.json
+2026-09-25 21:46:03 | INFO | metrics report (training-side only, run evaluate.py next): task1_llm/parth/outputs/smoke/metrics_report_smoke.csv

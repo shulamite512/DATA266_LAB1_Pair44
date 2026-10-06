@@ -1,0 +1,81 @@
+# Task 1 training config (Parth). All paths are relative to the repo root.
+# Run:        python task1_llm/parth/src/train.py --config task1_llm/parth/config/train.yaml
+# Smoke run:  python task1_llm/parth/src/train.py --config task1_llm/parth/config/train.yaml --smoke
+
+run_name: parth_gpt_char_v1
+seed: 8503
+model_config: task1_llm/parth/config/model.yaml
+
+data:
+  data_dir: task1_llm/data
+  data_file: null                  # null = auto-detect the first *train* .txt/.jsonl/.json in data_dir
+  # Stories are streamed in file order up to this cap, then shuffled with the seed and split.
+  # 80K stories is roughly 60M characters of TinyStoriesV2, far more than the split needs.
+  max_stories_to_load: 80000
+  story_separator: "\n\n"
+  # Whole stories are always assigned to one split (validation first, then training)
+  # before any window is cut, so no story contributes characters to both splits.
+  # split_unit only sets what train_size / val_size count: sequences (fixed-length
+  # windows, used for the reported run) | stories | characters.
+  split_unit: sequences
+  train_size: 100000               # 100K windows x 128 chars = 12.8M training characters
+  val_size: 10000                  # 10K windows x 128 chars = 1.28M validation characters
+  window_stride: null              # null = context_length, i.e. non-overlapping windows
+  min_char_freq: 1                 # characters rarer than this in train map to the unknown id
+  processed_dir: task1_llm/parth/data_processed
+  tokenizer_path: task1_llm/parth/data_processed/tokenizer.json
+
+training:
+  epochs: 10                       # lab minimum for the final run
+  batch_size: 128                  # 781 steps/epoch, 7,810 total; uses well under 2 GB on a 32 GB RTX 5090
+  learning_rate: 3.0e-4            # peak LR reached at the end of warmup
+  min_lr_ratio: 0.1                # cosine decays to 3e-5
+  weight_decay: 0.01
+  betas: [0.9, 0.95]
+  warmup_ratio: 0.05               # 5% of total steps; used when warmup_steps is null
+  warmup_steps: null
+  grad_clip: 1.0
+  amp: true                        # CUDA only; bf16 on sm_80+ (RTX 5090), fp16 + GradScaler on older GPUs
+  amp_dtype: auto                  # auto | bf16 | fp16
+  allow_tf32: true
+  num_workers: 2
+  log_interval: 50                 # optimizer steps between raw-log lines
+  spike_factor: 2.0                # a step counts as a loss spike if loss > 2 x EMA of recent loss
+  eval_train_batches: 100          # batches of evenly spaced train windows used by evaluate.py for train CE
+
+paths:
+  checkpoint_dir: task1_llm/parth/checkpoints
+  figures_dir: task1_llm/parth/figures
+  logs_dir: task1_llm/parth/logs
+  outputs_dir: task1_llm/parth/outputs
+  metrics_report: task1_llm/parth/metrics_report.csv
+  raw_log_dir: reproducibility/raw_logs
+  manifest_dir: reproducibility/manifests
+
+# Applied only with --smoke. Everything is redirected into smoke/ subfolders so a smoke
+# run can never overwrite the real best.pt, split cache, figure, or metrics report.
+smoke:
+  run_name: parth_gpt_char_v1
+  model:
+    d_model: 64
+    n_heads: 4
+    n_layers: 2
+    context_length: 64
+  data:
+    max_stories_to_load: 3000
+    train_size: 2000
+    val_size: 200
+    processed_dir: task1_llm/parth/data_processed/smoke
+    tokenizer_path: task1_llm/parth/data_processed/smoke/tokenizer.json
+  training:
+    epochs: 2
+    batch_size: 32
+    num_workers: 0
+    log_interval: 10
+    eval_train_batches: 5
+  paths:
+    checkpoint_dir: task1_llm/parth/checkpoints/smoke
+    figures_dir: task1_llm/parth/figures/smoke
+    logs_dir: task1_llm/parth/logs/smoke
+    outputs_dir: task1_llm/parth/outputs/smoke
+    metrics_report: task1_llm/parth/outputs/smoke/metrics_report_smoke.csv

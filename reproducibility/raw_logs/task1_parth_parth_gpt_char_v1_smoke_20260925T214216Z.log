@@ -1,0 +1,64 @@
+2026-09-25 21:42:16 | INFO | run_id=parth_gpt_char_v1_smoke_20260925T214216Z
+2026-09-25 21:42:16 | INFO | resolved config:
+run_name: parth_gpt_char_v1
+seed: 8503
+model_config: task1_llm/parth/config/model.yaml
+data:
+  data_dir: task1_llm/data
+  data_file: null
+  max_stories_to_load: 3000
+  story_separator: '
+
+
+    '
+  split_unit: sequences
+  train_size: 2000
+  val_size: 200
+  window_stride: null
+  min_char_freq: 1
+  processed_dir: task1_llm/parth/data_processed/smoke
+  tokenizer_path: task1_llm/parth/data_processed/smoke/tokenizer.json
+training:
+  epochs: 2
+  batch_size: 32
+  learning_rate: 0.0003
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  betas:
+  - 0.9
+  - 0.95
+  warmup_ratio: 0.05
+  warmup_steps: null
+  grad_clip: 1.0
+  amp: true
+  amp_dtype: auto
+  allow_tf32: true
+  num_workers: 0
+  log_interval: 10
+  spike_factor: 2.0
+  eval_train_batches: 5
+paths:
+  checkpoint_dir: task1_llm/parth/checkpoints/smoke
+  figures_dir: task1_llm/parth/figures/smoke
+  logs_dir: task1_llm/parth/logs/smoke
+  outputs_dir: task1_llm/parth/outputs/smoke
+  metrics_report: task1_llm/parth/outputs/smoke/metrics_report_smoke.csv
+  raw_log_dir: reproducibility/raw_logs
+  manifest_dir: reproducibility/manifests
+model:
+  model_type: decoder-only-gpt
+  tokenization: character-level
+  normalization: pre-norm
+  positional_embedding: learned
+  activation: gelu
+  d_model: 64
+  n_heads: 4
+  n_layers: 2
+  context_length: 64
+  dropout: 0.1
+  ffn_hidden_multiplier: 4
+  bias: true
+  tie_weights: false
+is_smoke: true
+
+2026-09-25 21:42:16 | INFO | device=cuda hardware=NVIDIA GeForce RTX 5090 torch=2.7.1+cu128 cuda_build=12.8

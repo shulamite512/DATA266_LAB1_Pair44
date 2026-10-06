@@ -1,0 +1,23 @@
+{
+  "run_id": "parth_gpt_char_v1_20260925T214701Z",
+  "checkpoint": "task1_llm/parth/checkpoints/best.pt",
+  "metrics_report": "task1_llm/parth/metrics_report.csv",
+  "samples_file": "task1_llm/parth/outputs/generated_samples.jsonl",
+  "summary_file": "task1_llm/parth/logs/train_summary_parth_gpt_char_v1_20260925T214701Z.json",
+  "eval": {
+    "run_id": "parth_gpt_char_v1_20260925T214701Z",
+    "checkpoint": "task1_llm/parth/checkpoints/best.pt",
+    "checkpoint_epoch": 10,
+    "split_source": "data_processed cache (run_id match)",
+    "val_loss": 0.7394431144714355,
+    "val_accuracy": 0.76552578125,
+    "val_tokens_evaluated": 1280000,
+    "train_loss": 0.720107432603836,
+    "train_accuracy": 0.7701080322265625,
+    "train_tokens_evaluated": 1638400,
+    "parameter_count": 3233792,
+    "amp_dtype": "torch.bfloat16",
+    "device": "cuda",
+    "evaluated_at": "2026-09-25T21:49:54+00:00"
+  }
+}

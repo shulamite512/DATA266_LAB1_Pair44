@@ -1,0 +1,19 @@
+# Task 1 architecture (Parth): decoder-only character-level GPT.
+# The descriptive keys below are validated against model.py (GPTConfig.from_dict),
+# so changing one to something the code does not implement raises an error.
+# vocab_size is not set here: it comes from the tokenizer fit on the training split.
+
+model_type: decoder-only-gpt
+tokenization: character-level
+normalization: pre-norm            # x = x + attn(ln1(x)); x = x + ffn(ln2(x)); final LayerNorm before LM head
+positional_embedding: learned
+activation: gelu
+
+d_model: 256
+n_heads: 8                         # head_dim = 256 / 8 = 32
+n_layers: 4
+context_length: 128
+dropout: 0.1                       # embeddings, attention weights, attention output, FFN output
+ffn_hidden_multiplier: 4           # FFN hidden size = 4 * 256 = 1024
+bias: true
+tie_weights: false                 # separate LM head matrix (V x C)

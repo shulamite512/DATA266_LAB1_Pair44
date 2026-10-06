@@ -1,0 +1,48 @@
+{
+  "eval": {
+    "run_id": "parth_gpt_char_v1_20260925T214701Z",
+    "checkpoint": "task1_llm/parth/checkpoints/best.pt",
+    "checkpoint_epoch": 10,
+    "split_source": "data_processed cache (run_id match)",
+    "val_loss": 0.7394431144714355,
+    "val_accuracy": 0.76552578125,
+    "val_tokens_evaluated": 1280000,
+    "train_loss": 0.720107432603836,
+    "train_accuracy": 0.7701080322265625,
+    "train_tokens_evaluated": 1638400,
+    "parameter_count": 3233792,
+    "amp_dtype": "torch.bfloat16",
+    "device": "cuda",
+    "evaluated_at": "2026-09-25T21:49:54+00:00"
+  },
+  "generation": {
+    "temperature=0.8,top_k=50": {
+      "num_samples": 6,
+      "distinct_1": 0.4059097978227061,
+      "distinct_2": 0.8116169544740973,
+      "distinct_3": 0.9334389857369255,
+      "repeated_4gram_rate": 0.0,
+      "generation_tokens_per_sec": 709.8718732899687,
+      "devices": [
+        "cuda"
+      ],
+      "run_ids": [
+        "parth_gpt_char_v1_20260925T214701Z"
+      ]
+    },
+    "greedy": {
+      "num_samples": 1,
+      "distinct_1": 0.5267857142857143,
+      "distinct_2": 0.7567567567567568,
+      "distinct_3": 0.8454545454545455,
+      "repeated_4gram_rate": 0.07339449541284404,
+      "generation_tokens_per_sec": 558.9036492362832,
+      "devices": [
+        "cuda"
+      ],
+      "run_ids": [
+        "parth_gpt_char_v1_20260925T214701Z"
+      ]
+    }
+  }
+}

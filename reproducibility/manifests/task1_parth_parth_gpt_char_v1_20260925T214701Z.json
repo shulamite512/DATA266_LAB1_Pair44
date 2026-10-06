@@ -1,0 +1,149 @@
+{
+  "run_id": "parth_gpt_char_v1_20260925T214701Z",
+  "task": "task1_llm",
+  "member": "parth",
+  "command": "python task1_llm/parth/src/train.py --config task1_llm/parth/config/train.yaml",
+  "created_at": "2026-09-25T21:48:36+00:00",
+  "git": {
+    "commit": "3e96e78887995965eb03081831a19249ec649100",
+    "branch": "main",
+    "dirty": true
+  },
+  "environment": {
+    "python": "3.11.13",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "torch": "2.7.1+cu128",
+    "torch_cuda_build": "12.8",
+    "cudnn": 90701,
+    "numpy": "2.2.6",
+    "pyyaml": "6.0.2",
+    "cuda_available": true,
+    "matplotlib": "3.11.2",
+    "gpu_name": "NVIDIA GeForce RTX 5090",
+    "gpu_compute_capability": "12.0",
+    "gpu_total_memory_gb": 31.84,
+    "gpu_count": 1,
+    "nvidia_driver": "610.60"
+  },
+  "pip_freeze_file": "reproducibility/manifests/task1_parth_parth_gpt_char_v1_20260925T214701Z_pip_freeze.txt",
+  "config": {
+    "run_name": "parth_gpt_char_v1",
+    "seed": 8503,
+    "model_config": "task1_llm/parth/config/model.yaml",
+    "data": {
+      "data_dir": "task1_llm/data",
+      "data_file": null,
+      "max_stories_to_load": 80000,
+      "story_separator": "\n\n",
+      "split_unit": "sequences",
+      "train_size": 100000,
+      "val_size": 10000,
+      "window_stride": null,
+      "min_char_freq": 1,
+      "processed_dir": "task1_llm/parth/data_processed",
+      "tokenizer_path": "task1_llm/parth/data_processed/tokenizer.json"
+    },
+    "training": {
+      "epochs": 10,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "min_lr_ratio": 0.1,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "warmup_ratio": 0.05,
+      "warmup_steps": null,
+      "grad_clip": 1.0,
+      "amp": true,
+      "amp_dtype": "auto",
+      "allow_tf32": true,
+      "num_workers": 2,
+      "log_interval": 50,
+      "spike_factor": 2.0,
+      "eval_train_batches": 100
+    },
+    "paths": {
+      "checkpoint_dir": "task1_llm/parth/checkpoints",
+      "figures_dir": "task1_llm/parth/figures",
+      "logs_dir": "task1_llm/parth/logs",
+      "outputs_dir": "task1_llm/parth/outputs",
+      "metrics_report": "task1_llm/parth/metrics_report.csv",
+      "raw_log_dir": "reproducibility/raw_logs",
+      "manifest_dir": "reproducibility/manifests"
+    },
+    "model": {
+      "model_type": "decoder-only-gpt",
+      "tokenization": "character-level",
+      "normalization": "pre-norm",
+      "positional_embedding": "learned",
+      "activation": "gelu",
+      "d_model": 256,
+      "n_heads": 8,
+      "n_layers": 4,
+      "context_length": 128,
+      "dropout": 0.1,
+      "ffn_hidden_multiplier": 4,
+      "bias": true,
+      "tie_weights": false
+    },
+    "is_smoke": false
+  },
+  "model_config": {
+    "vocab_size": 81,
+    "context_length": 128,
+    "d_model": 256,
+    "n_heads": 8,
+    "n_layers": 4,
+    "dropout": 0.1,
+    "ffn_hidden_multiplier": 4,
+    "bias": true,
+    "tie_weights": false
+  },
+  "data_split": {
+    "data_file": "task1_llm/data/TinyStoriesV2-GPT4-train.txt",
+    "split_unit": "sequences",
+    "split_unit_note": "NEEDS_CLARIFICATION: confirm unit of the 100K/10K split",
+    "train_size_requested": 100000,
+    "val_size_requested": 10000,
+    "seed": 8503,
+    "stories_loaded": 80000,
+    "stories_loaded_note": "first max_stories_to_load stories in file order, then seeded shuffle",
+    "train_stories": 15880,
+    "val_stories": 1610,
+    "train_chars": 12800004,
+    "val_chars": 1280350,
+    "context_length": 128,
+    "window_stride": 128,
+    "train_windows": 100000,
+    "val_windows": 10000,
+    "vocab_size": 81,
+    "tokenizer_fitted_on": "train split only",
+    "val_unknown_chars": 0,
+    "story_separator": "\n\n",
+    "run_id": "parth_gpt_char_v1_20260925T214701Z"
+  },
+  "checkpoint_map": {
+    "best": {
+      "path": "task1_llm/parth/checkpoints/best.pt",
+      "epoch": 10,
+      "val_loss": 0.7394431144714355,
+      "used_for": "metrics_report.csv, generated samples"
+    },
+    "latest": {
+      "path": "task1_llm/parth/checkpoints/latest.pt",
+      "epoch": 10
+    }
+  },
+  "artifacts": {
+    "best_checkpoint": "task1_llm/parth/checkpoints/best.pt",
+    "latest_checkpoint": "task1_llm/parth/checkpoints/latest.pt",
+    "raw_log": "reproducibility/raw_logs/task1_parth_parth_gpt_char_v1_20260925T214701Z.log",
+    "history": "task1_llm/parth/logs/history_parth_gpt_char_v1_20260925T214701Z.json",
+    "loss_curve": "task1_llm/parth/figures/task1_loss_curve.png",
+    "tokenizer": "task1_llm/parth/data_processed/tokenizer.json",
+    "summary": "task1_llm/parth/logs/train_summary_parth_gpt_char_v1_20260925T214701Z.json",
+    "metrics_report": "task1_llm/parth/metrics_report.csv"
+  }
+}

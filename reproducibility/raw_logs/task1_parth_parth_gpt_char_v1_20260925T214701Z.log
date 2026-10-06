@@ -1,0 +1,240 @@
+2026-09-25 21:47:01 | INFO | run_id=parth_gpt_char_v1_20260925T214701Z
+2026-09-25 21:47:01 | INFO | resolved config:
+run_name: parth_gpt_char_v1
+seed: 8503
+model_config: task1_llm/parth/config/model.yaml
+data:
+  data_dir: task1_llm/data
+  data_file: null
+  max_stories_to_load: 80000
+  story_separator: '
+
+
+    '
+  split_unit: sequences
+  train_size: 100000
+  val_size: 10000
+  window_stride: null
+  min_char_freq: 1
+  processed_dir: task1_llm/parth/data_processed
+  tokenizer_path: task1_llm/parth/data_processed/tokenizer.json
+training:
+  epochs: 10
+  batch_size: 128
+  learning_rate: 0.0003
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  betas:
+  - 0.9
+  - 0.95
+  warmup_ratio: 0.05
+  warmup_steps: null
+  grad_clip: 1.0
+  amp: true
+  amp_dtype: auto
+  allow_tf32: true
+  num_workers: 2
+  log_interval: 50
+  spike_factor: 2.0
+  eval_train_batches: 100
+paths:
+  checkpoint_dir: task1_llm/parth/checkpoints
+  figures_dir: task1_llm/parth/figures
+  logs_dir: task1_llm/parth/logs
+  outputs_dir: task1_llm/parth/outputs
+  metrics_report: task1_llm/parth/metrics_report.csv
+  raw_log_dir: reproducibility/raw_logs
+  manifest_dir: reproducibility/manifests
+model:
+  model_type: decoder-only-gpt
+  tokenization: character-level
+  normalization: pre-norm
+  positional_embedding: learned
+  activation: gelu
+  d_model: 256
+  n_heads: 8
+  n_layers: 4
+  context_length: 128
+  dropout: 0.1
+  ffn_hidden_multiplier: 4
+  bias: true
+  tie_weights: false
+is_smoke: false
+
+2026-09-25 21:47:01 | INFO | device=cuda hardware=NVIDIA GeForce RTX 5090 torch=2.7.1+cu128 cuda_build=12.8
+2026-09-25 21:47:03 | INFO | data prepared in 2.0s: {'data_file': 'task1_llm/data/TinyStoriesV2-GPT4-train.txt', 'split_unit': 'sequences', 'split_unit_note': 'NEEDS_CLARIFICATION: confirm unit of the 100K/10K split', 'train_size_requested': 100000, 'val_size_requested': 10000, 'seed': 8503, 'stories_loaded': 80000, 'stories_loaded_note': 'first max_stories_to_load stories in file order, then seeded shuffle', 'train_stories': 15880, 'val_stories': 1610, 'train_chars': 12800004, 'val_chars': 1280350, 'context_length': 128, 'window_stride': 128, 'train_windows': 100000, 'val_windows': 10000, 'vocab_size': 81, 'tokenizer_fitted_on': 'train split only', 'val_unknown_chars': 0, 'story_separator': '\n\n', 'run_id': 'parth_gpt_char_v1_20260925T214701Z'}
+2026-09-25 21:47:03 | INFO | tokenizer saved to task1_llm/parth/data_processed/tokenizer.json (vocab_size=81)
+2026-09-25 21:47:03 | INFO | model config: {'vocab_size': 81, 'context_length': 128, 'd_model': 256, 'n_heads': 8, 'n_layers': 4, 'dropout': 0.1, 'ffn_hidden_multiplier': 4, 'bias': True, 'tie_weights': False}
+2026-09-25 21:47:03 | INFO | parameter count: 3,233,792
+2026-09-25 21:47:04 | INFO | steps/epoch=781 total_steps=7810 warmup_steps=390 amp=True dtype=torch.bfloat16 grad_scaler=False
+2026-09-25 21:47:05 | INFO | epoch 1 step 1/7810 | loss 4.4631 | lr 1.538e-06 | grad_norm 9.472
+2026-09-25 21:47:05 | INFO | epoch 1 step 50/7810 | loss 3.0827 | lr 3.923e-05 | grad_norm 1.661
+2026-09-25 21:47:06 | INFO | epoch 1 step 100/7810 | loss 2.6038 | lr 7.769e-05 | grad_norm 0.974
+2026-09-25 21:47:06 | INFO | epoch 1 step 150/7810 | loss 2.3932 | lr 1.162e-04 | grad_norm 0.504
+2026-09-25 21:47:07 | INFO | epoch 1 step 200/7810 | loss 2.3001 | lr 1.546e-04 | grad_norm 1.120
+2026-09-25 21:47:07 | INFO | epoch 1 step 250/7810 | loss 2.1907 | lr 1.931e-04 | grad_norm 0.898
+2026-09-25 21:47:08 | INFO | epoch 1 step 300/7810 | loss 2.1254 | lr 2.315e-04 | grad_norm 1.553
+2026-09-25 21:47:08 | INFO | epoch 1 step 350/7810 | loss 1.9806 | lr 2.700e-04 | grad_norm 1.154
+2026-09-25 21:47:09 | INFO | epoch 1 step 400/7810 | loss 1.8729 | lr 3.000e-04 | grad_norm 1.414
+2026-09-25 21:47:09 | INFO | epoch 1 step 450/7810 | loss 1.7452 | lr 3.000e-04 | grad_norm 1.240
+2026-09-25 21:47:10 | INFO | epoch 1 step 500/7810 | loss 1.6575 | lr 2.999e-04 | grad_norm 1.552
+2026-09-25 21:47:10 | INFO | epoch 1 step 550/7810 | loss 1.5297 | lr 2.997e-04 | grad_norm 1.576
+2026-09-25 21:47:11 | INFO | epoch 1 step 600/7810 | loss 1.4919 | lr 2.995e-04 | grad_norm 1.318
+2026-09-25 21:47:12 | INFO | epoch 1 step 650/7810 | loss 1.4344 | lr 2.992e-04 | grad_norm 1.299
+2026-09-25 21:47:12 | INFO | epoch 1 step 700/7810 | loss 1.3832 | lr 2.988e-04 | grad_norm 1.283
+2026-09-25 21:47:13 | INFO | epoch 1 step 750/7810 | loss 1.3393 | lr 2.984e-04 | grad_norm 1.373
+2026-09-25 21:47:14 | INFO | EPOCH 1/10 | train_loss 2.0034 | val_loss 1.2159 | val_ppl 3.373 | val_bpc 1.7542 | val_acc 0.6265 | 1411669 tok/s | 9.1s | new best -> best.pt
+2026-09-25 21:47:14 | INFO | epoch 2 step 800/7810 | loss 1.2801 | lr 2.980e-04 | grad_norm 1.257
+2026-09-25 21:47:15 | INFO | epoch 2 step 850/7810 | loss 1.2702 | lr 2.974e-04 | grad_norm 1.277
+2026-09-25 21:47:15 | INFO | epoch 2 step 900/7810 | loss 1.2245 | lr 2.969e-04 | grad_norm 1.217
+2026-09-25 21:47:16 | INFO | epoch 2 step 950/7810 | loss 1.1994 | lr 2.962e-04 | grad_norm 1.048
+2026-09-25 21:47:16 | INFO | epoch 2 step 1000/7810 | loss 1.1810 | lr 2.955e-04 | grad_norm 1.125
+2026-09-25 21:47:17 | INFO | epoch 2 step 1050/7810 | loss 1.1683 | lr 2.948e-04 | grad_norm 0.996
+2026-09-25 21:47:17 | INFO | epoch 2 step 1100/7810 | loss 1.1400 | lr 2.939e-04 | grad_norm 0.970
+2026-09-25 21:47:18 | INFO | epoch 2 step 1150/7810 | loss 1.1509 | lr 2.931e-04 | grad_norm 1.004
+2026-09-25 21:47:18 | INFO | epoch 2 step 1200/7810 | loss 1.1042 | lr 2.921e-04 | grad_norm 0.970
+2026-09-25 21:47:19 | INFO | epoch 2 step 1250/7810 | loss 1.1130 | lr 2.911e-04 | grad_norm 1.042
+2026-09-25 21:47:20 | INFO | epoch 2 step 1300/7810 | loss 1.0986 | lr 2.901e-04 | grad_norm 1.022
+2026-09-25 21:47:20 | INFO | epoch 2 step 1350/7810 | loss 1.0516 | lr 2.890e-04 | grad_norm 0.910
+2026-09-25 21:47:21 | INFO | epoch 2 step 1400/7810 | loss 1.0806 | lr 2.878e-04 | grad_norm 0.925
+2026-09-25 21:47:21 | INFO | epoch 2 step 1450/7810 | loss 1.0794 | lr 2.866e-04 | grad_norm 0.976
+2026-09-25 21:47:22 | INFO | epoch 2 step 1500/7810 | loss 1.0298 | lr 2.854e-04 | grad_norm 0.889
+2026-09-25 21:47:22 | INFO | epoch 2 step 1550/7810 | loss 1.0449 | lr 2.840e-04 | grad_norm 0.863
+2026-09-25 21:47:23 | INFO | EPOCH 2/10 | train_loss 1.1379 | val_loss 0.9587 | val_ppl 2.608 | val_bpc 1.3832 | val_acc 0.7003 | 1521138 tok/s | 8.4s | new best -> best.pt
+2026-09-25 21:47:24 | INFO | epoch 3 step 1600/7810 | loss 1.0152 | lr 2.827e-04 | grad_norm 0.957
+2026-09-25 21:47:24 | INFO | epoch 3 step 1650/7810 | loss 1.0096 | lr 2.812e-04 | grad_norm 0.826
+2026-09-25 21:47:25 | INFO | epoch 3 step 1700/7810 | loss 1.0015 | lr 2.798e-04 | grad_norm 0.892
+2026-09-25 21:47:25 | INFO | epoch 3 step 1750/7810 | loss 1.0169 | lr 2.782e-04 | grad_norm 0.901
+2026-09-25 21:47:26 | INFO | epoch 3 step 1800/7810 | loss 0.9522 | lr 2.766e-04 | grad_norm 0.759
+2026-09-25 21:47:26 | INFO | epoch 3 step 1850/7810 | loss 0.9954 | lr 2.750e-04 | grad_norm 0.860
+2026-09-25 21:47:27 | INFO | epoch 3 step 1900/7810 | loss 0.9506 | lr 2.733e-04 | grad_norm 0.870
+2026-09-25 21:47:27 | INFO | epoch 3 step 1950/7810 | loss 0.9792 | lr 2.716e-04 | grad_norm 0.780
+2026-09-25 21:47:28 | INFO | epoch 3 step 2000/7810 | loss 0.9483 | lr 2.698e-04 | grad_norm 0.836
+2026-09-25 21:47:28 | INFO | epoch 3 step 2050/7810 | loss 0.9756 | lr 2.680e-04 | grad_norm 0.815
+2026-09-25 21:47:29 | INFO | epoch 3 step 2100/7810 | loss 0.9522 | lr 2.661e-04 | grad_norm 0.780
+2026-09-25 21:47:29 | INFO | epoch 3 step 2150/7810 | loss 0.9492 | lr 2.642e-04 | grad_norm 0.790
+2026-09-25 21:47:30 | INFO | epoch 3 step 2200/7810 | loss 0.9518 | lr 2.623e-04 | grad_norm 0.774
+2026-09-25 21:47:30 | INFO | epoch 3 step 2250/7810 | loss 0.9439 | lr 2.603e-04 | grad_norm 0.729
+2026-09-25 21:47:31 | INFO | epoch 3 step 2300/7810 | loss 0.9579 | lr 2.582e-04 | grad_norm 0.722
+2026-09-25 21:47:32 | INFO | EPOCH 3/10 | train_loss 0.9733 | val_loss 0.8707 | val_ppl 2.389 | val_bpc 1.2562 | val_acc 0.7257 | 1545747 tok/s | 8.3s | new best -> best.pt
+2026-09-25 21:47:32 | INFO | epoch 4 step 2350/7810 | loss 0.9266 | lr 2.561e-04 | grad_norm 0.756
+2026-09-25 21:47:33 | INFO | epoch 4 step 2400/7810 | loss 0.9234 | lr 2.540e-04 | grad_norm 0.762
+2026-09-25 21:47:33 | INFO | epoch 4 step 2450/7810 | loss 0.9322 | lr 2.518e-04 | grad_norm 0.694
+2026-09-25 21:47:34 | INFO | epoch 4 step 2500/7810 | loss 0.9095 | lr 2.496e-04 | grad_norm 0.738
+2026-09-25 21:47:34 | INFO | epoch 4 step 2550/7810 | loss 0.9183 | lr 2.474e-04 | grad_norm 0.706
+2026-09-25 21:47:35 | INFO | epoch 4 step 2600/7810 | loss 0.9162 | lr 2.451e-04 | grad_norm 0.668
+2026-09-25 21:47:35 | INFO | epoch 4 step 2650/7810 | loss 0.8881 | lr 2.428e-04 | grad_norm 0.700
+2026-09-25 21:47:36 | INFO | epoch 4 step 2700/7810 | loss 0.9247 | lr 2.404e-04 | grad_norm 0.700
+2026-09-25 21:47:36 | INFO | epoch 4 step 2750/7810 | loss 0.9077 | lr 2.380e-04 | grad_norm 0.687
+2026-09-25 21:47:37 | INFO | epoch 4 step 2800/7810 | loss 0.8882 | lr 2.356e-04 | grad_norm 0.676
+2026-09-25 21:47:37 | INFO | epoch 4 step 2850/7810 | loss 0.8752 | lr 2.332e-04 | grad_norm 0.678
+2026-09-25 21:47:38 | INFO | epoch 4 step 2900/7810 | loss 0.8845 | lr 2.307e-04 | grad_norm 0.671
+2026-09-25 21:47:38 | INFO | epoch 4 step 2950/7810 | loss 0.8705 | lr 2.282e-04 | grad_norm 0.654
+2026-09-25 21:47:39 | INFO | epoch 4 step 3000/7810 | loss 0.8940 | lr 2.256e-04 | grad_norm 0.656
+2026-09-25 21:47:39 | INFO | epoch 4 step 3050/7810 | loss 0.8872 | lr 2.231e-04 | grad_norm 0.631
+2026-09-25 21:47:40 | INFO | epoch 4 step 3100/7810 | loss 0.8672 | lr 2.205e-04 | grad_norm 0.634
+2026-09-25 21:47:41 | INFO | EPOCH 4/10 | train_loss 0.9007 | val_loss 0.8265 | val_ppl 2.285 | val_bpc 1.1924 | val_acc 0.7389 | 1568944 tok/s | 8.2s | new best -> best.pt
+2026-09-25 21:47:41 | INFO | epoch 5 step 3150/7810 | loss 0.8703 | lr 2.178e-04 | grad_norm 0.696
+2026-09-25 21:47:42 | INFO | epoch 5 step 3200/7810 | loss 0.8817 | lr 2.152e-04 | grad_norm 0.655
+2026-09-25 21:47:42 | INFO | epoch 5 step 3250/7810 | loss 0.8304 | lr 2.125e-04 | grad_norm 0.625
+2026-09-25 21:47:43 | INFO | epoch 5 step 3300/7810 | loss 0.8897 | lr 2.099e-04 | grad_norm 0.652
+2026-09-25 21:47:44 | INFO | epoch 5 step 3350/7810 | loss 0.8713 | lr 2.072e-04 | grad_norm 0.648
+2026-09-25 21:47:44 | INFO | epoch 5 step 3400/7810 | loss 0.8679 | lr 2.044e-04 | grad_norm 0.664
+2026-09-25 21:47:45 | INFO | epoch 5 step 3450/7810 | loss 0.8445 | lr 2.017e-04 | grad_norm 0.675
+2026-09-25 21:47:45 | INFO | epoch 5 step 3500/7810 | loss 0.8425 | lr 1.989e-04 | grad_norm 0.643
+2026-09-25 21:47:46 | INFO | epoch 5 step 3550/7810 | loss 0.8287 | lr 1.962e-04 | grad_norm 0.639
+2026-09-25 21:47:46 | INFO | epoch 5 step 3600/7810 | loss 0.8448 | lr 1.934e-04 | grad_norm 0.629
+2026-09-25 21:47:47 | INFO | epoch 5 step 3650/7810 | loss 0.8492 | lr 1.906e-04 | grad_norm 0.640
+2026-09-25 21:47:47 | INFO | epoch 5 step 3700/7810 | loss 0.8568 | lr 1.878e-04 | grad_norm 0.625
+2026-09-25 21:47:48 | INFO | epoch 5 step 3750/7810 | loss 0.8627 | lr 1.849e-04 | grad_norm 0.667
+2026-09-25 21:47:48 | INFO | epoch 5 step 3800/7810 | loss 0.8643 | lr 1.821e-04 | grad_norm 0.623
+2026-09-25 21:47:49 | INFO | epoch 5 step 3850/7810 | loss 0.8254 | lr 1.793e-04 | grad_norm 0.592
+2026-09-25 21:47:49 | INFO | epoch 5 step 3900/7810 | loss 0.8626 | lr 1.764e-04 | grad_norm 0.629
+2026-09-25 21:47:50 | INFO | EPOCH 5/10 | train_loss 0.8578 | val_loss 0.7976 | val_ppl 2.220 | val_bpc 1.1507 | val_acc 0.7476 | 1557236 tok/s | 8.2s | new best -> best.pt
+2026-09-25 21:47:51 | INFO | epoch 6 step 3950/7810 | loss 0.7986 | lr 1.736e-04 | grad_norm 0.622
+2026-09-25 21:47:51 | INFO | epoch 6 step 4000/7810 | loss 0.8427 | lr 1.707e-04 | grad_norm 0.638
+2026-09-25 21:47:52 | INFO | epoch 6 step 4050/7810 | loss 0.8153 | lr 1.679e-04 | grad_norm 0.633
+2026-09-25 21:47:52 | INFO | epoch 6 step 4100/7810 | loss 0.8076 | lr 1.650e-04 | grad_norm 0.607
+2026-09-25 21:47:53 | INFO | epoch 6 step 4150/7810 | loss 0.8582 | lr 1.621e-04 | grad_norm 0.633
+2026-09-25 21:47:53 | INFO | epoch 6 step 4200/7810 | loss 0.8203 | lr 1.593e-04 | grad_norm 0.597
+2026-09-25 21:47:54 | INFO | epoch 6 step 4250/7810 | loss 0.8246 | lr 1.564e-04 | grad_norm 0.613
+2026-09-25 21:47:54 | INFO | epoch 6 step 4300/7810 | loss 0.8205 | lr 1.536e-04 | grad_norm 0.623
+2026-09-25 21:47:55 | INFO | epoch 6 step 4350/7810 | loss 0.8166 | lr 1.507e-04 | grad_norm 0.620
+2026-09-25 21:47:55 | INFO | epoch 6 step 4400/7810 | loss 0.8239 | lr 1.479e-04 | grad_norm 0.605
+2026-09-25 21:47:56 | INFO | epoch 6 step 4450/7810 | loss 0.8161 | lr 1.451e-04 | grad_norm 0.619
+2026-09-25 21:47:56 | INFO | epoch 6 step 4500/7810 | loss 0.8360 | lr 1.422e-04 | grad_norm 0.617
+2026-09-25 21:47:57 | INFO | epoch 6 step 4550/7810 | loss 0.8218 | lr 1.394e-04 | grad_norm 0.612
+2026-09-25 21:47:57 | INFO | epoch 6 step 4600/7810 | loss 0.8180 | lr 1.366e-04 | grad_norm 0.620
+2026-09-25 21:47:58 | INFO | epoch 6 step 4650/7810 | loss 0.8094 | lr 1.338e-04 | grad_norm 0.598
+2026-09-25 21:47:59 | INFO | EPOCH 6/10 | train_loss 0.8282 | val_loss 0.7770 | val_ppl 2.175 | val_bpc 1.1210 | val_acc 0.7537 | 1530530 tok/s | 8.4s | new best -> best.pt
+2026-09-25 21:47:59 | INFO | epoch 7 step 4700/7810 | loss 0.8012 | lr 1.311e-04 | grad_norm 0.600
+2026-09-25 21:48:00 | INFO | epoch 7 step 4750/7810 | loss 0.8416 | lr 1.283e-04 | grad_norm 0.594
+2026-09-25 21:48:00 | INFO | epoch 7 step 4800/7810 | loss 0.8158 | lr 1.256e-04 | grad_norm 0.605
+2026-09-25 21:48:01 | INFO | epoch 7 step 4850/7810 | loss 0.7900 | lr 1.228e-04 | grad_norm 0.594
+2026-09-25 21:48:02 | INFO | epoch 7 step 4900/7810 | loss 0.8041 | lr 1.201e-04 | grad_norm 0.619
+2026-09-25 21:48:02 | INFO | epoch 7 step 4950/7810 | loss 0.8083 | lr 1.175e-04 | grad_norm 0.595
+2026-09-25 21:48:03 | INFO | epoch 7 step 5000/7810 | loss 0.7997 | lr 1.148e-04 | grad_norm 0.607
+2026-09-25 21:48:03 | INFO | epoch 7 step 5050/7810 | loss 0.7886 | lr 1.122e-04 | grad_norm 0.581
+2026-09-25 21:48:04 | INFO | epoch 7 step 5100/7810 | loss 0.7913 | lr 1.095e-04 | grad_norm 0.614
+2026-09-25 21:48:04 | INFO | epoch 7 step 5150/7810 | loss 0.8362 | lr 1.069e-04 | grad_norm 0.620
+2026-09-25 21:48:05 | INFO | epoch 7 step 5200/7810 | loss 0.7845 | lr 1.044e-04 | grad_norm 0.593
+2026-09-25 21:48:06 | INFO | epoch 7 step 5250/7810 | loss 0.8358 | lr 1.018e-04 | grad_norm 0.627
+2026-09-25 21:48:06 | INFO | epoch 7 step 5300/7810 | loss 0.7722 | lr 9.932e-05 | grad_norm 0.577
+2026-09-25 21:48:07 | INFO | epoch 7 step 5350/7810 | loss 0.7440 | lr 9.684e-05 | grad_norm 0.580
+2026-09-25 21:48:07 | INFO | epoch 7 step 5400/7810 | loss 0.8040 | lr 9.439e-05 | grad_norm 0.622
+2026-09-25 21:48:08 | INFO | epoch 7 step 5450/7810 | loss 0.7829 | lr 9.197e-05 | grad_norm 0.585
+2026-09-25 21:48:09 | INFO | EPOCH 7/10 | train_loss 0.8065 | val_loss 0.7611 | val_ppl 2.141 | val_bpc 1.0980 | val_acc 0.7590 | 1444710 tok/s | 8.9s | new best -> best.pt
+2026-09-25 21:48:09 | INFO | epoch 8 step 5500/7810 | loss 0.7771 | lr 8.958e-05 | grad_norm 0.595
+2026-09-25 21:48:10 | INFO | epoch 8 step 5550/7810 | loss 0.8175 | lr 8.723e-05 | grad_norm 0.602
+2026-09-25 21:48:10 | INFO | epoch 8 step 5600/7810 | loss 0.8133 | lr 8.491e-05 | grad_norm 0.613
+2026-09-25 21:48:11 | INFO | epoch 8 step 5650/7810 | loss 0.7976 | lr 8.263e-05 | grad_norm 0.606
+2026-09-25 21:48:11 | INFO | epoch 8 step 5700/7810 | loss 0.7771 | lr 8.038e-05 | grad_norm 0.600
+2026-09-25 21:48:12 | INFO | epoch 8 step 5750/7810 | loss 0.7931 | lr 7.818e-05 | grad_norm 0.611
+2026-09-25 21:48:12 | INFO | epoch 8 step 5800/7810 | loss 0.7707 | lr 7.601e-05 | grad_norm 0.600
+2026-09-25 21:48:13 | INFO | epoch 8 step 5850/7810 | loss 0.7853 | lr 7.388e-05 | grad_norm 0.613
+2026-09-25 21:48:13 | INFO | epoch 8 step 5900/7810 | loss 0.7874 | lr 7.179e-05 | grad_norm 0.605
+2026-09-25 21:48:14 | INFO | epoch 8 step 5950/7810 | loss 0.7969 | lr 6.974e-05 | grad_norm 0.619
+2026-09-25 21:48:14 | INFO | epoch 8 step 6000/7810 | loss 0.8041 | lr 6.774e-05 | grad_norm 0.624
+2026-09-25 21:48:15 | INFO | epoch 8 step 6050/7810 | loss 0.7996 | lr 6.578e-05 | grad_norm 0.628
+2026-09-25 21:48:15 | INFO | epoch 8 step 6100/7810 | loss 0.7531 | lr 6.386e-05 | grad_norm 0.602
+2026-09-25 21:48:16 | INFO | epoch 8 step 6150/7810 | loss 0.7782 | lr 6.199e-05 | grad_norm 0.615
+2026-09-25 21:48:17 | INFO | epoch 8 step 6200/7810 | loss 0.8151 | lr 6.017e-05 | grad_norm 0.611
+2026-09-25 21:48:18 | INFO | EPOCH 8/10 | train_loss 0.7903 | val_loss 0.7503 | val_ppl 2.118 | val_bpc 1.0825 | val_acc 0.7620 | 1546099 tok/s | 8.3s | new best -> best.pt
+2026-09-25 21:48:18 | INFO | epoch 9 step 6250/7810 | loss 0.7926 | lr 5.839e-05 | grad_norm 0.605
+2026-09-25 21:48:18 | INFO | epoch 9 step 6300/7810 | loss 0.7711 | lr 5.666e-05 | grad_norm 0.590
+2026-09-25 21:48:19 | INFO | epoch 9 step 6350/7810 | loss 0.8125 | lr 5.498e-05 | grad_norm 0.632
+2026-09-25 21:48:19 | INFO | epoch 9 step 6400/7810 | loss 0.7957 | lr 5.335e-05 | grad_norm 0.608
+2026-09-25 21:48:20 | INFO | epoch 9 step 6450/7810 | loss 0.7919 | lr 5.177e-05 | grad_norm 0.599
+2026-09-25 21:48:21 | INFO | epoch 9 step 6500/7810 | loss 0.8202 | lr 5.024e-05 | grad_norm 0.626
+2026-09-25 21:48:21 | INFO | epoch 9 step 6550/7810 | loss 0.8035 | lr 4.876e-05 | grad_norm 0.610
+2026-09-25 21:48:22 | INFO | epoch 9 step 6600/7810 | loss 0.7659 | lr 4.733e-05 | grad_norm 0.607
+2026-09-25 21:48:22 | INFO | epoch 9 step 6650/7810 | loss 0.7781 | lr 4.596e-05 | grad_norm 0.603
+2026-09-25 21:48:23 | INFO | epoch 9 step 6700/7810 | loss 0.7548 | lr 4.464e-05 | grad_norm 0.593
+2026-09-25 21:48:23 | INFO | epoch 9 step 6750/7810 | loss 0.7733 | lr 4.337e-05 | grad_norm 0.605
+2026-09-25 21:48:24 | INFO | epoch 9 step 6800/7810 | loss 0.7823 | lr 4.216e-05 | grad_norm 0.614
+2026-09-25 21:48:24 | INFO | epoch 9 step 6850/7810 | loss 0.7877 | lr 4.100e-05 | grad_norm 0.615
+2026-09-25 21:48:25 | INFO | epoch 9 step 6900/7810 | loss 0.7724 | lr 3.990e-05 | grad_norm 0.600
+2026-09-25 21:48:25 | INFO | epoch 9 step 6950/7810 | loss 0.7598 | lr 3.885e-05 | grad_norm 0.597
+2026-09-25 21:48:26 | INFO | epoch 9 step 7000/7810 | loss 0.7719 | lr 3.786e-05 | grad_norm 0.608
+2026-09-25 21:48:27 | INFO | EPOCH 9/10 | train_loss 0.7792 | val_loss 0.7433 | val_ppl 2.103 | val_bpc 1.0723 | val_acc 0.7642 | 1575561 tok/s | 8.1s | new best -> best.pt
+2026-09-25 21:48:27 | INFO | epoch 10 step 7050/7810 | loss 0.7639 | lr 3.693e-05 | grad_norm 0.609
+2026-09-25 21:48:28 | INFO | epoch 10 step 7100/7810 | loss 0.7671 | lr 3.605e-05 | grad_norm 0.614
+2026-09-25 21:48:28 | INFO | epoch 10 step 7150/7810 | loss 0.8189 | lr 3.524e-05 | grad_norm 0.639
+2026-09-25 21:48:29 | INFO | epoch 10 step 7200/7810 | loss 0.7642 | lr 3.448e-05 | grad_norm 0.606
+2026-09-25 21:48:29 | INFO | epoch 10 step 7250/7810 | loss 0.7675 | lr 3.378e-05 | grad_norm 0.628
+2026-09-25 21:48:30 | INFO | epoch 10 step 7300/7810 | loss 0.7647 | lr 3.314e-05 | grad_norm 0.620
+2026-09-25 21:48:30 | INFO | epoch 10 step 7350/7810 | loss 0.8096 | lr 3.255e-05 | grad_norm 0.675
+2026-09-25 21:48:31 | INFO | epoch 10 step 7400/7810 | loss 0.7762 | lr 3.203e-05 | grad_norm 0.610
+2026-09-25 21:48:31 | INFO | epoch 10 step 7450/7810 | loss 0.7688 | lr 3.157e-05 | grad_norm 0.611
+2026-09-25 21:48:32 | INFO | epoch 10 step 7500/7810 | loss 0.7688 | lr 3.116e-05 | grad_norm 0.614
+2026-09-25 21:48:32 | INFO | epoch 10 step 7550/7810 | loss 0.7646 | lr 3.082e-05 | grad_norm 0.605
+2026-09-25 21:48:33 | INFO | epoch 10 step 7600/7810 | loss 0.7572 | lr 3.053e-05 | grad_norm 0.592
+2026-09-25 21:48:33 | INFO | epoch 10 step 7650/7810 | loss 0.7452 | lr 3.031e-05 | grad_norm 0.613
+2026-09-25 21:48:34 | INFO | epoch 10 step 7700/7810 | loss 0.7786 | lr 3.015e-05 | grad_norm 0.625
+2026-09-25 21:48:34 | INFO | epoch 10 step 7750/7810 | loss 0.8022 | lr 3.004e-05 | grad_norm 0.627
+2026-09-25 21:48:35 | INFO | epoch 10 step 7800/7810 | loss 0.8021 | lr 3.000e-05 | grad_norm 0.643
+2026-09-25 21:48:35 | INFO | EPOCH 10/10 | train_loss 0.7721 | val_loss 0.7394 | val_ppl 2.095 | val_bpc 1.0668 | val_acc 0.7655 | 1570520 tok/s | 8.1s | new best -> best.pt
+2026-09-25 21:48:36 | INFO | training finished in 91.8s | best epoch 10 val_loss 0.7394 | 1525316 train tok/s | peak mem 1240.3 MB
+2026-09-25 21:48:36 | INFO | summary: task1_llm/parth/logs/train_summary_parth_gpt_char_v1_20260925T214701Z.json
+2026-09-25 21:48:36 | INFO | manifest: reproducibility/manifests/task1_parth_parth_gpt_char_v1_20260925T214701Z.json
+2026-09-25 21:48:36 | INFO | metrics report (training-side only, run evaluate.py next): task1_llm/parth/metrics_report.csv
