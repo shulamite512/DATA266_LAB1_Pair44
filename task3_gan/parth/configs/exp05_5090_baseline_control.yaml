@@ -1,0 +1,6 @@
+# EXP-05: RTX 5090 baseline CONTROL (member: parth)
+# Exact replicate of baseline.yaml (EXP-00, trained on RTX 4090 / CUDA 12.8) on the RTX 5090 / CUDA 13.0 machine,
+# trained from scratch with the same seed 8503. The only difference is the run name. Purpose: measure how much
+# the course score varies between runs / environments before attributing small differences to hyperparameters.
+base: baseline.yaml
+run_name: exp05_5090_baseline_control

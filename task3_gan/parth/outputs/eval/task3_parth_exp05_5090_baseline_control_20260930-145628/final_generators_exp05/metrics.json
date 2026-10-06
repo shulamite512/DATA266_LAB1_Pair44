@@ -1,0 +1,222 @@
+{
+  "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+  "checkpoint": "final_generators_exp05",
+  "checkpoint_path": "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators.pt",
+  "checkpoint_sha256": "e979e90002d17e9c9cd3e80c49a10bad4dfa82e5da20399a73d35b54b7a05b92",
+  "checkpoint_epoch": 60,
+  "global_step": 60000,
+  "evaluated_at": "2026-09-30T16:27:19-07:00",
+  "config_file": "task3_gan/parth/configs/exp05_5090_baseline_control.yaml",
+  "eval_config_hash": "dcfb462b504c1704",
+  "eval_settings": {
+    "batch_size": 16,
+    "num_workers": 4,
+    "max_eval_monet": null,
+    "max_eval_photo": null,
+    "kid_subset_size": 1000,
+    "kid_subsets": 100,
+    "pr_k": 3,
+    "mifid_cosine_eps": 0.1,
+    "lpips_net": "alex",
+    "lpips_allow_random_backbone": false
+  },
+  "evaluator_version": "2: internal FID-Inception space + gated official-reference (torchvision Inception-v3) space",
+  "feature_extractor": {
+    "feature_space": "INTERNAL",
+    "id": "pytorch-fid FID-Inception (TF 2015-12-05 FID graph), pool3 2048-d",
+    "network": "InceptionV3 (pytorch-fid port of the TensorFlow FID graph)",
+    "implementation": "pytorch_fid.inception.InceptionV3([3], resize_input=True, normalize_input=True, use_fid_inception=True)",
+    "weights": "pt_inception-2015-12-05-6726825d.pth (pytorch-fid FID_WEIGHTS_URL)",
+    "layer": "pool3 (final average pool), 2048-d",
+    "feature_dim": 2048,
+    "preprocessing": "PIL RGB -> short-side bicubic resize to image_size + center crop (a no-op for images already at image_size) -> float [0,1] -> bilinear resize to 299x299 inside the model (align_corners=False, no antialias) -> scale to [-1,1]",
+    "images_read_from": "JPG files on disk (the exact bytes that would be submitted)",
+    "used_for": "internal FID, KID, precision/recall, density/coverage, content cosine"
+  },
+  "feature_extractors": {
+    "internal": {
+      "feature_space": "INTERNAL",
+      "id": "pytorch-fid FID-Inception (TF 2015-12-05 FID graph), pool3 2048-d",
+      "network": "InceptionV3 (pytorch-fid port of the TensorFlow FID graph)",
+      "implementation": "pytorch_fid.inception.InceptionV3([3], resize_input=True, normalize_input=True, use_fid_inception=True)",
+      "weights": "pt_inception-2015-12-05-6726825d.pth (pytorch-fid FID_WEIGHTS_URL)",
+      "layer": "pool3 (final average pool), 2048-d",
+      "feature_dim": 2048,
+      "preprocessing": "PIL RGB -> short-side bicubic resize to image_size + center crop (a no-op for images already at image_size) -> float [0,1] -> bilinear resize to 299x299 inside the model (align_corners=False, no antialias) -> scale to [-1,1]",
+      "images_read_from": "JPG files on disk (the exact bytes that would be submitted)",
+      "used_for": "internal FID, KID, precision/recall, density/coverage, content cosine"
+    },
+    "official_reference": {
+      "feature_space": "OFFICIAL_REFERENCE",
+      "id": "torchvision Inception-v3 IMAGENET1K_V1, [-1,1] input, pool 2048-d (real_stats.npz-compatible)",
+      "network": "torchvision Inception-v3 (standard ImageNet classifier, not the FID graph)",
+      "implementation": "pytorch_fid.inception.InceptionV3([3], resize_input=True, normalize_input=True, use_fid_inception=False) wrapping torchvision.models.inception_v3(weights='DEFAULT')",
+      "weights": "inception_v3_google-0cc3c7bd.pth (torchvision Inception_V3_Weights.IMAGENET1K_V1)",
+      "layer": "global average pool after Mixed_7c, 2048-d",
+      "feature_dim": 2048,
+      "preprocessing": "PIL RGB -> short-side bicubic resize to image_size + center crop (a no-op for images already at image_size) -> float [0,1] -> bilinear resize to 299x299 inside the model (align_corners=False, no antialias) -> scale to [-1,1]",
+      "images_read_from": "JPG files on disk (the exact bytes that would be submitted)",
+      "used_for": "only the real_stats.npz block: FID vs mu_real/sigma_real, MiFID memorization vs feats_real, and the reference check"
+    }
+  },
+  "reference_check": {
+    "real_stats_available": true,
+    "feature_space": "torchvision Inception-v3 IMAGENET1K_V1, [-1,1] input, pool 2048-d (real_stats.npz-compatible)",
+    "valid_threshold_fid": 1.0,
+    "real_stats_sha256": "43c1616e28b6a8c5c5bdc91e1ece0fda6e07050f1c5e2b52c332090f411c18e0",
+    "fid_local_monet_vs_official": 0.07433271275982634,
+    "reference_valid": true,
+    "status": "MEASURED",
+    "n_local_monet": 300,
+    "n_official": 300,
+    "rows_reference": 300,
+    "rows_local": 300,
+    "row_best_cosine_median": 0.999887298449372,
+    "row_best_cosine_min": 0.9994171833210762,
+    "row_nn_unique_targets": 300,
+    "row_aligned_cosine_median": 0.999887298449372,
+    "row_aligned_cosine_min": 0.9994171833210762,
+    "interpretation": "official-reference metrics are published only if FID(local Monet, real_stats) <= 1.0 in the official-reference feature space"
+  },
+  "data": {
+    "A": {
+      "domain": "A",
+      "name": "monet",
+      "directory": "task3_gan/data/monet_jpg",
+      "found": 300,
+      "valid": 300,
+      "skipped": [],
+      "used": 300,
+      "limit": null,
+      "original_sizes_top10": {
+        "256x256": 300
+      },
+      "original_modes": {
+        "RGB": 300
+      }
+    },
+    "B": {
+      "domain": "B",
+      "name": "photo",
+      "directory": "task3_gan/data/photo_jpg",
+      "found": 7038,
+      "valid": 7038,
+      "skipped": [],
+      "used": 7038,
+      "limit": null,
+      "original_sizes_top10": {
+        "256x256": 7038
+      },
+      "original_modes": {
+        "RGB": 7038
+      }
+    }
+  },
+  "directions": {
+    "A2B": {
+      "fid": 81.07001850908875,
+      "fid_eig_crosscheck": 81.07003385288988,
+      "fid_offset_used": false,
+      "fid_max_imag": 3.138317425500269e-08,
+      "fid_mean_term": 10.358664630362265,
+      "kid_mean": 0.017564932804830753,
+      "kid_std": 0.0008239082715864336,
+      "kid_subset_size": 300,
+      "kid_subsets": 100,
+      "precision": 0.5433333516120911,
+      "recall": 0.3557828962802887,
+      "density": 0.5777778029441833,
+      "coverage": 0.06038647145032883,
+      "pr_k": 3,
+      "warnings": [
+        "n < 2048 feature dims (real=7038, gen=300): covariance is rank-deficient and FID is biased upward; compare only at equal sample sizes."
+      ],
+      "content_cosine_mean": 0.81468337032289,
+      "content_cosine_std": 0.06747572608652687,
+      "n_inputs": 300,
+      "n_reference": 7038,
+      "cycle_l1": 0.0806734320273002,
+      "cycle_l1_std": 0.01974892207273064,
+      "lpips_input_vs_output": 0.2987244315445423,
+      "lpips_input_vs_reconstruction": 0.2668631822864215,
+      "lpips_status": "OK (lpips 0.1.4, net=alex, pretrained backbone)",
+      "lpips_smoke_codepath_mean": null,
+      "inference_images_per_sec": 321.4966483422593,
+      "pred_dir": "task3_gan/parth/outputs/pred_A2B/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators_exp05",
+      "reference": "real photos (domain B)"
+    },
+    "B2A": {
+      "fid": 85.09325794138476,
+      "fid_eig_crosscheck": 85.09327445963191,
+      "fid_offset_used": false,
+      "fid_max_imag": 3.3071260299492694e-08,
+      "fid_mean_term": 7.275947306618381,
+      "kid_mean": 0.012560902460025508,
+      "kid_std": 0.0008559625516891451,
+      "kid_subset_size": 300,
+      "kid_subsets": 100,
+      "precision": 0.3604717254638672,
+      "recall": 0.5366666913032532,
+      "density": 0.32679736614227295,
+      "coverage": 0.9466667175292969,
+      "pr_k": 3,
+      "warnings": [
+        "n < 2048 feature dims (real=300, gen=7038): covariance is rank-deficient and FID is biased upward; compare only at equal sample sizes."
+      ],
+      "content_cosine_mean": 0.7524819223480117,
+      "content_cosine_std": 0.10582320406911717,
+      "n_inputs": 7038,
+      "n_reference": 300,
+      "cycle_l1": 0.10182560819832905,
+      "cycle_l1_std": 0.0356556123885683,
+      "lpips_input_vs_output": 0.3801067506629284,
+      "lpips_input_vs_reconstruction": 0.23067563607162392,
+      "lpips_status": "OK (lpips 0.1.4, net=alex, pretrained backbone)",
+      "lpips_smoke_codepath_mean": null,
+      "inference_images_per_sec": 518.9532254691414,
+      "pred_dir": "task3_gan/parth/outputs/pred_B2A/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators_exp05",
+      "reference": "real Monet (domain A)",
+      "fid_vs_official_real_stats": 83.78193345491596,
+      "memorization_distance": 0.2538458190420589,
+      "memorization_threshold_eps": 0.1,
+      "memorization_distance_thresholded": 1.0,
+      "memorization_penalty_applied": false,
+      "mifid_local_approx": 83.78193345491512,
+      "kaggle_style_score_local_approx": 83.78193345491553,
+      "official_reference_feature_space": "torchvision Inception-v3 IMAGENET1K_V1, [-1,1] input, pool 2048-d (real_stats.npz-compatible)",
+      "kaggle_note": "LOCAL APPROXIMATION - NOT OFFICIAL KAGGLE SCORE",
+      "official_reference_status": "MEASURED"
+    }
+  },
+  "raw_log": "reproducibility/raw_logs/task3_parth_exp05_5090_baseline_control_20260930-145628_eval_final_generators_exp05_20260930-162436.log",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "os": "Windows",
+    "torch": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "cudnn": 91900,
+    "cuda_available": true,
+    "cpu_count": 24,
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "torchvision": "0.26.0+cu130",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "pillow": "12.3.0",
+      "pyyaml": "6.0.3",
+      "matplotlib": "3.11.2",
+      "pytorch-fid": "0.3.0",
+      "lpips": "0.1.4"
+    },
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "count": 1,
+      "total_memory_mb": 32607,
+      "capability": "sm_120",
+      "bf16_supported": true,
+      "nvidia_smi": "NVIDIA GeForce RTX 5090, 610.60, GPU-41051861-72ca-e198-fd60-2bf89fd2a67b"
+    }
+  },
+  "device": "cuda"
+}

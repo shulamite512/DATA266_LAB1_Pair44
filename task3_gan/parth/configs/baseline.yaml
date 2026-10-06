@@ -1,0 +1,92 @@
+# Task 3 CycleGAN baseline (member: parth)
+# Domain A = Monet paintings, Domain B = real photographs.
+# All paths are relative to the repository root.
+
+member: parth
+run_name: baseline
+seed: 8503
+
+paths:
+  monet_dir: task3_gan/data/monet_jpg
+  photo_dir: task3_gan/data/photo_jpg
+  real_stats: task3_gan/data/real_stats.npz
+  checkpoints_dir: task3_gan/parth/checkpoints
+  outputs_dir: task3_gan/parth/outputs
+  reports_dir: task3_gan/parth   # metrics CSVs, results.md, experiments.csv, kaggle_results.json
+  raw_logs_dir: reproducibility/raw_logs
+  manifests_dir: reproducibility/manifests
+
+data:
+  image_size: 256          # network input and output resolution
+  load_size: 286           # resize before random crop (paper: 286 -> 256)
+  hflip: true              # random horizontal flip during training only
+  num_workers: 4
+  steps_per_epoch: 1000    # one "epoch" = this many unpaired (A, B) batches
+  max_monet: null          # null = use every valid Monet image
+  max_photo: null          # null = use every valid photo
+  extensions: [".jpg", ".jpeg", ".png"]
+
+model:
+  ngf: 64                  # generator base channels
+  ndf: 64                  # discriminator base channels
+  n_res_blocks: 9          # ResNet generator depth for 256x256
+  n_d_layers: 3            # 3 strided layers -> 70x70 PatchGAN
+  norm: instance
+  upsample: deconv         # deconv (paper) | resize_conv (checkerboard ablation)
+  init_gain: 0.02
+
+loss:
+  gan_mode: lsgan          # lsgan (paper) | vanilla
+  lambda_cycle: 10.0
+  lambda_identity: 5.0     # absolute weight = 0.5 * lambda_cycle, as in the paper
+
+train:
+  batch_size: 1
+  lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  n_epochs_constant: 30    # constant LR phase
+  n_epochs_decay: 30       # linear decay to zero phase
+  pool_size: 50            # replay buffer of past fakes for D updates
+  amp: none                # none | bf16 | fp16
+  allow_tf32: true
+  cudnn_benchmark: true
+  grad_clip_norm: null     # null = no clipping (paper); value = clip threshold
+  max_steps: null          # null = run the full schedule
+  step_log_every: 10       # rows written to step_metrics.csv
+  print_every: 100         # lines written to the raw log
+  sample_every_epochs: 1
+  checkpoint_every_epochs: 5      # generator-only snapshots for model selection
+  full_checkpoint_every_epochs: 10  # full resumable snapshots kept on disk
+  max_consecutive_nonfinite: 20   # abort if this many steps in a row are non-finite
+  spike_factor: 3.0               # loss > spike_factor * EMA counts as a spike
+  spike_warmup_steps: 500
+  num_sample_images: 4
+
+eval:
+  batch_size: 16
+  num_workers: 4
+  max_eval_monet: null     # null = all Monet images
+  max_eval_photo: null     # null = all photos
+  kid_subset_size: 1000
+  kid_subsets: 100
+  pr_k: 3
+  mifid_cosine_eps: 0.1
+  lpips_net: alex
+  lpips_allow_random_backbone: false   # smoke-only code path check
+
+inference:
+  batch_size: 16
+  jpg_quality: 95
+
+submission:
+  direction: B2A           # photo -> Monet (confirm with inspect_real_stats.py)
+  expected_count: null     # set from the Kaggle data page once confirmed
+
+human_audit:
+  per_direction:
+    B2A: 15
+    A2B: 15
+  raters: [R1, R2]
+  score_min: 1
+  score_max: 5

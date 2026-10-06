@@ -1,0 +1,40 @@
+{
+  "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+  "label": "final_generators_epoch_060",
+  "checkpoint": "final_generators.pt",
+  "checkpoint_sha256": "e979e90002d17e9c9cd3e80c49a10bad4dfa82e5da20399a73d35b54b7a05b92",
+  "epoch": 60,
+  "global_step": 60000,
+  "FID_A2B": 103.09256329850902,
+  "FID_B2A": 103.02015942255423,
+  "MiFID_A2B": 0.4228598177433014,
+  "MiFID_B2A": 0.41448909044265747,
+  "submission_FID": 103.05636136053162,
+  "submission_MiFID": 0.41867445409297943,
+  "combined_score": 51.7375179073123,
+  "course_device": "cuda",
+  "course_counts": [
+    300,
+    300,
+    300,
+    300
+  ],
+  "validation": {
+    "A2B": {
+      "count": 300,
+      "names_match_sources": true,
+      "format_failures": [],
+      "nonfinite_values": 0,
+      "ok": true
+    },
+    "B2A": {
+      "count": 300,
+      "names_match_sources": true,
+      "format_failures": [],
+      "nonfinite_values": 0,
+      "ok": true
+    }
+  },
+  "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+  "seconds": 36.5
+}

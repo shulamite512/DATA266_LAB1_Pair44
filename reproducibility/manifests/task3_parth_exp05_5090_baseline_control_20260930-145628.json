@@ -1,0 +1,197 @@
+{
+  "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+  "task": "task3_cyclegan",
+  "member": "parth",
+  "created": "2026-09-30T14:57:01-07:00",
+  "status": "completed",
+  "seed": 8503,
+  "git": {
+    "commit_sha": "UNAVAILABLE",
+    "branch": "UNAVAILABLE",
+    "dirty": null,
+    "dirty_files": []
+  },
+  "config_file": "task3_gan/parth/configs/exp05_5090_baseline_control.yaml",
+  "config_overrides": [],
+  "config_hash": "dcfb462b504c1704",
+  "config_resolved": "task3_gan/parth/outputs/runs/task3_parth_exp05_5090_baseline_control_20260930-145628/config_resolved.yaml",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "os": "Windows",
+    "torch": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "cudnn": 91900,
+    "cuda_available": true,
+    "cpu_count": 24,
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "torchvision": "0.26.0+cu130",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "pillow": "12.3.0",
+      "pyyaml": "6.0.3",
+      "matplotlib": "3.11.2",
+      "pytorch-fid": "0.3.0",
+      "lpips": "0.1.4"
+    },
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "count": 1,
+      "total_memory_mb": 32607,
+      "capability": "sm_120",
+      "bf16_supported": true,
+      "nvidia_smi": "NVIDIA GeForce RTX 5090, 610.60, GPU-41051861-72ca-e198-fd60-2bf89fd2a67b"
+    },
+    "backends": {
+      "cuda": true,
+      "cudnn_benchmark": true,
+      "tf32": true,
+      "tf32_api": "fp32_precision"
+    }
+  },
+  "pip_freeze": "reproducibility/manifests/task3_parth_exp05_5090_baseline_control_20260930-145628_pip_freeze.txt",
+  "data": {
+    "A_monet": {
+      "domain": "A",
+      "name": "monet",
+      "directory": "task3_gan/data/monet_jpg",
+      "found": 300,
+      "valid": 300,
+      "skipped": [],
+      "used": 300,
+      "limit": null,
+      "original_sizes_top10": {
+        "256x256": 300
+      },
+      "original_modes": {
+        "RGB": 300
+      },
+      "duplicates_within": 0
+    },
+    "B_photo": {
+      "domain": "B",
+      "name": "photo",
+      "directory": "task3_gan/data/photo_jpg",
+      "found": 7038,
+      "valid": 7038,
+      "skipped": [],
+      "used": 7038,
+      "limit": null,
+      "original_sizes_top10": {
+        "256x256": 7038
+      },
+      "original_modes": {
+        "RGB": 7038
+      },
+      "duplicates_within": 9,
+      "duplicates_cross_domain": 0
+    }
+  },
+  "parameters": {
+    "G_A2B": 11378179,
+    "G_B2A": 11378179,
+    "D_A": 2764737,
+    "D_B": 2764737,
+    "generators_total": 22756358,
+    "discriminators_total": 5529474,
+    "all_total": 28285832
+  },
+  "sample_files": {
+    "A": [
+      "task3_gan/data/monet_jpg/3deea9f4a4.jpg",
+      "task3_gan/data/monet_jpg/8b7948248f.jpg",
+      "task3_gan/data/monet_jpg/95a53d7b0b.jpg",
+      "task3_gan/data/monet_jpg/fdf1530d95.jpg"
+    ],
+    "B": [
+      "task3_gan/data/photo_jpg/12f74378d4.jpg",
+      "task3_gan/data/photo_jpg/32df0e0408.jpg",
+      "task3_gan/data/photo_jpg/38dfbc95b7.jpg",
+      "task3_gan/data/photo_jpg/6cad5acca6.jpg"
+    ]
+  },
+  "outputs": {
+    "run_dir": "task3_gan/parth/outputs/runs/task3_parth_exp05_5090_baseline_control_20260930-145628",
+    "samples_dir": "task3_gan/parth/outputs/samples/task3_parth_exp05_5090_baseline_control_20260930-145628",
+    "step_metrics": "task3_gan/parth/outputs/runs/task3_parth_exp05_5090_baseline_control_20260930-145628/step_metrics.csv",
+    "epoch_metrics": "task3_gan/parth/outputs/runs/task3_parth_exp05_5090_baseline_control_20260930-145628/epoch_metrics.csv",
+    "plots_dir": "task3_gan/parth/outputs/plots/task3_parth_exp05_5090_baseline_control_20260930-145628"
+  },
+  "checkpoints": {
+    "latest": "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/latest.pt",
+    "full": [
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_010.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_020.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_030.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_040.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_050.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/full_epoch_060.pt"
+    ],
+    "generators": [
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_005.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_010.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_015.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_020.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_025.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_030.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_035.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_040.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_045.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_050.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_055.pt",
+      "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/generators_epoch_060.pt"
+    ],
+    "final_generators": "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators.pt"
+  },
+  "sessions": [
+    {
+      "session_id": "initial",
+      "raw_log": "reproducibility/raw_logs/task3_parth_exp05_5090_baseline_control_20260930-145628.log",
+      "command": "python task3_gan/parth/src/train.py --config task3_gan/parth/configs/exp05_5090_baseline_control.yaml --run-id task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "started": "2026-09-30T14:56:32-07:00",
+      "status": "completed",
+      "resumed_from": null,
+      "ended": "2026-09-30T16:23:39-07:00",
+      "wall_seconds": 5227.34,
+      "peak_memory": {
+        "gpu_peak_allocated_mb": 9028.8,
+        "gpu_peak_reserved_mb": 9784.0,
+        "cpu_peak_rss_mb": null
+      },
+      "end_epoch": 60
+    }
+  ],
+  "eval": [
+    {
+      "tag": "final_generators_exp05",
+      "metrics": "task3_gan/parth/outputs/eval/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators_exp05/metrics.json",
+      "checkpoint": "task3_gan/parth/checkpoints/task3_parth_exp05_5090_baseline_control_20260930-145628/final_generators.pt",
+      "raw_log": "reproducibility/raw_logs/task3_parth_exp05_5090_baseline_control_20260930-145628_eval_final_generators_exp05_20260930-162436.log",
+      "evaluated_at": "2026-09-30T16:27:19-07:00"
+    }
+  ],
+  "updated": "2026-09-30T16:23:39-07:00",
+  "progress": {
+    "epochs_completed": 60,
+    "epochs_total": 60,
+    "global_step": 60000
+  },
+  "totals": {
+    "epochs_completed": 60,
+    "global_step": 60000,
+    "train_loop_seconds": 4245.34,
+    "images_seen": 120000,
+    "images_per_sec": 28.266,
+    "nonfinite_steps": 0,
+    "spike_steps": 38,
+    "d_saturated_steps": 6,
+    "wall_seconds_all_sessions": 5227.34,
+    "peak_memory": {
+      "gpu_peak_allocated_mb": 9028.8,
+      "gpu_peak_reserved_mb": 9784.0,
+      "cpu_peak_rss_mb": null
+    }
+  }
+}

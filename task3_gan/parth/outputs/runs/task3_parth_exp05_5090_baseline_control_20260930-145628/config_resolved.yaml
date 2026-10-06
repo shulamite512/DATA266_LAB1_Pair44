@@ -1,0 +1,86 @@
+member: parth
+run_name: exp05_5090_baseline_control
+seed: 8503
+paths:
+  monet_dir: task3_gan/data/monet_jpg
+  photo_dir: task3_gan/data/photo_jpg
+  real_stats: task3_gan/data/real_stats.npz
+  checkpoints_dir: task3_gan/parth/checkpoints
+  outputs_dir: task3_gan/parth/outputs
+  reports_dir: task3_gan/parth
+  raw_logs_dir: reproducibility/raw_logs
+  manifests_dir: reproducibility/manifests
+data:
+  image_size: 256
+  load_size: 286
+  hflip: true
+  num_workers: 4
+  steps_per_epoch: 1000
+  max_monet: null
+  max_photo: null
+  extensions:
+  - .jpg
+  - .jpeg
+  - .png
+model:
+  ngf: 64
+  ndf: 64
+  n_res_blocks: 9
+  n_d_layers: 3
+  norm: instance
+  upsample: deconv
+  init_gain: 0.02
+loss:
+  gan_mode: lsgan
+  lambda_cycle: 10.0
+  lambda_identity: 5.0
+train:
+  batch_size: 1
+  lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  n_epochs_constant: 30
+  n_epochs_decay: 30
+  pool_size: 50
+  amp: none
+  allow_tf32: true
+  cudnn_benchmark: true
+  grad_clip_norm: null
+  max_steps: null
+  step_log_every: 10
+  print_every: 100
+  sample_every_epochs: 1
+  checkpoint_every_epochs: 5
+  full_checkpoint_every_epochs: 10
+  max_consecutive_nonfinite: 20
+  spike_factor: 3.0
+  spike_warmup_steps: 500
+  num_sample_images: 4
+eval:
+  batch_size: 16
+  num_workers: 4
+  max_eval_monet: null
+  max_eval_photo: null
+  kid_subset_size: 1000
+  kid_subsets: 100
+  pr_k: 3
+  mifid_cosine_eps: 0.1
+  lpips_net: alex
+  lpips_allow_random_backbone: false
+inference:
+  batch_size: 16
+  jpg_quality: 95
+submission:
+  direction: B2A
+  expected_count: null
+human_audit:
+  per_direction:
+    B2A: 15
+    A2B: 15
+  raters:
+  - R1
+  - R2
+  score_min: 1
+  score_max: 5
+_config_file: task3_gan/parth/configs/exp05_5090_baseline_control.yaml
+_overrides: []

@@ -1,0 +1,749 @@
+{
+  "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "cuda_runtime": "13.0",
+    "cudnn": 91900,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "capability": "sm_120",
+    "python": "3.12.10",
+    "config_hash": "dcfb462b504c1704"
+  },
+  "n_eval": 300,
+  "control": {
+    "FID_A2B": 103.09256329850902,
+    "FID_B2A": 103.02015942255423,
+    "MiFID_A2B": 0.4228598177433014,
+    "MiFID_B2A": 0.41448909044265747,
+    "submission_FID": 103.05636136053162,
+    "submission_MiFID": 0.41867445409297943,
+    "combined_score": 51.7375179073123
+  },
+  "report": "task3_gan/parth/checkpoint_sweep_exp05.csv",
+  "reference_combined": 52.5732635808473,
+  "inventory": [
+    {
+      "file": "final_generators.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 60,
+      "global_step": 60000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91065867,
+      "sha256": "e979e90002d17e9c9cd3e80c49a10bad4dfa82e5da20399a73d35b54b7a05b92",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_010.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 10,
+      "global_step": 10000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247899,
+      "sha256": "03eb6f3f9397baa5f2f29b5285b509b122f8b91a877556bdf5f8d54b6107b0ba",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_020.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 20,
+      "global_step": 20000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247899,
+      "sha256": "2422836a4bcf72518ec0c6ff4a15c4c61c4a1db5289a9a0f19a3e2bb0a53a2a4",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_030.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 30,
+      "global_step": 30000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247899,
+      "sha256": "79b7b5b5735ee0329957989b307ade198527bb8380cc9977eac85c95b36776bc",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_040.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 40,
+      "global_step": 40000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247899,
+      "sha256": "1b6c5c463e6097b1ab1c35c1c514b2b3183555acca1dbfd1eb305c9361a24209",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_050.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 50,
+      "global_step": 50000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247899,
+      "sha256": "6f22c929528201be2dbe1408d458029de6763b219fb8747dbf4783a559432b10",
+      "readable": true
+    },
+    {
+      "file": "full_epoch_060.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 60,
+      "global_step": 60000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418247963,
+      "sha256": "7b40b340ff2e8d28946bee24c5c0a008d109fcf9ca0eec1489243eb337982cef",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_005.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 5,
+      "global_step": 5000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "4577bfdaabe30c85b14b0dc3e7e11ec26174da6c9516706ac7d7c4b8a315e746",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_010.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 10,
+      "global_step": 10000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "cddb2e05efd98153c2b7c4bb078ed489cd98ea1b41c7001d055194cd050897f1",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_015.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 15,
+      "global_step": 15000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "4747e8d03744d553169cd4286135648c522b0ba29161df85a7b6b33773c9bdd7",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_020.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 20,
+      "global_step": 20000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "032881cc1b86f303defbae6b55ff18f4bc539d153207804abd9c92736a38b372",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_025.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 25,
+      "global_step": 25000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "3a7577ad2dcaad7b85674b5e5a9e7b297997ad182b28498a4fcb736312d3df9b",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_030.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 30,
+      "global_step": 30000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "106034376ee56907c39cbec4df30eab616f867a341871fc64a43f64497c94b93",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_035.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 35,
+      "global_step": 35000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "4677c442c07a95a7d747c2c1eafe773498ecec9a31ba7cfb4b17106c3be49054",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_040.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 40,
+      "global_step": 40000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "7dc8760de2424e0c1c6eb4d3c82e86e4aa0b960d2f35377e19d8ef9bd06338bf",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_045.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 45,
+      "global_step": 45000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "ca8311a053ddc83a225d10a22d5ce3af0f61f41b9d4b1312bf88c49c9325c68f",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_050.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 50,
+      "global_step": 50000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "2db5f9e3f5980bc9db63fbfda63ca3287a64ae7b5a113635aa3bcfd69773b8aa",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_055.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 55,
+      "global_step": 55000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "4bd88c6271a956e61ec3a2eb9ac30c2cb01f05a5d93fc6f56d2eeeb5dd155e0c",
+      "readable": true
+    },
+    {
+      "file": "generators_epoch_060.pt",
+      "format": "task3_cyclegan_generators_v1",
+      "epoch": 60,
+      "global_step": 60000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 91066339,
+      "sha256": "4dbef4e9abed8fa8d96ae74197cc7790d40be92b0c498bda2404bbb6261ae7a5",
+      "readable": true
+    },
+    {
+      "file": "latest.pt",
+      "format": "task3_cyclegan_full_v1",
+      "epoch": 60,
+      "global_step": 60000,
+      "config_hash": "dcfb462b504c1704",
+      "bytes": 418244171,
+      "sha256": "45caf8cd15a418b283081d7213fbf31596c9fc0558e1fc76ecbbe24b965dec78",
+      "readable": true
+    }
+  ],
+  "results": [
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_060",
+      "checkpoint": "generators_epoch_060.pt",
+      "checkpoint_sha256": "4dbef4e9abed8fa8d96ae74197cc7790d40be92b0c498bda2404bbb6261ae7a5",
+      "epoch": 60,
+      "global_step": 60000,
+      "FID_A2B": 103.09256329850902,
+      "FID_B2A": 103.02015942255423,
+      "MiFID_A2B": 0.4228598177433014,
+      "MiFID_B2A": 0.41448909044265747,
+      "submission_FID": 103.05636136053162,
+      "submission_MiFID": 0.41867445409297943,
+      "combined_score": 51.7375179073123,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 34.5
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "final_generators_epoch_060",
+      "checkpoint": "final_generators.pt",
+      "checkpoint_sha256": "e979e90002d17e9c9cd3e80c49a10bad4dfa82e5da20399a73d35b54b7a05b92",
+      "epoch": 60,
+      "global_step": 60000,
+      "FID_A2B": 103.09256329850902,
+      "FID_B2A": 103.02015942255423,
+      "MiFID_A2B": 0.4228598177433014,
+      "MiFID_B2A": 0.41448909044265747,
+      "submission_FID": 103.05636136053162,
+      "submission_MiFID": 0.41867445409297943,
+      "combined_score": 51.7375179073123,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 36.5
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_005",
+      "checkpoint": "generators_epoch_005.pt",
+      "checkpoint_sha256": "4577bfdaabe30c85b14b0dc3e7e11ec26174da6c9516706ac7d7c4b8a315e746",
+      "epoch": 5,
+      "global_step": 5000,
+      "FID_A2B": 218.25975889370272,
+      "FID_B2A": 155.1966939764966,
+      "MiFID_A2B": 0.49716106057167053,
+      "MiFID_B2A": 0.4202744960784912,
+      "submission_FID": 186.72822643509966,
+      "submission_MiFID": 0.45871777832508087,
+      "combined_score": 93.59347210671237,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 33.4
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_010",
+      "checkpoint": "generators_epoch_010.pt",
+      "checkpoint_sha256": "cddb2e05efd98153c2b7c4bb078ed489cd98ea1b41c7001d055194cd050897f1",
+      "epoch": 10,
+      "global_step": 10000,
+      "FID_A2B": 153.87866200245404,
+      "FID_B2A": 149.60777708534684,
+      "MiFID_A2B": 0.44154927134513855,
+      "MiFID_B2A": 0.42728373408317566,
+      "submission_FID": 151.74321954390044,
+      "submission_MiFID": 0.4344165027141571,
+      "combined_score": 76.0888180233073,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 36.1
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_015",
+      "checkpoint": "generators_epoch_015.pt",
+      "checkpoint_sha256": "4747e8d03744d553169cd4286135648c522b0ba29161df85a7b6b33773c9bdd7",
+      "epoch": 15,
+      "global_step": 15000,
+      "FID_A2B": 132.1606482328982,
+      "FID_B2A": 127.94626857966986,
+      "MiFID_A2B": 0.4396740794181824,
+      "MiFID_B2A": 0.42008525133132935,
+      "submission_FID": 130.05345840628405,
+      "submission_MiFID": 0.42987966537475586,
+      "combined_score": 65.2416690358294,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 30.0
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_020",
+      "checkpoint": "generators_epoch_020.pt",
+      "checkpoint_sha256": "032881cc1b86f303defbae6b55ff18f4bc539d153207804abd9c92736a38b372",
+      "epoch": 20,
+      "global_step": 20000,
+      "FID_A2B": 114.53781229337224,
+      "FID_B2A": 128.7331116768483,
+      "MiFID_A2B": 0.4353870749473572,
+      "MiFID_B2A": 0.41838568449020386,
+      "submission_FID": 121.63546198511027,
+      "submission_MiFID": 0.4268863797187805,
+      "combined_score": 61.031174182414524,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 29.6
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_025",
+      "checkpoint": "generators_epoch_025.pt",
+      "checkpoint_sha256": "3a7577ad2dcaad7b85674b5e5a9e7b297997ad182b28498a4fcb736312d3df9b",
+      "epoch": 25,
+      "global_step": 25000,
+      "FID_A2B": 121.09938632645692,
+      "FID_B2A": 109.38798908200592,
+      "MiFID_A2B": 0.43005743622779846,
+      "MiFID_B2A": 0.41141051054000854,
+      "submission_FID": 115.24368770423142,
+      "submission_MiFID": 0.4207339733839035,
+      "combined_score": 57.83221083880766,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 31.4
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_030",
+      "checkpoint": "generators_epoch_030.pt",
+      "checkpoint_sha256": "106034376ee56907c39cbec4df30eab616f867a341871fc64a43f64497c94b93",
+      "epoch": 30,
+      "global_step": 30000,
+      "FID_A2B": 107.70150277962303,
+      "FID_B2A": 114.31923605987973,
+      "MiFID_A2B": 0.4265051782131195,
+      "MiFID_B2A": 0.4111679196357727,
+      "submission_FID": 111.01036941975138,
+      "submission_MiFID": 0.4188365489244461,
+      "combined_score": 55.714602984337915,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 32.2
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_035",
+      "checkpoint": "generators_epoch_035.pt",
+      "checkpoint_sha256": "4677c442c07a95a7d747c2c1eafe773498ecec9a31ba7cfb4b17106c3be49054",
+      "epoch": 35,
+      "global_step": 35000,
+      "FID_A2B": 109.61353427764865,
+      "FID_B2A": 107.33882449921633,
+      "MiFID_A2B": 0.4280419945716858,
+      "MiFID_B2A": 0.41166138648986816,
+      "submission_FID": 108.47617938843248,
+      "submission_MiFID": 0.419851690530777,
+      "combined_score": 54.44801553948163,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 31.6
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_040",
+      "checkpoint": "generators_epoch_040.pt",
+      "checkpoint_sha256": "7dc8760de2424e0c1c6eb4d3c82e86e4aa0b960d2f35377e19d8ef9bd06338bf",
+      "epoch": 40,
+      "global_step": 40000,
+      "FID_A2B": 110.48639188969909,
+      "FID_B2A": 108.05288931945351,
+      "MiFID_A2B": 0.43035823106765747,
+      "MiFID_B2A": 0.41626083850860596,
+      "submission_FID": 109.2696406045763,
+      "submission_MiFID": 0.4233095347881317,
+      "combined_score": 54.846475069682214,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 33.0
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_045",
+      "checkpoint": "generators_epoch_045.pt",
+      "checkpoint_sha256": "ca8311a053ddc83a225d10a22d5ce3af0f61f41b9d4b1312bf88c49c9325c68f",
+      "epoch": 45,
+      "global_step": 45000,
+      "FID_A2B": 105.40178141090277,
+      "FID_B2A": 103.12979999448586,
+      "MiFID_A2B": 0.4277898669242859,
+      "MiFID_B2A": 0.4127156734466553,
+      "submission_FID": 104.26579070269432,
+      "submission_MiFID": 0.4202527701854706,
+      "combined_score": 52.343021736439894,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 33.4
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_050",
+      "checkpoint": "generators_epoch_050.pt",
+      "checkpoint_sha256": "2db5f9e3f5980bc9db63fbfda63ca3287a64ae7b5a113635aa3bcfd69773b8aa",
+      "epoch": 50,
+      "global_step": 50000,
+      "FID_A2B": 102.59500602816553,
+      "FID_B2A": 104.41916823614287,
+      "MiFID_A2B": 0.4242819845676422,
+      "MiFID_B2A": 0.4165421724319458,
+      "submission_FID": 103.5070871321542,
+      "submission_MiFID": 0.420412078499794,
+      "combined_score": 51.963749605326996,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 34.0
+    },
+    {
+      "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+      "label": "epoch_055",
+      "checkpoint": "generators_epoch_055.pt",
+      "checkpoint_sha256": "4bd88c6271a956e61ec3a2eb9ac30c2cb01f05a5d93fc6f56d2eeeb5dd155e0c",
+      "epoch": 55,
+      "global_step": 55000,
+      "FID_A2B": 102.80094545318329,
+      "FID_B2A": 103.37439754865483,
+      "MiFID_A2B": 0.4216497242450714,
+      "MiFID_B2A": 0.41506749391555786,
+      "submission_FID": 103.08767150091906,
+      "submission_MiFID": 0.41835860908031464,
+      "combined_score": 51.753015054999686,
+      "course_device": "cuda",
+      "course_counts": [
+        300,
+        300,
+        300,
+        300
+      ],
+      "validation": {
+        "A2B": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        },
+        "B2A": {
+          "count": 300,
+          "names_match_sources": true,
+          "format_failures": [],
+          "nonfinite_values": 0,
+          "ok": true
+        }
+      },
+      "evaluator": "instructor course evaluator via evaluation/run_course_evaluation.py (unchanged math)",
+      "seconds": 31.6
+    }
+  ],
+  "selection_bias_note": "Checkpoints are ranked on the same 300-image course evaluation set used for the final score, so the best-of-N result is optimistically biased; this is competition optimization, not an independent test-set estimate."
+}

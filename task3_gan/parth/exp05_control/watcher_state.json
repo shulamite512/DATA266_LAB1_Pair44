@@ -1,0 +1,119 @@
+{
+  "run_id": "task3_parth_exp05_5090_baseline_control_20260930-145628",
+  "train_launcher_pid": 64668,
+  "train_started": "2026-09-30T14:56:28-07:00",
+  "raw_log": "reproducibility/raw_logs/task3_parth_exp05_5090_baseline_control_20260930-145628.log",
+  "updated": "2026-09-30T16:34:22-07:00",
+  "train_exit_code": 0,
+  "train_finished": "2026-09-30T16:24:28-07:00",
+  "verification": {
+    "manifest completed": true,
+    "epochs 60": true,
+    "steps 60000": true,
+    "no non-finite steps": true,
+    "config hash matches config file": true,
+    "final_generators epoch/step": true,
+    "final_generators strict load": true,
+    "final == latest generator weights": true,
+    "stored LRs: G 0.0002, D 0.0002": true,
+    "LR reached 0 after the last epoch": true,
+    "seed 8503": true,
+    "loss weights as configured": true,
+    "20 checkpoint files": true
+  },
+  "final_generators_sha256": "e979e90002d17e9c9cd3e80c49a10bad4dfa82e5da20399a73d35b54b7a05b92",
+  "totals": {
+    "epochs_completed": 60,
+    "global_step": 60000,
+    "train_loop_seconds": 4245.34,
+    "images_seen": 120000,
+    "images_per_sec": 28.266,
+    "nonfinite_steps": 0,
+    "spike_steps": 38,
+    "d_saturated_steps": 6,
+    "wall_seconds_all_sessions": 5227.34,
+    "peak_memory": {
+      "gpu_peak_allocated_mb": 9028.8,
+      "gpu_peak_reserved_mb": 9784.0,
+      "cpu_peak_rss_mb": null
+    }
+  },
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "cudnn": 91900,
+    "gpu": "NVIDIA GeForce RTX 5090"
+  },
+  "course": {
+    "FID_A2B": 103.09256329850902,
+    "FID_B2A": 103.02015942255423,
+    "MiFID_A2B": 0.4228598177433014,
+    "MiFID_B2A": 0.41448909044265747,
+    "submission_FID": 103.05636136053162,
+    "submission_MiFID": 0.41867445409297943,
+    "combined_score": 51.7375179073123,
+    "course_device": "cuda",
+    "course_counts": [
+      300,
+      300,
+      300,
+      300
+    ]
+  },
+  "validation": {
+    "A2B": {
+      "count": 300,
+      "expected": 300,
+      "names_ok": true,
+      "format_failures": 0,
+      "byte_copies": 0,
+      "src_mad_min": 7.296712398529053,
+      "src_fail": 0,
+      "src_warn": 0,
+      "tgt_mad_min": 18.40877342224121,
+      "tgt_fail": 0,
+      "near_blank": 0
+    },
+    "B2A": {
+      "count": 7038,
+      "expected": 7038,
+      "names_ok": true,
+      "format_failures": 0,
+      "byte_copies": 0,
+      "src_mad_min": 4.877604007720947,
+      "src_fail": 0,
+      "src_warn": 1,
+      "tgt_mad_min": 16.6884765625,
+      "tgt_fail": 0,
+      "near_blank": 0
+    },
+    "status": "WARN",
+    "warnings": [
+      "B2A: 1 outputs with source MAD < 5"
+    ]
+  },
+  "internal": {
+    "fid_A2B": 81.07001850908875,
+    "kid_mean_A2B": 0.017564932804830753,
+    "precision_A2B": 0.5433333516120911,
+    "recall_A2B": 0.3557828962802887,
+    "cycle_l1_A2B": 0.0806734320273002,
+    "content_cosine_mean_A2B": 0.81468337032289,
+    "fid_B2A": 85.09325794138476,
+    "kid_mean_B2A": 0.012560902460025508,
+    "precision_B2A": 0.3604717254638672,
+    "recall_B2A": 0.5366666913032532,
+    "cycle_l1_B2A": 0.10182560819832905,
+    "content_cosine_mean_B2A": 0.7524819223480117
+  },
+  "reference_check": "MEASURED",
+  "official_ref_B2A": 83.78193345491596,
+  "lpips": [
+    "OK",
+    "OK"
+  ],
+  "delta_vs_exp00": -0.8357456735350013,
+  "pct_vs_exp00": -1.5896781303100755,
+  "protected_verification": "PASS",
+  "result": "COMPLETED"
+}
