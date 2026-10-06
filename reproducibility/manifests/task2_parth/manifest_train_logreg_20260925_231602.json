@@ -1,0 +1,223 @@
+{
+  "model": "logreg",
+  "stage": "train",
+  "created": "2026-09-25T23:16:02",
+  "git_commit": "3e96e78887995965eb03081831a19249ec649100",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "numpy": "2.2.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "nltk": "3.10.3",
+    "PyYAML": "6.0.2",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "datasets": "5.0.1"
+  },
+  "hardware": {
+    "python": "3.11.13",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "x86_64",
+    "cpu_count": 24,
+    "torch": "2.7.1+cu128",
+    "torch_cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5090",
+    "gpu_count": 1,
+    "gpu_capability": "sm_120",
+    "gpu_total_mem_gb": 31.84
+  },
+  "config": {
+    "seed": 8503,
+    "paths": {
+      "data_dir": "task2_sentiment/data",
+      "member_dir": "task2_sentiment/parth",
+      "smoke_dir": "task2_sentiment/parth/smoke_runs"
+    },
+    "data": {
+      "hf_names": [
+        "fancyzhx/yelp_polarity",
+        "yelp_polarity"
+      ],
+      "val_fraction": 0.05,
+      "train_subset": null,
+      "test_subset": null
+    },
+    "preprocessing": {
+      "lowercase": true,
+      "remove_punctuation": true,
+      "remove_stopwords": true,
+      "keep_stopwords": [
+        "not",
+        "no",
+        "nor",
+        "never",
+        "nothing",
+        "none",
+        "cannot",
+        "neither",
+        "nobody",
+        "noone",
+        "nowhere"
+      ],
+      "stemming": true,
+      "min_tokens": 1
+    },
+    "tokenizer": {
+      "max_vocab": 50000,
+      "min_freq": 2,
+      "max_length": 256
+    },
+    "eda": {
+      "length_bins": 60
+    },
+    "slices": {
+      "short_max_words": 50,
+      "long_min_words": 300,
+      "negation_words": [
+        "not",
+        "no",
+        "never",
+        "nothing",
+        "none",
+        "nobody",
+        "neither",
+        "nor",
+        "cannot",
+        "without"
+      ],
+      "contrast_words": [
+        "but",
+        "however",
+        "although",
+        "though",
+        "except",
+        "yet",
+        "unfortunately"
+      ]
+    },
+    "evaluation": {
+      "threshold": 0.5,
+      "ece_bins": 15,
+      "bootstrap_samples": 1000,
+      "baseline_model": "logreg",
+      "error_review_k": 5,
+      "min_slice_n": 100
+    },
+    "models": {
+      "logreg": {
+        "type": "logreg",
+        "tfidf": {
+          "ngram_range": [
+            1,
+            2
+          ],
+          "max_features": 200000,
+          "min_df": 3,
+          "sublinear_tf": true
+        },
+        "C": 1.0,
+        "max_iter": 1000,
+        "solver": "lbfgs"
+      },
+      "neural": {
+        "type": "neural",
+        "arch": "meanpool_mlp",
+        "embedding_dim": 128,
+        "hidden_dim": 256,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      },
+      "neural_cnn": {
+        "type": "neural",
+        "arch": "textcnn",
+        "embedding_dim": 128,
+        "num_filters": 128,
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "dropout": 0.3,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      }
+    },
+    "smoke": {
+      "n_train": 240,
+      "n_test": 80,
+      "epochs": 2,
+      "batch_size": 32,
+      "bootstrap_samples": 50
+    }
+  },
+  "summary": {
+    "model": "logreg",
+    "type": "logreg",
+    "param_count": 200001,
+    "vocab_size": 200000,
+    "train_loss": 0.1384784260656187,
+    "val_loss": 0.15768936980285583,
+    "val_accuracy": 0.9436785714285715,
+    "converged_iterations": 26,
+    "training_time_s": 58.413711735000106,
+    "train_examples_per_sec": 9106.85152851294,
+    "epochs": 1,
+    "checkpoint": "task2_sentiment/parth/checkpoints/logreg_tfidf.joblib",
+    "checkpoint_sha256": "5a9b23959ee0ab73ff175557da2b07f4cf95382c3861eb71563acf3e64fd6a35",
+    "seed": 8503,
+    "smoke": false,
+    "hyperparameters": {
+      "type": "logreg",
+      "tfidf": {
+        "ngram_range": [
+          1,
+          2
+        ],
+        "max_features": 200000,
+        "min_df": 3,
+        "sublinear_tf": true
+      },
+      "C": 1.0,
+      "max_iter": 1000,
+      "solver": "lbfgs"
+    },
+    "train_device": "CPU (x86_64, 24 cores)",
+    "hardware": {
+      "python": "3.11.13",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "cpu_count": 24,
+      "torch": "2.7.1+cu128",
+      "torch_cuda_build": "12.8",
+      "cuda_available": true,
+      "gpu_name": "NVIDIA GeForce RTX 5090",
+      "gpu_count": 1,
+      "gpu_capability": "sm_120",
+      "gpu_total_mem_gb": 31.84
+    },
+    "train_peak_memory": {
+      "gpu_peak_mb": null,
+      "cpu_peak_rss_mb": 7932.6
+    },
+    "train_log": "task2_sentiment/parth/logs/train_logreg_20260925_231345.log",
+    "n_train": 531965,
+    "n_val": 28000
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "row": {
+    "model": "neural_cnn",
+    "type": "neural",
+    "arch": "textcnn",
+    "hyperparameters": "{'type': 'neural', 'arch': 'textcnn', 'embedding_dim': 128, 'num_filters': 128, 'kernel_sizes': [3, 4, 5], 'dropout': 0.3, 'batch_size': 128, 'eval_batch_size': 512, 'learning_rate': 0.0003, 'weight_decay': 0.01, 'epochs': 5, 'grad_clip': 1.0, 'num_workers': 2, 'select_by': 'val_loss', 'log_every': 200}",
+    "seed": 8503,
+    "n_test": 38000,
+    "accuracy": 0.9378947368421052,
+    "precision_macro": 0.9379611662094653,
+    "recall_macro": 0.9378947368421053,
+    "f1_macro": 0.9378923817418661,
+    "precision_micro": 0.9378947368421052,
+    "recall_micro": 0.9378947368421052,
+    "f1_micro": 0.9378947368421052,
+    "precision_weighted": 0.9379611662094652,
+    "recall_weighted": 0.9378947368421052,
+    "f1_weighted": 0.937892381741866,
+    "roc_auc": 0.984809833795014,
+    "pr_auc": 0.9852903578763151,
+    "mcc": 0.8758559005324,
+    "brier": 0.04606485129294632,
+    "ece": 0.005870093075317377,
+    "tn": 17703,
+    "fp": 1297,
+    "fn": 1063,
+    "tp": 17937,
+    "accuracy_ci95_low": 0.9353671052631579,
+    "accuracy_ci95_high": 0.9401315789473684,
+    "macro_f1_ci95_low": 0.9353666789985413,
+    "macro_f1_ci95_high": 0.9401306336001224,
+    "mcc_ci95_low": 0.8708106515210073,
+    "mcc_ci95_high": 0.8803301352321392,
+    "mcnemar_vs_baseline_p": 2.8069431031876366e-18,
+    "mcnemar_vs_baseline_stat": 76.02078693392724,
+    "param_count": 6597762,
+    "train_loss": 0.1513877294824513,
+    "val_loss": 0.16433442556858063,
+    "training_time_s": 127.05814826099959,
+    "train_examples_per_sec": 20933.919126038698,
+    "inference_time_s": 1.3184795029992529,
+    "inference_examples_per_sec": 28821.07754694578,
+    "train_peak_gpu_mb": 486.0,
+    "train_peak_cpu_rss_mb": 2904.0,
+    "eval_peak_gpu_mb": 377.7,
+    "eval_peak_cpu_rss_mb": 1463.3,
+    "train_device": "NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)",
+    "eval_device": "NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)",
+    "checkpoint": "task2_sentiment/parth/checkpoints/best_neural_cnn.pt",
+    "checkpoint_sha256": "7f34ff61f82c63b78d93412792a6b14e22c70f55ffc5f57af0ec650d02f61814",
+    "train_log": "task2_sentiment/parth/logs/train_neural_cnn_20260925_231732.log",
+    "eval_log": "task2_sentiment/parth/logs/eval_neural_cnn_20260925_232228.log",
+    "slice_all_n": 38000,
+    "slice_all_macro_f1": 0.9378923817418661,
+    "slice_all_error_rate": 0.06210526315789474,
+    "slice_length_short_n": 9287,
+    "slice_length_short_macro_f1": 0.9298450217136953,
+    "slice_length_short_error_rate": 0.06719069667276839,
+    "slice_length_medium_n": 25377,
+    "slice_length_medium_macro_f1": 0.9389281325722267,
+    "slice_length_medium_error_rate": 0.06103952397840564,
+    "slice_length_long_n": 3336,
+    "slice_length_long_macro_f1": 0.9372314955353437,
+    "slice_length_long_error_rate": 0.05605515587529976,
+    "slice_has_negation_n": 28544,
+    "slice_has_negation_macro_f1": 0.9335495950927175,
+    "slice_has_negation_error_rate": 0.06453195067264574,
+    "slice_no_negation_n": 9456,
+    "slice_no_negation_macro_f1": 0.9229464480104101,
+    "slice_no_negation_error_rate": 0.054780033840947547,
+    "slice_has_contrast_n": 22770,
+    "slice_has_contrast_macro_f1": 0.9306100915005662,
+    "slice_has_contrast_error_rate": 0.06877470355731226,
+    "slice_no_contrast_n": 15230,
+    "slice_no_contrast_macro_f1": 0.9465632964276629,
+    "slice_no_contrast_error_rate": 0.05213394615889692
+  },
+  "bootstrap_ci95": {
+    "accuracy": [
+      0.9353671052631579,
+      0.9401315789473684
+    ],
+    "macro_f1": [
+      0.9353666789985413,
+      0.9401306336001224
+    ],
+    "mcc": [
+      0.8708106515210073,
+      0.8803301352321392
+    ]
+  },
+  "mcnemar": {
+    "b_a_right_b_wrong": 834,
+    "c_a_wrong_b_right": 513,
+    "statistic": 76.02078693392724,
+    "p_value": 2.8069431031876366e-18,
+    "method": "chi2 with continuity correction",
+    "baseline": "logreg",
+    "model": "neural_cnn",
+    "n": 38000
+  },
+  "calibration_bins": [
+    {
+      "bin": 0,
+      "lo": 0.5,
+      "hi": 0.5333333333333333,
+      "count": 379,
+      "accuracy": 0.5488126649076517,
+      "confidence": 0.5156371036745943
+    },
+    {
+      "bin": 1,
+      "lo": 0.5333333333333333,
+      "hi": 0.5666666666666667,
+      "count": 397,
+      "accuracy": 0.5390428211586902,
+      "confidence": 0.5498678970246832
+    },
+    {
+      "bin": 2,
+      "lo": 0.5666666666666667,
+      "hi": 0.6,
+      "count": 374,
+      "accuracy": 0.5427807486631016,
+      "confidence": 0.5822574571173459
+    },
+    {
+      "bin": 3,
+      "lo": 0.6,
+      "hi": 0.6333333333333333,
+      "count": 445,
+      "accuracy": 0.5910112359550562,
+      "confidence": 0.6169979664047113
+    },
+    {
+      "bin": 4,
+      "lo": 0.6333333333333333,
+      "hi": 0.6666666666666666,
+      "count": 449,
+      "accuracy": 0.6792873051224945,
+      "confidence": 0.6500412239661992
+    },
+    {
+      "bin": 5,
+      "lo": 0.6666666666666666,
+      "hi": 0.7,
+      "count": 462,
+      "accuracy": 0.6471861471861472,
+      "confidence": 0.6837117499732351
+    },
+    {
+      "bin": 6,
+      "lo": 0.7,
+      "hi": 0.7333333333333334,
+      "count": 496,
+      "accuracy": 0.7600806451612904,
+      "confidence": 0.7157287369332006
+    },
+    {
+      "bin": 7,
+      "lo": 0.7333333333333334,
+      "hi": 0.7666666666666666,
+      "count": 530,
+      "accuracy": 0.7320754716981132,
+      "confidence": 0.7501978441791715
+    },
+    {
+      "bin": 8,
+      "lo": 0.7666666666666666,
+      "hi": 0.8,
+      "count": 610,
+      "accuracy": 0.780327868852459,
+      "confidence": 0.7836689834956263
+    },
+    {
+      "bin": 9,
+      "lo": 0.8,
+      "hi": 0.8333333333333333,
+      "count": 752,
+      "accuracy": 0.8085106382978723,
+      "confidence": 0.8172305575869185
+    },
+    {
+      "bin": 10,
+      "lo": 0.8333333333333333,
+      "hi": 0.8666666666666667,
+      "count": 881,
+      "accuracy": 0.8059023836549376,
+      "confidence": 0.8505401671372531
+    },
+    {
+      "bin": 11,
+      "lo": 0.8666666666666667,
+      "hi": 0.9,
+      "count": 1128,
+      "accuracy": 0.8865248226950354,
+      "confidence": 0.8843487009987341
+    },
+    {
+      "bin": 12,
+      "lo": 0.9,
+      "hi": 0.9333333333333333,
+      "count": 1632,
+      "accuracy": 0.9136029411764706,
+      "confidence": 0.9177413505511176
+    },
+    {
+      "bin": 13,
+      "lo": 0.9333333333333333,
+      "hi": 0.9666666666666667,
+      "count": 3123,
+      "accuracy": 0.9503682356708293,
+      "confidence": 0.9522712632078526
+    },
+    {
+      "bin": 14,
+      "lo": 0.9666666666666667,
+      "hi": 1.0,
+      "count": 26342,
+      "accuracy": 0.9919520157922709,
+      "confidence": 0.9940468182501121
+    }
+  ],
+  "confusion_matrix": [
+    [
+      17703,
+      1297
+    ],
+    [
+      1063,
+      17937
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n    negative     0.9434    0.9317    0.9375     19000\n    positive     0.9326    0.9441    0.9383     19000\n\n    accuracy                         0.9379     38000\n   macro avg     0.9380    0.9379    0.9379     38000\nweighted avg     0.9380    0.9379    0.9379     38000\n",
+  "worst_slice": "has_contrast"
+}

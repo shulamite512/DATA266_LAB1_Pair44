@@ -1,0 +1,99 @@
+# Task 2: Yelp Polarity sentiment classification (member: parth)
+# Every path is relative to the repo root. Run all commands from the repo root.
+
+seed: 8503
+
+paths:
+  data_dir: task2_sentiment/data            # shared raw data: train.csv, test.csv (optional)
+  member_dir: task2_sentiment/parth         # real runs write here
+  smoke_dir: task2_sentiment/parth/smoke_runs  # smoke runs write here (gitignored)
+
+data:
+  hf_names: [fancyzhx/yelp_polarity, yelp_polarity]  # tried in order if no local CSVs
+  val_fraction: 0.05        # stratified split carved from the official train set
+  train_subset: null        # integer to subsample train for a quick real-data run
+  test_subset: null         # keep null for final numbers
+
+preprocessing:
+  lowercase: true
+  remove_punctuation: true
+  remove_stopwords: true
+  # Words protected from stopword removal (sklearn's list contains these).
+  # Quoted on purpose: unquoted `no` is parsed by YAML as the boolean false.
+  keep_stopwords: ["not", "no", "nor", "never", "nothing", "none", "cannot", "neither", "nobody", "noone", "nowhere"]
+  stemming: true            # NLTK PorterStemmer
+  min_tokens: 1             # training reviews with fewer processed tokens are dropped
+
+tokenizer:
+  max_vocab: 50000          # includes <pad> and <unk>
+  min_freq: 2
+  max_length: 256           # tokens kept per review (head of the review)
+
+eda:
+  length_bins: 60
+
+slices:
+  short_max_words: 50       # raw words <= this -> "short"
+  long_min_words: 300       # raw words >= this -> "long"
+  negation_words: ["not", "no", "never", "nothing", "none", "nobody", "neither", "nor", "cannot", "without"]
+  contrast_words: ["but", "however", "although", "though", "except", "yet", "unfortunately"]
+
+evaluation:
+  threshold: 0.5
+  ece_bins: 15
+  bootstrap_samples: 1000
+  baseline_model: logreg    # McNemar compares every other model against this one
+  error_review_k: 5         # 5 per bucket x 4 buckets = 20 reviewed errors
+  min_slice_n: 100          # slices smaller than this are not picked as "worst slice"
+
+models:
+  logreg:                   # Model A: baseline
+    type: logreg
+    tfidf:
+      ngram_range: [1, 2]
+      max_features: 200000
+      min_df: 3
+      sublinear_tf: true
+    C: 1.0
+    max_iter: 1000
+    solver: lbfgs
+
+  neural:                   # Model B: from-scratch embeddings + mean pooling + MLP
+    type: neural
+    arch: meanpool_mlp
+    embedding_dim: 128
+    hidden_dim: 256
+    dropout: 0.2
+    batch_size: 128
+    eval_batch_size: 512
+    learning_rate: 3.0e-4
+    weight_decay: 0.01
+    epochs: 5
+    grad_clip: 1.0
+    num_workers: 2
+    select_by: val_loss     # best_<model>.pt = lowest validation loss
+    log_every: 200
+
+  neural_cnn:               # Model C: from-scratch embeddings + TextCNN (kernels 3/4/5)
+    type: neural
+    arch: textcnn
+    embedding_dim: 128
+    num_filters: 128          # per kernel size
+    kernel_sizes: [3, 4, 5]
+    dropout: 0.3
+    batch_size: 128
+    eval_batch_size: 512
+    learning_rate: 3.0e-4
+    weight_decay: 0.01
+    epochs: 5
+    grad_clip: 1.0
+    num_workers: 2
+    select_by: val_loss
+    log_every: 200
+
+smoke:
+  n_train: 240
+  n_test: 80
+  epochs: 2
+  batch_size: 32
+  bootstrap_samples: 50

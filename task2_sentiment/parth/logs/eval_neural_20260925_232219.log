@@ -1,0 +1,17 @@
+2026-09-25 23:22:19,996 | INFO | Using cached processed data in task2_sentiment/parth/data_processed (key=d4a7195820a8)
+2026-09-25 23:22:24,220 | INFO | Inference on 38000 reviews took 1.17s on NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)
+2026-09-25 23:22:24,566 | INFO | Metrics: accuracy=0.9313, precision_macro=0.9313, recall_macro=0.9313, f1_macro=0.9313, precision_micro=0.9313, recall_micro=0.9313, f1_micro=0.9313, precision_weighted=0.9313, recall_weighted=0.9313, f1_weighted=0.9313, roc_auc=0.9803, pr_auc=0.9804, mcc=0.8626, brier=0.0517, ece=0.0048, tn=17705, fp=1295, fn=1315, tp=17685
+2026-09-25 23:22:24,568 | INFO | Bootstrap 95% CIs (1000 resamples): {'accuracy': (0.9285519736842106, 0.9336585526315789), 'macro_f1': (0.9285480373594878, 0.9336545978993575), 'mcc': (0.8570974134951936, 0.867309258750035)}
+2026-09-25 23:22:24,568 | INFO | Classification report:
+              precision    recall  f1-score   support
+
+    negative     0.9309    0.9318    0.9314     19000
+    positive     0.9318    0.9308    0.9313     19000
+
+    accuracy                         0.9313     38000
+   macro avg     0.9313    0.9313    0.9313     38000
+weighted avg     0.9313    0.9313    0.9313     38000
+
+2026-09-25 23:22:25,534 | INFO | Error review sample: 20 rows (worst slice: has_contrast)
+2026-09-25 23:22:25,799 | INFO | McNemar vs logreg: {'b_a_right_b_wrong': 947, 'c_a_wrong_b_right': 376, 'statistic': 245.57823129251702, 'p_value': 2.3903360407775292e-55, 'method': 'chi2 with continuity correction', 'baseline': 'logreg', 'model': 'neural', 'n': 38000}
+2026-09-25 23:22:25,941 | INFO | Wrote task2_sentiment/parth/metrics_report.csv and outputs for neural

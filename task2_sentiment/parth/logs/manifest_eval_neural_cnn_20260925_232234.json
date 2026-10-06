@@ -1,0 +1,246 @@
+{
+  "model": "neural_cnn",
+  "stage": "eval",
+  "created": "2026-09-25T23:22:34",
+  "git_commit": "3e96e78887995965eb03081831a19249ec649100",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "numpy": "2.2.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "nltk": "3.10.3",
+    "PyYAML": "6.0.2",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "datasets": "5.0.1"
+  },
+  "hardware": {
+    "python": "3.11.13",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "x86_64",
+    "cpu_count": 24,
+    "torch": "2.7.1+cu128",
+    "torch_cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5090",
+    "gpu_count": 1,
+    "gpu_capability": "sm_120",
+    "gpu_total_mem_gb": 31.84
+  },
+  "config": {
+    "seed": 8503,
+    "paths": {
+      "data_dir": "task2_sentiment/data",
+      "member_dir": "task2_sentiment/parth",
+      "smoke_dir": "task2_sentiment/parth/smoke_runs"
+    },
+    "data": {
+      "hf_names": [
+        "fancyzhx/yelp_polarity",
+        "yelp_polarity"
+      ],
+      "val_fraction": 0.05,
+      "train_subset": null,
+      "test_subset": null
+    },
+    "preprocessing": {
+      "lowercase": true,
+      "remove_punctuation": true,
+      "remove_stopwords": true,
+      "keep_stopwords": [
+        "not",
+        "no",
+        "nor",
+        "never",
+        "nothing",
+        "none",
+        "cannot",
+        "neither",
+        "nobody",
+        "noone",
+        "nowhere"
+      ],
+      "stemming": true,
+      "min_tokens": 1
+    },
+    "tokenizer": {
+      "max_vocab": 50000,
+      "min_freq": 2,
+      "max_length": 256
+    },
+    "eda": {
+      "length_bins": 60
+    },
+    "slices": {
+      "short_max_words": 50,
+      "long_min_words": 300,
+      "negation_words": [
+        "not",
+        "no",
+        "never",
+        "nothing",
+        "none",
+        "nobody",
+        "neither",
+        "nor",
+        "cannot",
+        "without"
+      ],
+      "contrast_words": [
+        "but",
+        "however",
+        "although",
+        "though",
+        "except",
+        "yet",
+        "unfortunately"
+      ]
+    },
+    "evaluation": {
+      "threshold": 0.5,
+      "ece_bins": 15,
+      "bootstrap_samples": 1000,
+      "baseline_model": "logreg",
+      "error_review_k": 5,
+      "min_slice_n": 100
+    },
+    "models": {
+      "logreg": {
+        "type": "logreg",
+        "tfidf": {
+          "ngram_range": [
+            1,
+            2
+          ],
+          "max_features": 200000,
+          "min_df": 3,
+          "sublinear_tf": true
+        },
+        "C": 1.0,
+        "max_iter": 1000,
+        "solver": "lbfgs"
+      },
+      "neural": {
+        "type": "neural",
+        "arch": "meanpool_mlp",
+        "embedding_dim": 128,
+        "hidden_dim": 256,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      },
+      "neural_cnn": {
+        "type": "neural",
+        "arch": "textcnn",
+        "embedding_dim": 128,
+        "num_filters": 128,
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "dropout": 0.3,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      }
+    },
+    "smoke": {
+      "n_train": 240,
+      "n_test": 80,
+      "epochs": 2,
+      "batch_size": 32,
+      "bootstrap_samples": 50
+    }
+  },
+  "metrics": {
+    "model": "neural_cnn",
+    "type": "neural",
+    "arch": "textcnn",
+    "hyperparameters": "{'type': 'neural', 'arch': 'textcnn', 'embedding_dim': 128, 'num_filters': 128, 'kernel_sizes': [3, 4, 5], 'dropout': 0.3, 'batch_size': 128, 'eval_batch_size': 512, 'learning_rate': 0.0003, 'weight_decay': 0.01, 'epochs': 5, 'grad_clip': 1.0, 'num_workers': 2, 'select_by': 'val_loss', 'log_every': 200}",
+    "seed": 8503,
+    "n_test": 38000,
+    "accuracy": 0.9378947368421052,
+    "precision_macro": 0.9379611662094653,
+    "recall_macro": 0.9378947368421053,
+    "f1_macro": 0.9378923817418661,
+    "precision_micro": 0.9378947368421052,
+    "recall_micro": 0.9378947368421052,
+    "f1_micro": 0.9378947368421052,
+    "precision_weighted": 0.9379611662094652,
+    "recall_weighted": 0.9378947368421052,
+    "f1_weighted": 0.937892381741866,
+    "roc_auc": 0.984809833795014,
+    "pr_auc": 0.9852903578763151,
+    "mcc": 0.8758559005324,
+    "brier": 0.04606485129294632,
+    "ece": 0.005870093075317377,
+    "tn": 17703,
+    "fp": 1297,
+    "fn": 1063,
+    "tp": 17937,
+    "accuracy_ci95_low": 0.9353671052631579,
+    "accuracy_ci95_high": 0.9401315789473684,
+    "macro_f1_ci95_low": 0.9353666789985413,
+    "macro_f1_ci95_high": 0.9401306336001224,
+    "mcc_ci95_low": 0.8708106515210073,
+    "mcc_ci95_high": 0.8803301352321392,
+    "mcnemar_vs_baseline_p": 2.8069431031876366e-18,
+    "mcnemar_vs_baseline_stat": 76.02078693392724,
+    "param_count": 6597762,
+    "train_loss": 0.1513877294824513,
+    "val_loss": 0.16433442556858063,
+    "training_time_s": 127.05814826099959,
+    "train_examples_per_sec": 20933.919126038698,
+    "inference_time_s": 1.3184795029992529,
+    "inference_examples_per_sec": 28821.07754694578,
+    "train_peak_gpu_mb": 486.0,
+    "train_peak_cpu_rss_mb": 2904.0,
+    "eval_peak_gpu_mb": 377.7,
+    "eval_peak_cpu_rss_mb": 1463.3,
+    "train_device": "NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)",
+    "eval_device": "NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)",
+    "checkpoint": "task2_sentiment/parth/checkpoints/best_neural_cnn.pt",
+    "checkpoint_sha256": "7f34ff61f82c63b78d93412792a6b14e22c70f55ffc5f57af0ec650d02f61814",
+    "train_log": "task2_sentiment/parth/logs/train_neural_cnn_20260925_231732.log",
+    "eval_log": "task2_sentiment/parth/logs/eval_neural_cnn_20260925_232228.log",
+    "slice_all_n": 38000,
+    "slice_all_macro_f1": 0.9378923817418661,
+    "slice_all_error_rate": 0.06210526315789474,
+    "slice_length_short_n": 9287,
+    "slice_length_short_macro_f1": 0.9298450217136953,
+    "slice_length_short_error_rate": 0.06719069667276839,
+    "slice_length_medium_n": 25377,
+    "slice_length_medium_macro_f1": 0.9389281325722267,
+    "slice_length_medium_error_rate": 0.06103952397840564,
+    "slice_length_long_n": 3336,
+    "slice_length_long_macro_f1": 0.9372314955353437,
+    "slice_length_long_error_rate": 0.05605515587529976,
+    "slice_has_negation_n": 28544,
+    "slice_has_negation_macro_f1": 0.9335495950927175,
+    "slice_has_negation_error_rate": 0.06453195067264574,
+    "slice_no_negation_n": 9456,
+    "slice_no_negation_macro_f1": 0.9229464480104101,
+    "slice_no_negation_error_rate": 0.054780033840947547,
+    "slice_has_contrast_n": 22770,
+    "slice_has_contrast_macro_f1": 0.9306100915005662,
+    "slice_has_contrast_error_rate": 0.06877470355731226,
+    "slice_no_contrast_n": 15230,
+    "slice_no_contrast_macro_f1": 0.9465632964276629,
+    "slice_no_contrast_error_rate": 0.05213394615889692
+  }
+}

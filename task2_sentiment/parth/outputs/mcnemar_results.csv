@@ -1,0 +1,3 @@
+b_a_right_b_wrong,c_a_wrong_b_right,statistic,p_value,method,baseline,model,n
+947,376,245.57823129251705,2.390336040777529e-55,chi2 with continuity correction,logreg,neural,38000
+834,513,76.02078693392724,2.8069431031876366e-18,chi2 with continuity correction,logreg,neural_cnn,38000

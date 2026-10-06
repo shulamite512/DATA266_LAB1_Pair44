@@ -1,0 +1,246 @@
+{
+  "model": "logreg",
+  "stage": "eval",
+  "created": "2026-09-25T23:22:17",
+  "git_commit": "3e96e78887995965eb03081831a19249ec649100",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "numpy": "2.2.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "nltk": "3.10.3",
+    "PyYAML": "6.0.2",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "datasets": "5.0.1"
+  },
+  "hardware": {
+    "python": "3.11.13",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "x86_64",
+    "cpu_count": 24,
+    "torch": "2.7.1+cu128",
+    "torch_cuda_build": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5090",
+    "gpu_count": 1,
+    "gpu_capability": "sm_120",
+    "gpu_total_mem_gb": 31.84
+  },
+  "config": {
+    "seed": 8503,
+    "paths": {
+      "data_dir": "task2_sentiment/data",
+      "member_dir": "task2_sentiment/parth",
+      "smoke_dir": "task2_sentiment/parth/smoke_runs"
+    },
+    "data": {
+      "hf_names": [
+        "fancyzhx/yelp_polarity",
+        "yelp_polarity"
+      ],
+      "val_fraction": 0.05,
+      "train_subset": null,
+      "test_subset": null
+    },
+    "preprocessing": {
+      "lowercase": true,
+      "remove_punctuation": true,
+      "remove_stopwords": true,
+      "keep_stopwords": [
+        "not",
+        "no",
+        "nor",
+        "never",
+        "nothing",
+        "none",
+        "cannot",
+        "neither",
+        "nobody",
+        "noone",
+        "nowhere"
+      ],
+      "stemming": true,
+      "min_tokens": 1
+    },
+    "tokenizer": {
+      "max_vocab": 50000,
+      "min_freq": 2,
+      "max_length": 256
+    },
+    "eda": {
+      "length_bins": 60
+    },
+    "slices": {
+      "short_max_words": 50,
+      "long_min_words": 300,
+      "negation_words": [
+        "not",
+        "no",
+        "never",
+        "nothing",
+        "none",
+        "nobody",
+        "neither",
+        "nor",
+        "cannot",
+        "without"
+      ],
+      "contrast_words": [
+        "but",
+        "however",
+        "although",
+        "though",
+        "except",
+        "yet",
+        "unfortunately"
+      ]
+    },
+    "evaluation": {
+      "threshold": 0.5,
+      "ece_bins": 15,
+      "bootstrap_samples": 1000,
+      "baseline_model": "logreg",
+      "error_review_k": 5,
+      "min_slice_n": 100
+    },
+    "models": {
+      "logreg": {
+        "type": "logreg",
+        "tfidf": {
+          "ngram_range": [
+            1,
+            2
+          ],
+          "max_features": 200000,
+          "min_df": 3,
+          "sublinear_tf": true
+        },
+        "C": 1.0,
+        "max_iter": 1000,
+        "solver": "lbfgs"
+      },
+      "neural": {
+        "type": "neural",
+        "arch": "meanpool_mlp",
+        "embedding_dim": 128,
+        "hidden_dim": 256,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      },
+      "neural_cnn": {
+        "type": "neural",
+        "arch": "textcnn",
+        "embedding_dim": 128,
+        "num_filters": 128,
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "dropout": 0.3,
+        "batch_size": 128,
+        "eval_batch_size": 512,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "epochs": 5,
+        "grad_clip": 1.0,
+        "num_workers": 2,
+        "select_by": "val_loss",
+        "log_every": 200
+      }
+    },
+    "smoke": {
+      "n_train": 240,
+      "n_test": 80,
+      "epochs": 2,
+      "batch_size": 32,
+      "bootstrap_samples": 50
+    }
+  },
+  "metrics": {
+    "model": "logreg",
+    "type": "logreg",
+    "arch": "tfidf_logreg",
+    "hyperparameters": "{'type': 'logreg', 'tfidf': {'ngram_range': [1, 2], 'max_features': 200000, 'min_df': 3, 'sublinear_tf': True}, 'C': 1.0, 'max_iter': 1000, 'solver': 'lbfgs'}",
+    "seed": 8503,
+    "n_test": 38000,
+    "accuracy": 0.9463421052631579,
+    "precision_macro": 0.9463434517119638,
+    "recall_macro": 0.946342105263158,
+    "f1_macro": 0.9463420647967511,
+    "precision_micro": 0.9463421052631579,
+    "recall_micro": 0.9463421052631579,
+    "f1_micro": 0.9463421052631579,
+    "precision_weighted": 0.9463434517119638,
+    "recall_weighted": 0.9463421052631579,
+    "f1_weighted": 0.9463420647967512,
+    "roc_auc": 0.9876018074792244,
+    "pr_auc": 0.988056797840989,
+    "mcc": 0.8926855569741061,
+    "brier": 0.042367614053190075,
+    "ece": 0.03208338385374456,
+    "tn": 17964,
+    "fp": 1036,
+    "fn": 1003,
+    "tp": 17997,
+    "accuracy_ci95_low": 0.9440782894736842,
+    "accuracy_ci95_high": 0.9483690789473683,
+    "macro_f1_ci95_low": 0.944077109572532,
+    "macro_f1_ci95_high": 0.9483690217564452,
+    "mcc_ci95_low": 0.888157036677889,
+    "mcc_ci95_high": 0.8967422120331714,
+    "mcnemar_vs_baseline_p": NaN,
+    "mcnemar_vs_baseline_stat": NaN,
+    "param_count": 200001,
+    "train_loss": 0.1384784260656187,
+    "val_loss": 0.15768936980285583,
+    "training_time_s": 58.413711735000106,
+    "train_examples_per_sec": 9106.85152851294,
+    "inference_time_s": 1.642967782998312,
+    "inference_examples_per_sec": 23128.87714125009,
+    "train_peak_gpu_mb": null,
+    "train_peak_cpu_rss_mb": 7932.6,
+    "eval_peak_gpu_mb": null,
+    "eval_peak_cpu_rss_mb": 1347.3,
+    "train_device": "CPU (x86_64, 24 cores)",
+    "eval_device": "CPU (x86_64, 24 cores)",
+    "checkpoint": "task2_sentiment/parth/checkpoints/logreg_tfidf.joblib",
+    "checkpoint_sha256": "5a9b23959ee0ab73ff175557da2b07f4cf95382c3861eb71563acf3e64fd6a35",
+    "train_log": "task2_sentiment/parth/logs/train_logreg_20260925_231345.log",
+    "eval_log": "task2_sentiment/parth/logs/eval_logreg_20260925_232211.log",
+    "slice_all_n": 38000,
+    "slice_all_macro_f1": 0.9463420647967511,
+    "slice_all_error_rate": 0.053657894736842106,
+    "slice_length_short_n": 9287,
+    "slice_length_short_macro_f1": 0.9436079146426559,
+    "slice_length_short_error_rate": 0.05405405405405406,
+    "slice_length_medium_n": 25377,
+    "slice_length_medium_macro_f1": 0.9458117665146313,
+    "slice_length_medium_error_rate": 0.05414351578200733,
+    "slice_length_long_n": 3336,
+    "slice_length_long_macro_f1": 0.9448189639906822,
+    "slice_length_long_error_rate": 0.048860911270983215,
+    "slice_has_negation_n": 28544,
+    "slice_has_negation_macro_f1": 0.9425540560949888,
+    "slice_has_negation_error_rate": 0.05566844170403588,
+    "slice_no_negation_n": 9456,
+    "slice_no_negation_macro_f1": 0.9333803223959036,
+    "slice_no_negation_error_rate": 0.04758883248730964,
+    "slice_has_contrast_n": 22770,
+    "slice_has_contrast_macro_f1": 0.938154651991483,
+    "slice_has_contrast_error_rate": 0.061220904699165565,
+    "slice_no_contrast_n": 15230,
+    "slice_no_contrast_macro_f1": 0.9566424083339052,
+    "slice_no_contrast_error_rate": 0.042350623768877216
+  }
+}

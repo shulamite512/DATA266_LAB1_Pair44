@@ -1,0 +1,133 @@
+2026-09-25 23:17:32,447 | INFO | Model 'neural_cnn' (neural) | smoke=False | seed=8503
+2026-09-25 23:17:32,448 | INFO | Hardware: {'python': '3.11.13', 'platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'cpu': 'x86_64', 'cpu_count': 24, 'torch': '2.7.1+cu128', 'torch_cuda_build': '12.8', 'cuda_available': True, 'gpu_name': 'NVIDIA GeForce RTX 5090', 'gpu_count': 1, 'gpu_capability': 'sm_120', 'gpu_total_mem_gb': 31.84}
+2026-09-25 23:17:32,449 | INFO | Model config: {'type': 'neural', 'arch': 'textcnn', 'embedding_dim': 128, 'num_filters': 128, 'kernel_sizes': [3, 4, 5], 'dropout': 0.3, 'batch_size': 128, 'eval_batch_size': 512, 'learning_rate': 0.0003, 'weight_decay': 0.01, 'epochs': 5, 'grad_clip': 1.0, 'num_workers': 2, 'select_by': 'val_loss', 'log_every': 200}
+2026-09-25 23:17:32,518 | INFO | Using cached processed data in task2_sentiment/parth/data_processed (key=d4a7195820a8)
+2026-09-25 23:17:41,334 | INFO | Vocab size 50000; encoding took 6.5s
+2026-09-25 23:17:41,520 | INFO | Model:
+TextCNN(
+  (embedding): Embedding(50000, 128, padding_idx=0)
+  (convs): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(3,), stride=(1,))
+    (1): Conv1d(128, 128, kernel_size=(4,), stride=(1,))
+    (2): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+  )
+  (act): ReLU()
+  (dropout): Dropout(p=0.3, inplace=False)
+  (fc): Linear(in_features=384, out_features=2, bias=True)
+)
+2026-09-25 23:17:41,520 | INFO | Parameters: total=6,597,762 trainable=6,597,762
+2026-09-25 23:17:44,536 | INFO | epoch 1 step 200 train_loss 0.5684 grad_norm 1.658
+2026-09-25 23:17:45,752 | INFO | epoch 1 step 400 train_loss 0.4028 grad_norm 2.573
+2026-09-25 23:17:46,932 | INFO | epoch 1 step 600 train_loss 0.3530 grad_norm 1.020
+2026-09-25 23:17:48,124 | INFO | epoch 1 step 800 train_loss 0.3274 grad_norm 1.643
+2026-09-25 23:17:49,325 | INFO | epoch 1 step 1000 train_loss 0.3023 grad_norm 1.572
+2026-09-25 23:17:50,517 | INFO | epoch 1 step 1200 train_loss 0.2958 grad_norm 1.387
+2026-09-25 23:17:51,677 | INFO | epoch 1 step 1400 train_loss 0.2833 grad_norm 2.120
+2026-09-25 23:17:52,791 | INFO | epoch 1 step 1600 train_loss 0.2788 grad_norm 2.968
+2026-09-25 23:17:53,980 | INFO | epoch 1 step 1800 train_loss 0.2692 grad_norm 1.035
+2026-09-25 23:17:55,126 | INFO | epoch 1 step 2000 train_loss 0.2716 grad_norm 1.248
+2026-09-25 23:17:56,265 | INFO | epoch 1 step 2200 train_loss 0.2694 grad_norm 1.065
+2026-09-25 23:17:57,414 | INFO | epoch 1 step 2400 train_loss 0.2582 grad_norm 1.347
+2026-09-25 23:17:58,631 | INFO | epoch 1 step 2600 train_loss 0.2553 grad_norm 1.108
+2026-09-25 23:17:59,895 | INFO | epoch 1 step 2800 train_loss 0.2497 grad_norm 0.920
+2026-09-25 23:18:01,182 | INFO | epoch 1 step 3000 train_loss 0.2504 grad_norm 1.399
+2026-09-25 23:18:02,522 | INFO | epoch 1 step 3200 train_loss 0.2448 grad_norm 1.147
+2026-09-25 23:18:03,804 | INFO | epoch 1 step 3400 train_loss 0.2457 grad_norm 1.546
+2026-09-25 23:18:04,954 | INFO | epoch 1 step 3600 train_loss 0.2359 grad_norm 2.120
+2026-09-25 23:18:06,178 | INFO | epoch 1 step 3800 train_loss 0.2403 grad_norm 1.347
+2026-09-25 23:18:07,444 | INFO | epoch 1 step 4000 train_loss 0.2312 grad_norm 0.973
+2026-09-25 23:18:08,750 | INFO | EPOCH epoch=1 train_loss=0.2892 val_loss=0.2044 val_accuracy=0.9171 grad_norm_mean=1.5388 grad_norm_max=8.9080 epoch_time_s=26.2688 train_examples_per_sec=20250.8485
+2026-09-25 23:18:09,219 | INFO | New best checkpoint at epoch 1 (val_loss=0.2044)
+2026-09-25 23:18:09,532 | INFO | epoch 2 step 4200 train_loss 0.2133 grad_norm 1.039
+2026-09-25 23:18:10,642 | INFO | epoch 2 step 4400 train_loss 0.2112 grad_norm 2.360
+2026-09-25 23:18:11,784 | INFO | epoch 2 step 4600 train_loss 0.2140 grad_norm 1.139
+2026-09-25 23:18:12,953 | INFO | epoch 2 step 4800 train_loss 0.2080 grad_norm 1.149
+2026-09-25 23:18:14,131 | INFO | epoch 2 step 5000 train_loss 0.2095 grad_norm 0.911
+2026-09-25 23:18:15,252 | INFO | epoch 2 step 5200 train_loss 0.2067 grad_norm 1.386
+2026-09-25 23:18:16,302 | INFO | epoch 2 step 5400 train_loss 0.2065 grad_norm 0.794
+2026-09-25 23:18:17,645 | INFO | epoch 2 step 5600 train_loss 0.2140 grad_norm 0.880
+2026-09-25 23:18:18,823 | INFO | epoch 2 step 5800 train_loss 0.2053 grad_norm 1.040
+2026-09-25 23:18:20,041 | INFO | epoch 2 step 6000 train_loss 0.2062 grad_norm 0.759
+2026-09-25 23:18:21,261 | INFO | epoch 2 step 6200 train_loss 0.2030 grad_norm 1.372
+2026-09-25 23:18:22,435 | INFO | epoch 2 step 6400 train_loss 0.2047 grad_norm 1.156
+2026-09-25 23:18:23,581 | INFO | epoch 2 step 6600 train_loss 0.2069 grad_norm 0.910
+2026-09-25 23:18:24,750 | INFO | epoch 2 step 6800 train_loss 0.1979 grad_norm 1.022
+2026-09-25 23:18:25,940 | INFO | epoch 2 step 7000 train_loss 0.2046 grad_norm 0.834
+2026-09-25 23:18:27,109 | INFO | epoch 2 step 7200 train_loss 0.2004 grad_norm 1.068
+2026-09-25 23:18:28,257 | INFO | epoch 2 step 7400 train_loss 0.1992 grad_norm 1.175
+2026-09-25 23:18:29,410 | INFO | epoch 2 step 7600 train_loss 0.2027 grad_norm 1.182
+2026-09-25 23:18:30,528 | INFO | epoch 2 step 7800 train_loss 0.2034 grad_norm 1.223
+2026-09-25 23:18:31,688 | INFO | epoch 2 step 8000 train_loss 0.1948 grad_norm 0.716
+2026-09-25 23:18:32,772 | INFO | epoch 2 step 8200 train_loss 0.2002 grad_norm 1.433
+2026-09-25 23:18:33,767 | INFO | EPOCH epoch=2 train_loss=0.2047 val_loss=0.1835 val_accuracy=0.9259 grad_norm_mean=1.3463 grad_norm_max=4.4070 epoch_time_s=24.2500 train_examples_per_sec=21936.7316
+2026-09-25 23:18:34,528 | INFO | New best checkpoint at epoch 2 (val_loss=0.1835)
+2026-09-25 23:18:35,117 | INFO | epoch 3 step 8400 train_loss 0.1837 grad_norm 1.496
+2026-09-25 23:18:36,293 | INFO | epoch 3 step 8600 train_loss 0.1784 grad_norm 2.028
+2026-09-25 23:18:37,478 | INFO | epoch 3 step 8800 train_loss 0.1811 grad_norm 0.873
+2026-09-25 23:18:38,727 | INFO | epoch 3 step 9000 train_loss 0.1760 grad_norm 1.093
+2026-09-25 23:18:39,918 | INFO | epoch 3 step 9200 train_loss 0.1809 grad_norm 0.803
+2026-09-25 23:18:41,061 | INFO | epoch 3 step 9400 train_loss 0.1775 grad_norm 0.635
+2026-09-25 23:18:42,250 | INFO | epoch 3 step 9600 train_loss 0.1817 grad_norm 0.723
+2026-09-25 23:18:43,360 | INFO | epoch 3 step 9800 train_loss 0.1790 grad_norm 0.820
+2026-09-25 23:18:44,514 | INFO | epoch 3 step 10000 train_loss 0.1828 grad_norm 1.862
+2026-09-25 23:18:45,633 | INFO | epoch 3 step 10200 train_loss 0.1742 grad_norm 0.998
+2026-09-25 23:18:46,778 | INFO | epoch 3 step 10400 train_loss 0.1813 grad_norm 0.973
+2026-09-25 23:18:47,879 | INFO | epoch 3 step 10600 train_loss 0.1774 grad_norm 1.012
+2026-09-25 23:18:49,025 | INFO | epoch 3 step 10800 train_loss 0.1784 grad_norm 0.872
+2026-09-25 23:18:50,130 | INFO | epoch 3 step 11000 train_loss 0.1744 grad_norm 2.063
+2026-09-25 23:18:51,250 | INFO | epoch 3 step 11200 train_loss 0.1733 grad_norm 0.689
+2026-09-25 23:18:52,394 | INFO | epoch 3 step 11400 train_loss 0.1832 grad_norm 1.118
+2026-09-25 23:18:53,538 | INFO | epoch 3 step 11600 train_loss 0.1765 grad_norm 1.817
+2026-09-25 23:18:54,695 | INFO | epoch 3 step 11800 train_loss 0.1767 grad_norm 1.258
+2026-09-25 23:18:55,867 | INFO | epoch 3 step 12000 train_loss 0.1827 grad_norm 1.052
+2026-09-25 23:18:57,014 | INFO | epoch 3 step 12200 train_loss 0.1777 grad_norm 0.859
+2026-09-25 23:18:58,165 | INFO | epoch 3 step 12400 train_loss 0.1785 grad_norm 0.811
+2026-09-25 23:18:58,938 | INFO | EPOCH epoch=3 train_loss=0.1787 val_loss=0.1732 val_accuracy=0.9314 grad_norm_mean=1.2555 grad_norm_max=4.5099 epoch_time_s=24.1130 train_examples_per_sec=22061.3058
+2026-09-25 23:18:59,561 | INFO | New best checkpoint at epoch 3 (val_loss=0.1732)
+2026-09-25 23:19:00,434 | INFO | epoch 4 step 12600 train_loss 0.1621 grad_norm 1.392
+2026-09-25 23:19:01,574 | INFO | epoch 4 step 12800 train_loss 0.1641 grad_norm 1.073
+2026-09-25 23:19:02,734 | INFO | epoch 4 step 13000 train_loss 0.1619 grad_norm 1.720
+2026-09-25 23:19:03,848 | INFO | epoch 4 step 13200 train_loss 0.1621 grad_norm 1.162
+2026-09-25 23:19:04,938 | INFO | epoch 4 step 13400 train_loss 0.1594 grad_norm 1.989
+2026-09-25 23:19:06,143 | INFO | epoch 4 step 13600 train_loss 0.1671 grad_norm 0.869
+2026-09-25 23:19:07,311 | INFO | epoch 4 step 13800 train_loss 0.1607 grad_norm 1.922
+2026-09-25 23:19:08,423 | INFO | epoch 4 step 14000 train_loss 0.1590 grad_norm 0.718
+2026-09-25 23:19:09,565 | INFO | epoch 4 step 14200 train_loss 0.1631 grad_norm 1.744
+2026-09-25 23:19:10,637 | INFO | epoch 4 step 14400 train_loss 0.1628 grad_norm 1.591
+2026-09-25 23:19:11,726 | INFO | epoch 4 step 14600 train_loss 0.1582 grad_norm 2.372
+2026-09-25 23:19:12,848 | INFO | epoch 4 step 14800 train_loss 0.1624 grad_norm 0.887
+2026-09-25 23:19:13,997 | INFO | epoch 4 step 15000 train_loss 0.1609 grad_norm 0.725
+2026-09-25 23:19:15,123 | INFO | epoch 4 step 15200 train_loss 0.1648 grad_norm 1.654
+2026-09-25 23:19:16,266 | INFO | epoch 4 step 15400 train_loss 0.1635 grad_norm 1.002
+2026-09-25 23:19:17,407 | INFO | epoch 4 step 15600 train_loss 0.1638 grad_norm 0.971
+2026-09-25 23:19:18,545 | INFO | epoch 4 step 15800 train_loss 0.1662 grad_norm 1.266
+2026-09-25 23:19:19,719 | INFO | epoch 4 step 16000 train_loss 0.1639 grad_norm 1.015
+2026-09-25 23:19:20,806 | INFO | epoch 4 step 16200 train_loss 0.1646 grad_norm 0.827
+2026-09-25 23:19:21,952 | INFO | epoch 4 step 16400 train_loss 0.1690 grad_norm 1.048
+2026-09-25 23:19:23,122 | INFO | epoch 4 step 16600 train_loss 0.1655 grad_norm 0.992
+2026-09-25 23:19:23,624 | INFO | EPOCH epoch=4 train_loss=0.1632 val_loss=0.1679 val_accuracy=0.9338 grad_norm_mean=1.1859 grad_norm_max=4.1357 epoch_time_s=23.7790 train_examples_per_sec=22371.2270
+2026-09-25 23:19:24,294 | INFO | New best checkpoint at epoch 4 (val_loss=0.1679)
+2026-09-25 23:19:25,395 | INFO | epoch 5 step 16800 train_loss 0.1428 grad_norm 2.044
+2026-09-25 23:19:26,558 | INFO | epoch 5 step 17000 train_loss 0.1431 grad_norm 1.070
+2026-09-25 23:19:27,663 | INFO | epoch 5 step 17200 train_loss 0.1538 grad_norm 1.887
+2026-09-25 23:19:28,777 | INFO | epoch 5 step 17400 train_loss 0.1468 grad_norm 1.147
+2026-09-25 23:19:29,910 | INFO | epoch 5 step 17600 train_loss 0.1476 grad_norm 0.669
+2026-09-25 23:19:31,058 | INFO | epoch 5 step 17800 train_loss 0.1486 grad_norm 0.955
+2026-09-25 23:19:32,188 | INFO | epoch 5 step 18000 train_loss 0.1521 grad_norm 0.608
+2026-09-25 23:19:33,287 | INFO | epoch 5 step 18200 train_loss 0.1474 grad_norm 0.697
+2026-09-25 23:19:34,473 | INFO | epoch 5 step 18400 train_loss 0.1540 grad_norm 1.013
+2026-09-25 23:19:35,698 | INFO | epoch 5 step 18600 train_loss 0.1506 grad_norm 1.069
+2026-09-25 23:19:36,960 | INFO | epoch 5 step 18800 train_loss 0.1541 grad_norm 0.841
+2026-09-25 23:19:38,170 | INFO | epoch 5 step 19000 train_loss 0.1536 grad_norm 0.788
+2026-09-25 23:19:39,436 | INFO | epoch 5 step 19200 train_loss 0.1539 grad_norm 0.913
+2026-09-25 23:19:40,598 | INFO | epoch 5 step 19400 train_loss 0.1564 grad_norm 1.299
+2026-09-25 23:19:41,680 | INFO | epoch 5 step 19600 train_loss 0.1557 grad_norm 1.602
+2026-09-25 23:19:42,771 | INFO | epoch 5 step 19800 train_loss 0.1484 grad_norm 1.030
+2026-09-25 23:19:43,831 | INFO | epoch 5 step 20000 train_loss 0.1528 grad_norm 0.670
+2026-09-25 23:19:44,916 | INFO | epoch 5 step 20200 train_loss 0.1565 grad_norm 0.893
+2026-09-25 23:19:46,086 | INFO | epoch 5 step 20400 train_loss 0.1510 grad_norm 0.855
+2026-09-25 23:19:47,270 | INFO | epoch 5 step 20600 train_loss 0.1535 grad_norm 1.770
+2026-09-25 23:19:48,615 | INFO | EPOCH epoch=5 train_loss=0.1514 val_loss=0.1643 val_accuracy=0.9360 grad_norm_mean=1.1163 grad_norm_max=4.5213 epoch_time_s=24.0351 train_examples_per_sec=22132.8842
+2026-09-25 23:19:49,258 | INFO | New best checkpoint at epoch 5 (val_loss=0.1643)
+2026-09-25 23:19:49,697 | INFO | Summary: {'model': 'neural_cnn', 'type': 'neural', 'arch': 'textcnn', 'param_count': 6597762, 'trainable_params': 6597762, 'vocab_size': 50000, 'best_epoch': 5, 'select_by': 'val_loss', 'train_loss': 0.1513877294824513, 'val_loss': 0.16433442556858063, 'val_accuracy': 0.936, 'final_train_loss': 0.1513877294824513, 'final_val_loss': 0.16433442556858063, 'grad_norm_max_overall': 8.90795612335205, 'nan_or_skipped_steps': 0, 'training_time_s': 127.05814826099959, 'train_examples_per_sec': 20933.919126038698, 'epochs': 5, 'checkpoint': 'task2_sentiment/parth/checkpoints/best_neural_cnn.pt', 'checkpoint_sha256': '7f34ff61f82c63b78d93412792a6b14e22c70f55ffc5f57af0ec650d02f61814', 'latest_checkpoint': 'task2_sentiment/parth/checkpoints/latest_neural_cnn.pt', 'seed': 8503, 'smoke': False, 'hyperparameters': {'type': 'neural', 'arch': 'textcnn', 'embedding_dim': 128, 'num_filters': 128, 'kernel_sizes': [3, 4, 5], 'dropout': 0.3, 'batch_size': 128, 'eval_batch_size': 512, 'learning_rate': 0.0003, 'weight_decay': 0.01, 'epochs': 5, 'grad_clip': 1.0, 'num_workers': 2, 'select_by': 'val_loss', 'log_every': 200}, 'train_device': 'NVIDIA GeForce RTX 5090 (sm_120, 31.84 GB)', 'train_peak_memory': {'gpu_peak_mb': 486.0, 'cpu_peak_rss_mb': 2904.0}, 'train_log': 'task2_sentiment/parth/logs/train_neural_cnn_20260925_231732.log', 'n_train': 531965, 'n_val': 28000}
+2026-09-25 23:19:49,699 | INFO | Manifest written to task2_sentiment/parth/logs/manifest_train_neural_cnn_20260925_231949.json
