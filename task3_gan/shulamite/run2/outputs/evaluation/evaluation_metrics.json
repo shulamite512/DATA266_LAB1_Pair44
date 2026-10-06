@@ -1,0 +1,8 @@
+{
+  "checkpoint": "member_1/run2/checkpoints/cyclegan_epoch_95.pt",
+  "selected_epoch": 95,
+  "photo_to_monet_to_photo_l1": 0.06771004114300012,
+  "monet_to_photo_to_monet_l1": 0.06282371331006288,
+  "audit_sample_count": 30,
+  "submission_image_count": 7038
+}

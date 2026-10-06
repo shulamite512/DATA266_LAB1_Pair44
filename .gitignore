@@ -49,6 +49,7 @@ task1_llm/*/figures/smoke/
 task1_llm/*/logs/smoke/
 task1_llm/*/outputs/smoke/
 task2_sentiment/*/smoke_runs/
+task3_gan/shulamite/smoke/
 **/notebook_runs/smoke*/
 **/outputs/demo/
 **/scratch/

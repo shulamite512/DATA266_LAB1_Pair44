@@ -1,0 +1,56 @@
+Run started 2026-10-01 07:29:04 | torch 2.6.0+cu124 | python 3.12.10
+GPU: NVIDIA GeForce RTX 4090
+Run: run3 | config: {"epochs": 100, "decay_start_epoch": 50, "load_size": 286, "mixed_precision": true, "num_workers": 4, "save_every": 5, "select_checkpoint_by": "fid", "folder": "run3", "ema_decay": 0.999}
+Config: image_size=256 load_size=286 batch_size=8 epochs=100 decay_start_epoch=50 mixed_precision=True max_photos=8000 seed=266
+Using device: cuda; Monet images: 300; photo images: 7038
+Epoch 1/100 | generator=7.4091 | discriminator=0.4515 | cycle=0.4525 | identity=0.4153 | grad_norm=43.64 | nan=0 | lr=2.00e-04 | elapsed=3.6min
+Epoch 2/100 | generator=5.9970 | discriminator=0.3278 | cycle=0.3531 | identity=0.3240 | grad_norm=46.25 | nan=0 | lr=2.00e-04 | elapsed=7.0min
+Epoch 3/100 | generator=5.3576 | discriminator=0.2908 | cycle=0.3094 | identity=0.2822 | grad_norm=48.01 | nan=0 | lr=2.00e-04 | elapsed=10.5min
+Epoch 4/100 | generator=5.0562 | discriminator=0.4058 | cycle=0.2880 | identity=0.2618 | grad_norm=45.76 | nan=0 | lr=2.00e-04 | elapsed=13.9min
+Epoch 5/100 | generator=4.5432 | discriminator=0.3609 | cycle=0.2578 | identity=0.2361 | grad_norm=38.63 | nan=0 | lr=2.00e-04 | elapsed=17.3min
+Epoch 6/100 | generator=4.5642 | discriminator=0.2779 | cycle=0.2522 | identity=0.2296 | grad_norm=44.17 | nan=0 | lr=2.00e-04 | elapsed=20.7min
+Epoch 7/100 | generator=4.3627 | discriminator=0.5071 | cycle=0.2443 | identity=0.2172 | grad_norm=36.57 | nan=0 | lr=2.00e-04 | elapsed=24.2min
+Epoch 8/100 | generator=4.0178 | discriminator=0.3851 | cycle=0.2244 | identity=0.2030 | grad_norm=31.83 | nan=0 | lr=2.00e-04 | elapsed=27.6min
+Epoch 9/100 | generator=4.0898 | discriminator=0.4928 | cycle=0.2230 | identity=0.2013 | grad_norm=31.27 | nan=0 | lr=2.00e-04 | elapsed=31.0min
+Epoch 10/100 | generator=3.6571 | discriminator=0.4118 | cycle=0.2054 | identity=0.1862 | grad_norm=25.68 | nan=0 | lr=2.00e-04 | elapsed=34.5min
+Epoch 11/100 | generator=3.8436 | discriminator=0.3210 | cycle=0.2120 | identity=0.1887 | grad_norm=29.27 | nan=0 | lr=2.00e-04 | elapsed=38.1min
+Epoch 12/100 | generator=3.8195 | discriminator=0.4048 | cycle=0.2078 | identity=0.1850 | grad_norm=29.85 | nan=0 | lr=2.00e-04 | elapsed=41.5min
+Epoch 13/100 | generator=3.4947 | discriminator=0.3934 | cycle=0.1937 | identity=0.1718 | grad_norm=25.57 | nan=0 | lr=2.00e-04 | elapsed=44.9min
+Epoch 14/100 | generator=3.5389 | discriminator=0.3612 | cycle=0.1952 | identity=0.1713 | grad_norm=26.12 | nan=0 | lr=2.00e-04 | elapsed=48.4min
+Epoch 15/100 | generator=3.6234 | discriminator=0.4426 | cycle=0.1955 | identity=0.1717 | grad_norm=27.67 | nan=0 | lr=2.00e-04 | elapsed=51.8min
+Epoch 16/100 | generator=3.3903 | discriminator=0.3726 | cycle=0.1853 | identity=0.1633 | grad_norm=24.64 | nan=0 | lr=2.00e-04 | elapsed=55.2min
+Epoch 17/100 | generator=3.4884 | discriminator=0.3275 | cycle=0.1894 | identity=0.1631 | grad_norm=26.09 | nan=0 | lr=2.00e-04 | elapsed=58.6min
+Epoch 18/100 | generator=3.4574 | discriminator=0.3232 | cycle=0.1862 | identity=0.1588 | grad_norm=26.18 | nan=0 | lr=2.00e-04 | elapsed=62.1min
+Epoch 19/100 | generator=3.5262 | discriminator=0.4769 | cycle=0.1884 | identity=0.1616 | grad_norm=26.25 | nan=0 | lr=2.00e-04 | elapsed=65.5min
+Epoch 20/100 | generator=3.1116 | discriminator=0.4061 | cycle=0.1704 | identity=0.1466 | grad_norm=22.79 | nan=0 | lr=2.00e-04 | elapsed=68.9min
+Epoch 21/100 | generator=3.1885 | discriminator=0.4955 | cycle=0.1726 | identity=0.1488 | grad_norm=23.01 | nan=0 | lr=2.00e-04 | elapsed=72.4min
+Epoch 22/100 | generator=2.8853 | discriminator=0.4644 | cycle=0.1589 | identity=0.1396 | grad_norm=20.07 | nan=0 | lr=2.00e-04 | elapsed=75.8min
+Epoch 23/100 | generator=2.9615 | discriminator=0.4210 | cycle=0.1612 | identity=0.1392 | grad_norm=21.40 | nan=0 | lr=2.00e-04 | elapsed=79.2min
+Epoch 24/100 | generator=3.1224 | discriminator=0.3348 | cycle=0.1657 | identity=0.1401 | grad_norm=23.17 | nan=0 | lr=2.00e-04 | elapsed=82.7min
+Epoch 25/100 | generator=3.1900 | discriminator=0.3233 | cycle=0.1688 | identity=0.1393 | grad_norm=24.15 | nan=0 | lr=2.00e-04 | elapsed=86.1min
+Epoch 26/100 | generator=3.1747 | discriminator=0.3186 | cycle=0.1674 | identity=0.1373 | grad_norm=23.65 | nan=0 | lr=2.00e-04 | elapsed=89.5min
+Epoch 27/100 | generator=3.7129 | discriminator=0.5857 | cycle=0.1927 | identity=0.1553 | grad_norm=27.21 | nan=0 | lr=2.00e-04 | elapsed=92.9min
+Epoch 28/100 | generator=2.8753 | discriminator=0.4783 | cycle=0.1603 | identity=0.1397 | grad_norm=19.45 | nan=0 | lr=2.00e-04 | elapsed=96.4min
+Epoch 29/100 | generator=2.6321 | discriminator=0.4702 | cycle=0.1433 | identity=0.1239 | grad_norm=18.49 | nan=0 | lr=2.00e-04 | elapsed=99.8min
+Epoch 30/100 | generator=2.6852 | discriminator=0.4541 | cycle=0.1452 | identity=0.1244 | grad_norm=18.84 | nan=0 | lr=2.00e-04 | elapsed=103.2min
+Epoch 31/100 | generator=2.7915 | discriminator=0.4053 | cycle=0.1494 | identity=0.1246 | grad_norm=19.99 | nan=0 | lr=2.00e-04 | elapsed=107.0min
+Epoch 32/100 | generator=2.9149 | discriminator=0.3883 | cycle=0.1535 | identity=0.1255 | grad_norm=21.28 | nan=0 | lr=2.00e-04 | elapsed=110.4min
+Epoch 33/100 | generator=2.9139 | discriminator=0.5358 | cycle=0.1524 | identity=0.1278 | grad_norm=21.36 | nan=0 | lr=2.00e-04 | elapsed=113.8min
+Epoch 34/100 | generator=2.7306 | discriminator=0.3994 | cycle=0.1439 | identity=0.1208 | grad_norm=20.04 | nan=0 | lr=2.00e-04 | elapsed=117.3min
+Epoch 35/100 | generator=2.7713 | discriminator=0.3907 | cycle=0.1451 | identity=0.1201 | grad_norm=20.02 | nan=0 | lr=2.00e-04 | elapsed=120.7min
+Epoch 36/100 | generator=2.8148 | discriminator=0.3596 | cycle=0.1458 | identity=0.1194 | grad_norm=20.04 | nan=0 | lr=2.00e-04 | elapsed=124.1min
+Epoch 37/100 | generator=2.9543 | discriminator=0.3138 | cycle=0.1511 | identity=0.1204 | grad_norm=20.89 | nan=0 | lr=2.00e-04 | elapsed=127.6min
+Epoch 38/100 | generator=3.2917 | discriminator=0.5245 | cycle=0.1737 | identity=0.1423 | grad_norm=21.52 | nan=0 | lr=2.00e-04 | elapsed=131.0min
+Epoch 39/100 | generator=2.6944 | discriminator=0.3947 | cycle=0.1425 | identity=0.1156 | grad_norm=18.61 | nan=0 | lr=2.00e-04 | elapsed=134.4min
+Epoch 40/100 | generator=2.7781 | discriminator=0.3495 | cycle=0.1447 | identity=0.1147 | grad_norm=19.16 | nan=0 | lr=2.00e-04 | elapsed=137.8min
+Epoch 41/100 | generator=2.9068 | discriminator=0.3101 | cycle=0.1484 | identity=0.1161 | grad_norm=20.76 | nan=0 | lr=2.00e-04 | elapsed=141.3min
+Epoch 42/100 | generator=2.9144 | discriminator=0.3058 | cycle=0.1477 | identity=0.1147 | grad_norm=20.43 | nan=0 | lr=2.00e-04 | elapsed=144.7min
+Epoch 43/100 | generator=2.9478 | discriminator=0.3040 | cycle=0.1490 | identity=0.1149 | grad_norm=20.58 | nan=0 | lr=2.00e-04 | elapsed=148.1min
+Epoch 44/100 | generator=2.9480 | discriminator=0.2950 | cycle=0.1483 | identity=0.1143 | grad_norm=20.36 | nan=0 | lr=2.00e-04 | elapsed=151.6min
+Epoch 45/100 | generator=3.3849 | discriminator=0.5997 | cycle=0.1712 | identity=0.1398 | grad_norm=22.39 | nan=0 | lr=2.00e-04 | elapsed=155.0min
+Epoch 46/100 | generator=3.2453 | discriminator=0.6020 | cycle=0.1707 | identity=0.1382 | grad_norm=21.37 | nan=0 | lr=2.00e-04 | elapsed=158.4min
+Epoch 47/100 | generator=2.3827 | discriminator=0.4911 | cycle=0.1278 | identity=0.1091 | grad_norm=16.07 | nan=0 | lr=2.00e-04 | elapsed=161.9min
+Epoch 48/100 | generator=2.3391 | discriminator=0.4804 | cycle=0.1241 | identity=0.1051 | grad_norm=16.48 | nan=0 | lr=2.00e-04 | elapsed=165.3min
+Epoch 49/100 | generator=2.3259 | discriminator=0.4732 | cycle=0.1221 | identity=0.1031 | grad_norm=16.05 | nan=0 | lr=2.00e-04 | elapsed=168.7min
+Epoch 50/100 | generator=2.3800 | discriminator=0.4547 | cycle=0.1244 | identity=0.1037 | grad_norm=16.29 | nan=0 | lr=2.00e-04 | elapsed=172.2min
+Epoch 51/100 | generator=2.6169 | discriminator=0.3714 | cycle=0.1323 | identity=0.1055 | grad_norm=18.25 | nan=0 | lr=2.00e-04 | elapsed=176.2min

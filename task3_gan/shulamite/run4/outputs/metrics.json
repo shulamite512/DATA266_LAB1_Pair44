@@ -1,0 +1,192 @@
+{
+  "run": "run4",
+  "config": {
+    "epochs": 100,
+    "decay_start_epoch": 50,
+    "load_size": 286,
+    "mixed_precision": true,
+    "num_workers": 4,
+    "save_every": 5,
+    "select_checkpoint_by": "fid",
+    "folder": "run4",
+    "ema_decay": 0.999,
+    "diff_augment": "color,translation,cutout"
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "epochs": 100,
+  "epochs_completed": 15,
+  "training_seconds": 3210.717079999995,
+  "training_image_pairs_per_second": 32.8805053106704,
+  "parameter_count": 28285832,
+  "peak_gpu_memory_mb": 9127.11279296875,
+  "total_nan_count": 0.0,
+  "max_gradient_norm": 37.98489159237255,
+  "history": [
+    {
+      "generator": 7.063914238322865,
+      "discriminator": 0.4864636109633879,
+      "cycle": 0.4342349772764878,
+      "identity": 0.4024624509567564,
+      "gradient_norm": 37.98489159237255,
+      "nan_count": 0.0,
+      "epoch": 1,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 5.769244749437679,
+      "discriminator": 0.402740979550237,
+      "cycle": 0.33520251358435915,
+      "identity": 0.31521549763327295,
+      "gradient_norm": 35.50761464292353,
+      "nan_count": 0.0,
+      "epoch": 2,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 5.212245031920347,
+      "discriminator": 0.38404321592639795,
+      "cycle": 0.29391487941823224,
+      "identity": 0.276440685428679,
+      "gradient_norm": 35.32998439398679,
+      "nan_count": 0.0,
+      "epoch": 3,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 4.851063755967401,
+      "discriminator": 0.3803114119917154,
+      "cycle": 0.27016884003850544,
+      "identity": 0.25450163011185145,
+      "gradient_norm": 33.385296286236155,
+      "nan_count": 0.0,
+      "epoch": 4,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 4.566339112411846,
+      "discriminator": 0.38614043959162453,
+      "cycle": 0.2519451860169118,
+      "identity": 0.23737668222324415,
+      "gradient_norm": 31.057199819521472,
+      "nan_count": 0.0,
+      "epoch": 5,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 4.361975917220116,
+      "discriminator": 0.38751990119503305,
+      "cycle": 0.23904131754216823,
+      "identity": 0.2245412471958182,
+      "gradient_norm": 29.947315136952835,
+      "nan_count": 0.0,
+      "epoch": 6,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 4.174732946265827,
+      "discriminator": 0.3885459333150224,
+      "cycle": 0.22710556238889695,
+      "identity": 0.21297948133539069,
+      "gradient_norm": 28.860187462243168,
+      "nan_count": 0.0,
+      "epoch": 7,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 4.045784882252867,
+      "discriminator": 0.3851918774402954,
+      "cycle": 0.21815351655876095,
+      "identity": 0.20292648605325006,
+      "gradient_norm": 28.1622872504321,
+      "nan_count": 0.0,
+      "epoch": 8,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.9402915512973613,
+      "discriminator": 0.3840643052689054,
+      "cycle": 0.21157928114248947,
+      "identity": 0.19589057175273245,
+      "gradient_norm": 27.578338928656144,
+      "nan_count": 0.0,
+      "epoch": 9,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.8003714071078734,
+      "discriminator": 0.383343719674105,
+      "cycle": 0.20109181427820164,
+      "identity": 0.18616548802026295,
+      "gradient_norm": 26.15551164041866,
+      "nan_count": 0.0,
+      "epoch": 10,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.7604102830995214,
+      "discriminator": 0.5177849621765993,
+      "cycle": 0.19885358307510614,
+      "identity": 0.18110549908808687,
+      "gradient_norm": 27.23068220615387,
+      "nan_count": 0.0,
+      "epoch": 11,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.4487424116243015,
+      "discriminator": 0.41794262250716036,
+      "cycle": 0.18512506889687344,
+      "identity": 0.16995640840720047,
+      "gradient_norm": 24.486723468520424,
+      "nan_count": 0.0,
+      "epoch": 12,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.4805280365727165,
+      "discriminator": 0.39098244268785826,
+      "cycle": 0.18307514468377287,
+      "identity": 0.16714994101361794,
+      "gradient_norm": 24.311409404061056,
+      "nan_count": 0.0,
+      "epoch": 13,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.514369841597297,
+      "discriminator": 0.43670544595542277,
+      "cycle": 0.18203727076338097,
+      "identity": 0.16501274213872172,
+      "gradient_norm": 25.25196377689188,
+      "nan_count": 0.0,
+      "epoch": 14,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    },
+    {
+      "generator": 3.3452239310199565,
+      "discriminator": 0.5644764010540464,
+      "cycle": 0.17699179581620478,
+      "identity": 0.1608866499482908,
+      "gradient_norm": 23.099648703228343,
+      "nan_count": 0.0,
+      "epoch": 15,
+      "learning_rate": 0.0002,
+      "trained_learning_rate": 0.0002
+    }
+  ]
+}

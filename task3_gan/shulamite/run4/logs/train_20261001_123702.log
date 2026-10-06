@@ -1,0 +1,20 @@
+Run started 2026-10-01 12:37:02 | torch 2.6.0+cu124 | python 3.12.10
+GPU: NVIDIA GeForce RTX 4090
+Run: run4 | config: {"epochs": 100, "decay_start_epoch": 50, "load_size": 286, "mixed_precision": true, "num_workers": 4, "save_every": 5, "select_checkpoint_by": "fid", "folder": "run4", "ema_decay": 0.999, "diff_augment": "color,translation,cutout"}
+Config: image_size=256 load_size=286 batch_size=8 epochs=100 decay_start_epoch=50 mixed_precision=True max_photos=8000 seed=266
+Using device: cuda; Monet images: 300; photo images: 7038
+Epoch 1/100 | generator=7.0639 | discriminator=0.4865 | cycle=0.4342 | identity=0.4025 | grad_norm=37.98 | nan=0 | lr=2.00e-04 | elapsed=3.7min
+Epoch 2/100 | generator=5.7692 | discriminator=0.4027 | cycle=0.3352 | identity=0.3152 | grad_norm=35.51 | nan=0 | lr=2.00e-04 | elapsed=7.3min
+Epoch 3/100 | generator=5.2122 | discriminator=0.3840 | cycle=0.2939 | identity=0.2764 | grad_norm=35.33 | nan=0 | lr=2.00e-04 | elapsed=10.8min
+Epoch 4/100 | generator=4.8511 | discriminator=0.3803 | cycle=0.2702 | identity=0.2545 | grad_norm=33.39 | nan=0 | lr=2.00e-04 | elapsed=14.3min
+Epoch 5/100 | generator=4.5663 | discriminator=0.3861 | cycle=0.2519 | identity=0.2374 | grad_norm=31.06 | nan=0 | lr=2.00e-04 | elapsed=17.9min
+Epoch 6/100 | generator=4.3620 | discriminator=0.3875 | cycle=0.2390 | identity=0.2245 | grad_norm=29.95 | nan=0 | lr=2.00e-04 | elapsed=21.4min
+Epoch 7/100 | generator=4.1747 | discriminator=0.3885 | cycle=0.2271 | identity=0.2130 | grad_norm=28.86 | nan=0 | lr=2.00e-04 | elapsed=25.0min
+Epoch 8/100 | generator=4.0458 | discriminator=0.3852 | cycle=0.2182 | identity=0.2029 | grad_norm=28.16 | nan=0 | lr=2.00e-04 | elapsed=28.5min
+Epoch 9/100 | generator=3.9403 | discriminator=0.3841 | cycle=0.2116 | identity=0.1959 | grad_norm=27.58 | nan=0 | lr=2.00e-04 | elapsed=32.1min
+Epoch 10/100 | generator=3.8004 | discriminator=0.3833 | cycle=0.2011 | identity=0.1862 | grad_norm=26.16 | nan=0 | lr=2.00e-04 | elapsed=35.7min
+Epoch 11/100 | generator=3.7604 | discriminator=0.5178 | cycle=0.1989 | identity=0.1811 | grad_norm=27.23 | nan=0 | lr=2.00e-04 | elapsed=39.3min
+Epoch 12/100 | generator=3.4487 | discriminator=0.4179 | cycle=0.1851 | identity=0.1700 | grad_norm=24.49 | nan=0 | lr=2.00e-04 | elapsed=42.8min
+Epoch 13/100 | generator=3.4805 | discriminator=0.3910 | cycle=0.1831 | identity=0.1671 | grad_norm=24.31 | nan=0 | lr=2.00e-04 | elapsed=46.4min
+Epoch 14/100 | generator=3.5144 | discriminator=0.4367 | cycle=0.1820 | identity=0.1650 | grad_norm=25.25 | nan=0 | lr=2.00e-04 | elapsed=50.0min
+Epoch 15/100 | generator=3.3452 | discriminator=0.5645 | cycle=0.1770 | identity=0.1609 | grad_norm=23.10 | nan=0 | lr=2.00e-04 | elapsed=53.5min

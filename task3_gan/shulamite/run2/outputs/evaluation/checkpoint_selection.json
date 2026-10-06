@@ -1,0 +1,94 @@
+{
+  "criterion": "class-notebook mean FID (300 images per set)",
+  "selected_epoch": 95,
+  "scores": [
+    {
+      "epoch": 50,
+      "fid_photo_to_monet": 104.7213210353049,
+      "mifid_photo_to_monet": 0.4166593551635742,
+      "fid_monet_to_photo": 100.63068049659535,
+      "mifid_monet_to_photo": 0.42330682277679443,
+      "mean_fid": 102.67600076595012
+    },
+    {
+      "epoch": 55,
+      "fid_photo_to_monet": 102.1820489319888,
+      "mifid_photo_to_monet": 0.410856157541275,
+      "fid_monet_to_photo": 102.99248790583451,
+      "mifid_monet_to_photo": 0.4258463978767395,
+      "mean_fid": 102.58726841891166
+    },
+    {
+      "epoch": 60,
+      "fid_photo_to_monet": 99.48323249857535,
+      "mifid_photo_to_monet": 0.4101907014846802,
+      "fid_monet_to_photo": 102.43460849501656,
+      "mifid_monet_to_photo": 0.41922348737716675,
+      "mean_fid": 100.95892049679595
+    },
+    {
+      "epoch": 65,
+      "fid_photo_to_monet": 97.63297169875051,
+      "mifid_photo_to_monet": 0.40924081206321716,
+      "fid_monet_to_photo": 100.70728860702013,
+      "mifid_monet_to_photo": 0.42102521657943726,
+      "mean_fid": 99.17013015288532
+    },
+    {
+      "epoch": 70,
+      "fid_photo_to_monet": 97.48679906136005,
+      "mifid_photo_to_monet": 0.4063352346420288,
+      "fid_monet_to_photo": 99.94131558902117,
+      "mifid_monet_to_photo": 0.41750118136405945,
+      "mean_fid": 98.71405732519061
+    },
+    {
+      "epoch": 75,
+      "fid_photo_to_monet": 97.70248548481823,
+      "mifid_photo_to_monet": 0.40448838472366333,
+      "fid_monet_to_photo": 97.72803241919607,
+      "mifid_monet_to_photo": 0.4172087013721466,
+      "mean_fid": 97.71525895200715
+    },
+    {
+      "epoch": 80,
+      "fid_photo_to_monet": 96.92522347990847,
+      "mifid_photo_to_monet": 0.403311163187027,
+      "fid_monet_to_photo": 99.12729660465374,
+      "mifid_monet_to_photo": 0.4170324206352234,
+      "mean_fid": 98.02626004228111
+    },
+    {
+      "epoch": 85,
+      "fid_photo_to_monet": 97.16944407822892,
+      "mifid_photo_to_monet": 0.40224528312683105,
+      "fid_monet_to_photo": 96.5044971193453,
+      "mifid_monet_to_photo": 0.4155961573123932,
+      "mean_fid": 96.8369705987871
+    },
+    {
+      "epoch": 90,
+      "fid_photo_to_monet": 97.33265471045664,
+      "mifid_photo_to_monet": 0.40277278423309326,
+      "fid_monet_to_photo": 97.28873996610372,
+      "mifid_monet_to_photo": 0.4159003794193268,
+      "mean_fid": 97.31069733828018
+    },
+    {
+      "epoch": 95,
+      "fid_photo_to_monet": 96.15033975234755,
+      "mifid_photo_to_monet": 0.40214768052101135,
+      "fid_monet_to_photo": 95.86512486720136,
+      "mifid_monet_to_photo": 0.41478657722473145,
+      "mean_fid": 96.00773230977445
+    },
+    {
+      "epoch": 100,
+      "fid_photo_to_monet": 96.57233403584307,
+      "mifid_photo_to_monet": 0.4018672704696655,
+      "fid_monet_to_photo": 96.50624208446193,
+      "mifid_monet_to_photo": 0.4151655435562134,
+      "mean_fid": 96.5392880601525
+    }
+  ]
+}

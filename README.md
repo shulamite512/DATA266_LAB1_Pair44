@@ -10,7 +10,7 @@ Repository link: https://github.com/shulamite512/DATA266_LAB1_Pair44
 
 | Member | Folder name | Tasks currently in this repository |
 |---|---|---|
-| Chelsi Shulamite Elthuri | `shulamite` | Task 1, Task 2 |
+| Chelsi Shulamite Elthuri | `shulamite` | Task 1, Task 2, Task 3 |
 | Parth Patel | `parth` | Task 1, Task 2, Task 3 |
 
 Each member works in a named folder inside each task folder. `task1_llm/member_1/` and `task2_sentiment/member_1/` hold an earlier Task 1 and Task 2 upload from the team's first commits (September 28) and are kept unchanged.
@@ -54,14 +54,22 @@ task3_gan/
     exp05_control/            EXP-05 run report, checkpoint-sweep report, console log, run state
     submission.csv  full_metrics_report.csv  metrics_report.csv  results.md  failure_analysis.md
     experiments.csv  checkpoint_sweep_exp05.csv  EXP05_PROVENANCE.csv
+  shulamite/
+    src/                      train_cyclegan.py (all runs defined here), evaluate_cyclegan.py, advanced_metrics.py,
+                              plot_training.py, diff_augment.py, Part3_Evaluation_Script.ipynb, requirements_freeze.txt
+    evaluate_local.py         evaluation entry point
+    manifest.json             environment, per-run config, checkpoint -> Kaggle result map
+    submission.csv  metrics_report.csv  full_metrics_report.csv   run 1
+    logs/ outputs/            run 1 (raw log, per-epoch samples, plots, evaluation)
+    run2/                     final run: checkpoints/cyclegan_epoch_95.pt (Git LFS), logs/, outputs/ (pred_A2B/,
+                              pred_B2A/, evaluation/, plots/), submission.csv, metrics_report.csv, full_metrics_report.csv
+    run3/ run4/ run4_first_attempt_stopped_epoch35/   stopped runs: raw logs and per-epoch outputs only
 reproducibility/              Parth's runs
   raw_logs/                   unedited training and evaluation logs (Task 2 in task2_parth/)
   manifests/                  environment, config, data split and checkpoint map per run, pip freezes
 tests/                        CPU tests for Parth's Task 1 and Task 2 code (no dataset needed)
 report/                       final team report (not yet added)
 ```
-
-Task 3 currently has only Parth's folder.
 
 ## Datasets (Google Drive)
 
@@ -146,6 +154,23 @@ Where results live:
 └── results.md            architecture + hyperparameter justification and results
 ```
 
+## Chelsi Shulamite Elthuri (`shulamite`): Task 3, CycleGAN
+
+All runs are defined in the `RUNS` dict in `task3_gan/shulamite/src/train_cyclegan.py` and selected with `--run`. Training needs the images in `task3_gan/data/` (see its `README.md`); evaluation runs automatically after training.
+
+| Command | What it does |
+|---|---|
+| `python task3_gan/shulamite/src/train_cyclegan.py --run smoke` | smoke test: 2 epochs on 64 photos, writes to `task3_gan/shulamite/smoke/` (git-ignored) |
+| `python task3_gan/shulamite/src/train_cyclegan.py --run run2` | reproduces the final run (overwrites `task3_gan/shulamite/run2/`) |
+| `python task3_gan/shulamite/evaluate_local.py --run run2` | re-evaluates the committed checkpoint (overwrites `run2/outputs/`) |
+
+- **Final model:** run2, checkpoint `task3_gan/shulamite/run2/checkpoints/cyclegan_epoch_95.pt`, stored with Git LFS (run `git lfs pull` after cloning if the file is a small pointer).
+- **Kaggle-style result (class evaluation notebook):** run2 FID 96.0077, MiFID 0.40847 (`run2/submission.csv`); run1 FID 104.1418, MiFID 0.41564 (`submission.csv`).
+- **All metrics:** `run2/full_metrics_report.csv` (run1: `full_metrics_report.csv`); environment and checkpoint map in `manifest.json`.
+- **Hardware:** NVIDIA GeForce RTX 4090 (24 GB), Windows 11, Python 3.12.10, torch 2.6.0+cu124.
+- Only the selected checkpoint is committed. run3 (stopped at epoch 50) and run4 (interrupted at epoch 15) keep their raw logs and per-epoch outputs.
+- The folder was named `member_1/` during training, so the unedited logs, `manifest.json` and metrics files still refer to `member_1/...` paths; those paths now live under `task3_gan/shulamite/`.
+
 ## Parth Patel (`parth`): Task 1, character-level GPT
 
 - **Implementation:** `task1_llm/parth/src/task1.ipynb` (self-contained), with the scripts used for the reported run in `task1_llm/parth/src/` (`model.py` holds the hand-written attention).
@@ -210,7 +235,7 @@ The notebook needs the images in `task3_gan/data/` (see its `README.md`). Skip t
 
 | Member | Task 1 | Task 2 | Task 3 |
 |---|---|---|---|
-| Chelsi (`shulamite`) | `task1_char_gpt.ipynb`, with outputs | `task2_sentiment.ipynb`, with outputs | not yet in the repository |
+| Chelsi (`shulamite`) | `task1_char_gpt.ipynb`, with outputs | `task2_sentiment.ipynb`, with outputs | scripts in `src/`; no notebook with outputs yet |
 | Parth (`parth`) | `task1.ipynb`, with outputs | `task2.ipynb`, with outputs | `Task3_Parth_CycleGAN_Final.ipynb`, with outputs |
 
 Parth's Task 1 and Task 2 notebooks carry the saved outputs of a full end-to-end run on the RTX 5090 (October 2), which retrained the models. The reported numbers above still come from the committed September 25 checkpoints; each notebook's "Re-evaluating the reported checkpoint(s)" section re-evaluates them and reproduces the reported metrics, and an "About the saved outputs" note in each notebook explains this.
@@ -250,7 +275,7 @@ The final report will be added as `report/DATA266_Lab1_Report_Team_44.pdf`. It i
 
 This section lists open items and will be updated or removed before final submission.
 
-- Chelsi's Task 3.
+- Chelsi's Task 3: `results.md`, `failure_analysis.md` and a notebook with saved outputs.
 - Team architecture and hyperparameter comparison, and team best-model comparison.
 - Ownership statement.
 - Final team report in `report/`.
