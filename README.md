@@ -208,7 +208,12 @@ The notebook needs the images in `task3_gan/data/` (see its `README.md`). Skip t
 
 ## Notebook output status
 
-Chelsi's Task 1 and Task 2 notebooks carry saved outputs. Parth's Task 1 and Task 2 notebooks contain the complete end-to-end implementation but do not carry saved execution outputs in this version; the reported GPU-run results are preserved separately through the committed checkpoints, metrics, figures, logs and generated artifacts. Parth's Task 3 notebook keeps its execution outputs.
+| Member | Task 1 | Task 2 | Task 3 |
+|---|---|---|---|
+| Chelsi (`shulamite`) | `task1_char_gpt.ipynb`, with outputs | `task2_sentiment.ipynb`, with outputs | not yet in the repository |
+| Parth (`parth`) | `task1.ipynb`, with outputs | `task2.ipynb`, with outputs | `Task3_Parth_CycleGAN_Final.ipynb`, with outputs |
+
+Parth's Task 1 and Task 2 notebooks carry the saved outputs of a full end-to-end run on the RTX 5090 (October 2), which retrained the models. The reported numbers above still come from the committed September 25 checkpoints; each notebook's "Re-evaluating the reported checkpoint(s)" section re-evaluates them and reproduces the reported metrics, and an "About the saved outputs" note in each notebook explains this.
 
 ## Parth's reproducibility notes
 
@@ -245,7 +250,6 @@ The final report will be added as `report/DATA266_Lab1_Report_Team_44.pdf`. It i
 
 This section lists open items and will be updated or removed before final submission.
 
-- Saved notebook outputs for Parth's Task 1 and Task 2.
 - Chelsi's Task 3.
 - Team architecture and hyperparameter comparison, and team best-model comparison.
 - Ownership statement.
