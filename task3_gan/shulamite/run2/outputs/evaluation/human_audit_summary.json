@@ -1,0 +1,44 @@
+{
+    "run":  "run2",
+    "samples":  30,
+    "raters":  2,
+    "scale":  "1-5 per criterion (style, content, artifacts)",
+    "criteria":  {
+                     "style":  {
+                                   "mean_rater_1":  3.5667,
+                                   "mean_rater_2":  4.9667,
+                                   "mean_both":  4.2667,
+                                   "exact_agreement":  0.0333,
+                                   "agreement_within_1":  0.6,
+                                   "cohens_kappa":  -0.0175,
+                                   "linear_weighted_kappa":  0.0016
+                               },
+                     "content":  {
+                                     "mean_rater_1":  3.0333,
+                                     "mean_rater_2":  4,
+                                     "mean_both":  3.5167,
+                                     "exact_agreement":  0.0333,
+                                     "agreement_within_1":  1,
+                                     "cohens_kappa":  0,
+                                     "linear_weighted_kappa":  0
+                                 },
+                     "artifacts":  {
+                                       "mean_rater_1":  4.0333,
+                                       "mean_rater_2":  5,
+                                       "mean_both":  4.5167,
+                                       "exact_agreement":  0.0333,
+                                       "agreement_within_1":  1,
+                                       "cohens_kappa":  0,
+                                       "linear_weighted_kappa":  0
+                                   }
+                 },
+    "overall":  {
+                    "mean_score":  4.1,
+                    "mean_rater_1":  3.5444,
+                    "mean_rater_2":  4.6556,
+                    "exact_agreement":  0.0333,
+                    "agreement_within_1":  0.8667,
+                    "cohens_kappa":  -0.1943,
+                    "linear_weighted_kappa":  0.0136
+                }
+}
