@@ -166,6 +166,7 @@ All runs are defined in the `RUNS` dict in `task3_gan/shulamite/src/train_cycleg
 
 - **Final model:** run2, checkpoint `task3_gan/shulamite/run2/checkpoints/cyclegan_epoch_95.pt`, stored with Git LFS (run `git lfs pull` after cloning if the file is a small pointer).
 - **Kaggle-style result (class evaluation notebook):** run2 FID 96.0077, MiFID 0.40847 (`run2/submission.csv`); run1 FID 104.1418, MiFID 0.41564 (`submission.csv`).
+- **Kaggle leaderboard (run2 submission, team PairProgramming_Team_44):** public score −48.2080, rank 17.
 - **All metrics:** `run2/full_metrics_report.csv` (run1: `full_metrics_report.csv`); environment and checkpoint map in `manifest.json`.
 - **Hardware:** NVIDIA GeForce RTX 4090 (24 GB), Windows 11, Python 3.12.10, torch 2.6.0+cu124.
 - Only the selected checkpoint is committed. run3 (stopped at epoch 50) and run4 (interrupted at epoch 15) keep their raw logs and per-epoch outputs.
